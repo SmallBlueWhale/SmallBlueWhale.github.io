@@ -1,28 +1,220 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>SmallBlueWhale&#39;s blog</title>
-  
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="http://yoursite.com/"/>
-  <updated>2017-01-16T03:54:54.595Z</updated>
-  <id>http://yoursite.com/</id>
-  
-  <author>
-    <name>SmallBlueWhale</name>
+<!DOCTYPE html>
+<html>
+<head>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>学习总结</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2016/12/12/Android学习总结/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-01-16T03:54:54.595Z</updated>
+
     
-    <content type="html"><![CDATA[<h1 id="View学习中的一些难点记录"><a href="#View学习中的一些难点记录" class="headerlink" title="View学习中的一些难点记录"></a>View学习中的一些难点记录</h1><ul>
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>学习总结 | SmallBlueWhale&#39;s blog | null</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#99CCFF">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="View学习中的一些难点记录
+what is the different about getLeft(),getX()？  
+
+Position  
+
+这个部分可以参照这个地方去理解 
+
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习总结">
+<meta property="og:url" content="http://yoursite.com/2016/12/12/Android学习总结/index.html">
+<meta property="og:site_name" content="SmallBlueWhale's blog">
+<meta property="og:description" content="View学习中的一些难点记录
+what is the different about getLeft(),getX()？  
+
+Position  
+
+这个部分可以参照这个地方去理解 
+
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f88i0q8uozj30nm0kqwhm.jpg">
+<meta property="og:image" content="http://yoursite.com/img/010_demopng.png">
+<meta property="og:image" content="http://yoursite.com/img/010_view滑动冲突解决方案.gif">
+<meta property="og:image" content="http://yoursite.com/img/008_左右上下冲突.png">
+<meta property="og:image" content="http://yoursite.com/img/008_同向冲突.png">
+<meta property="og:image" content="http://yoursite.com/img/008_复杂冲突.png">
+<meta property="og:updated_time" content="2017-01-16T03:54:54.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习总结">
+<meta name="twitter:description" content="View学习中的一些难点记录
+what is the different about getLeft(),getX()？  
+
+Position  
+
+这个部分可以参照这个地方去理解 
+
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f88i0q8uozj30nm0kqwhm.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">SmallBlueWhale</h5>
+          <a href="mailto:349415101@qq.com" title="349415101@qq.com" class="mail">349415101@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/SmallBlueWhale" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/2353851293/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">学习总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">学习总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-11T17:23:00.000Z" itemprop="datePublished" class="page-time">
+  2016-12-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#View学习中的一些难点记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">View学习中的一些难点记录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#外部拦截法"><span class="post-toc-number">2.</span> <span class="post-toc-text">外部拦截法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件分发的过程图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">事件分发的过程图</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内部拦截法"><span class="post-toc-number">3.</span> <span class="post-toc-text">内部拦截法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重定义dispatchTouchEvent方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">重定义dispatchTouchEvent方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">5.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件分发流程"><span class="post-toc-number">6.</span> <span class="post-toc-text">事件分发流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发的规律总结-参考Android开发艺术探索"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">关于事件分发的规律总结(参考Android开发艺术探索)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发中的滑动冲突"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">关于事件分发中的滑动冲突</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于动画一些内容-下次用的时候可以直接从这里copy代码"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于动画一些内容(下次用的时候可以直接从这里copy代码)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-Splash秒开以及Activity白屏，黑屏的原因和过程"><span class="post-toc-number">8.</span> <span class="post-toc-text">Android Splash秒开以及Activity白屏，黑屏的原因和过程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-使用multidex时会出现的一些坑点，以及解决方式和部署步骤"><span class="post-toc-number">9.</span> <span class="post-toc-text">9 使用multidex时会出现的一些坑点，以及解决方式和部署步骤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#微信Tinker热修复原理"><span class="post-toc-number">10.</span> <span class="post-toc-text">微信Tinker热修复原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一个Android-Studio上的实用工具"><span class="post-toc-number">11.</span> <span class="post-toc-text">一个Android Studio上的实用工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle一些有用的学习资料"><span class="post-toc-number">12.</span> <span class="post-toc-text">gradle一些有用的学习资料</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#google上android的mvp结构基本实现方式以及如何规范的运用"><span class="post-toc-number">13.</span> <span class="post-toc-text">google上android的mvp结构基本实现方式以及如何规范的运用</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Android学习总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">学习总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+<span>
+    <a href="/2016/12/12/Android学习总结/#comments" class="ds-thread-count" data-thread-key="Android学习总结" data-count-type="comments"></a>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="View学习中的一些难点记录"><a href="#View学习中的一些难点记录" class="headerlink" title="View学习中的一些难点记录"></a>View学习中的一些难点记录</h1><ul>
 <li>what is the different about getLeft(),getX()？  </li>
 </ul>
 <p><code>Position</code>  </p>
@@ -883,56 +1075,270 @@ as.addAnimation(aniAlp);
 <li><p><a href="&quot;http://www.infoq.com/cn/articles/android-in-depth-gradle&quot;"> 深入理解Android（一）：Gradle详解 </a>  </p>
 </li>
 </ul>
-<h1 id="google上android的mvp结构基本实现方式以及如何规范的运用"><a href="#google上android的mvp结构基本实现方式以及如何规范的运用" class="headerlink" title="google上android的mvp结构基本实现方式以及如何规范的运用"></a>google上android的mvp结构基本实现方式以及如何规范的运用</h1>]]></content>
+<h1 id="google上android的mvp结构基本实现方式以及如何规范的运用"><a href="#google上android的mvp结构基本实现方式以及如何规范的运用" class="headerlink" title="google上android的mvp结构基本实现方式以及如何规范的运用"></a>google上android的mvp结构基本实现方式以及如何规范的运用</h1>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-16T03:54:54.595Z" itemprop="dateUpdated">2017年1月16日 11:54</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/12/12/Android学习总结/" target="_blank" rel="external">http://yoursite.com/2016/12/12/Android学习总结/</a>
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="SmallBlueWhale">
+            SmallBlueWhale
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
     
-    <summary type="html">
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/12/Android学习总结/&title=《学习总结》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/12/Android学习总结/&title=《学习总结》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/12/Android学习总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《学习总结》 — SmallBlueWhale's blog&url=http://yoursite.com/2016/12/12/Android学习总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/12/Android学习总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
     
-      &lt;h1 id=&quot;View学习中的一些难点记录&quot;&gt;&lt;a href=&quot;#View学习中的一些难点记录&quot; class=&quot;headerlink&quot; title=&quot;View学习中的一些难点记录&quot;&gt;&lt;/a&gt;View学习中的一些难点记录&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;what is the diff
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
-  <entry>
-    <title>学习总结</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E8%A1%A8%E5%B1%82%E7%9F%A5%E8%AF%86%E9%87%8C%E9%9D%A2%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android表层知识里面的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-01-16T04:14:36.806Z</updated>
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/12/Android表层知识里面的原理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">学习总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
     
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
-<ul>
-<li>writeObject的方式  </li>
-</ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Android学习总结" data-title="学习总结" data-url="http://yoursite.com/2016/12/12/Android学习总结/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢哥哥~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>SmallBlueWhale's blog &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/12/Android学习总结/&title=《学习总结》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/12/Android学习总结/&title=《学习总结》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/12/Android学习总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《学习总结》 — SmallBlueWhale's blog&url=http://yoursite.com/2016/12/12/Android学习总结/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/12/Android学习总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3awW7rMAwEQP//T6fXB7ROdqn2AZZGJyOJbU0OBCnyuuL1+rb+/fzuOrnr7i3XXywMDIzHMl5vV/6Cu9+857Wf3+4EAwPjAMbdtvIQeQfIN9e+FwMDA+P942ZhOkkTMTAwMNYZSQrYBuUciYGBcTKjTddmad/7zeXvwsDAOI2Rn7r//+s/6W9gYGA8ivEq1ywFbNsJ9a4wMDC2ZuQBLm9q5qnbSsDFwMA4jdEeurUNg5WksC6DMTAwNmXMUsBZGTwbyEianRgYGHszkuP49QZnkd7F39ZdBQwMjAcyZqXjrGHQNkHzPWBgYJzMmLUK2gHWPJRfsxswMDAezlghzUrNtp05PHTDwMDYiJHc0JaybTHc/nE/vAsDA2NrRlugfhjMKtuieYpZDHNgYGBsxxiOipYBMQ/EeSaLgYFxJiNJENtj/fY5s9MzDAyMExj5SER7rLbeqoxSTwwMjK0Zs9vyibM2oLd7wMDAOI2xnsz91qbzcvfK/28MDIyHM5Kj+Vnx2Y5lJOH19gkYGBjHMJJH5G2DWbl7zRYGBsYBjFlSmLchlzLWIPhiYGDsypiF1KQozQNoPsZxuwcMDIytGbO8qxjYig/y2nOzPExjYGDswZgNRqyQ2uK57mlgYGBsylgPfHmoXTlo+zBggYGBgRH/fgZud4WBgYExKyZbZEv60N/AwMDYmtE2A3JSXhLnJSsGBsZpjKXScfTQpKxdaS1gYGBsxPgCVS8D8VmpgLYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+var duoshuoQuery = {short_name:'smallbluewhale', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.5');
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
 </li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
-    
-    </summary>
-    
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-</feed>
+</template>
+
+<script src="/js/search.min.js?v=1.4.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
