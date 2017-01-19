@@ -20,43 +20,43 @@
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="View学习中的一些难点记录
+    <meta name="description" content="自定义View学习中的一些难点记录
 what is the different about getLeft(),getX()？  
 
 Position  
 
 这个部分可以参照这个地方去理解 
 
-The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习总结">
 <meta property="og:url" content="http://yoursite.com/2016/12/12/Android学习总结/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="View学习中的一些难点记录
+<meta property="og:description" content="自定义View学习中的一些难点记录
 what is the different about getLeft(),getX()？  
 
 Position  
 
 这个部分可以参照这个地方去理解 
 
-The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and t">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f88i0q8uozj30nm0kqwhm.jpg">
 <meta property="og:image" content="http://yoursite.com/img/010_demopng.png">
 <meta property="og:image" content="http://yoursite.com/img/010_view滑动冲突解决方案.gif">
 <meta property="og:image" content="http://yoursite.com/img/008_左右上下冲突.png">
 <meta property="og:image" content="http://yoursite.com/img/008_同向冲突.png">
 <meta property="og:image" content="http://yoursite.com/img/008_复杂冲突.png">
-<meta property="og:updated_time" content="2017-01-16T05:13:14.532Z">
+<meta property="og:updated_time" content="2017-01-19T10:10:26.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习总结">
-<meta name="twitter:description" content="View学习中的一些难点记录
+<meta name="twitter:description" content="自定义View学习中的一些难点记录
 what is the different about getLeft(),getX()？  
 
 Position  
 
 这个部分可以参照这个地方去理解 
 
-The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top">
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and t">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f88i0q8uozj30nm0kqwhm.jpg">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
@@ -185,7 +185,7 @@ The geometry of a view is that of a rectangle. A view has a location, expressed 
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#View学习中的一些难点记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">View学习中的一些难点记录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#外部拦截法"><span class="post-toc-number">2.</span> <span class="post-toc-text">外部拦截法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件分发的过程图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">事件分发的过程图</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内部拦截法"><span class="post-toc-number">3.</span> <span class="post-toc-text">内部拦截法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重定义dispatchTouchEvent方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">重定义dispatchTouchEvent方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">5.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件分发流程"><span class="post-toc-number">6.</span> <span class="post-toc-text">事件分发流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发的规律总结-参考Android开发艺术探索"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">关于事件分发的规律总结(参考Android开发艺术探索)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发中的滑动冲突"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">关于事件分发中的滑动冲突</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于动画一些内容-下次用的时候可以直接从这里copy代码"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于动画一些内容(下次用的时候可以直接从这里copy代码)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-Splash秒开以及Activity白屏，黑屏的原因和过程"><span class="post-toc-number">8.</span> <span class="post-toc-text">Android Splash秒开以及Activity白屏，黑屏的原因和过程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-使用multidex时会出现的一些坑点，以及解决方式和部署步骤"><span class="post-toc-number">9.</span> <span class="post-toc-text">9 使用multidex时会出现的一些坑点，以及解决方式和部署步骤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#微信Tinker热修复原理"><span class="post-toc-number">10.</span> <span class="post-toc-text">微信Tinker热修复原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一个Android-Studio上的实用工具"><span class="post-toc-number">11.</span> <span class="post-toc-text">一个Android Studio上的实用工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle一些有用的学习资料"><span class="post-toc-number">12.</span> <span class="post-toc-text">gradle一些有用的学习资料</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#google上android的mvp结构基本实现方式以及如何规范的运用"><span class="post-toc-number">13.</span> <span class="post-toc-text">google上android的mvp结构基本实现方式以及如何规范的运用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#自定义View学习中的一些难点记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">自定义View学习中的一些难点记录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#外部拦截法"><span class="post-toc-number">2.</span> <span class="post-toc-text">外部拦截法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件分发的过程图"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">事件分发的过程图</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内部拦截法"><span class="post-toc-number">3.</span> <span class="post-toc-text">内部拦截法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重定义dispatchTouchEvent方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">重定义dispatchTouchEvent方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">5.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#事件分发流程"><span class="post-toc-number">6.</span> <span class="post-toc-text">事件分发流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Matrix的使用"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Matrix的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mapPoints"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">mapPoints</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发的规律总结-参考Android开发艺术探索"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">关于事件分发的规律总结(参考Android开发艺术探索)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于事件分发中的滑动冲突"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">关于事件分发中的滑动冲突</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于动画一些内容-下次用的时候可以直接从这里copy代码"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于动画一些内容(下次用的时候可以直接从这里copy代码)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-Splash秒开以及Activity白屏，黑屏的原因和过程"><span class="post-toc-number">8.</span> <span class="post-toc-text">Android Splash秒开以及Activity白屏，黑屏的原因和过程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用multidex时会出现的一些坑点，以及解决方式和部署步骤"><span class="post-toc-number">9.</span> <span class="post-toc-text">使用multidex时会出现的一些坑点，以及解决方式和部署步骤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#微信Tinker热修复原理"><span class="post-toc-number">10.</span> <span class="post-toc-text">微信Tinker热修复原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一个Android-Studio上的实用工具"><span class="post-toc-number">11.</span> <span class="post-toc-text">一个Android Studio上的实用工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle一些有用的学习资料"><span class="post-toc-number">12.</span> <span class="post-toc-text">gradle一些有用的学习资料</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#google上android的mvp结构基本实现方式以及如何规范的运用"><span class="post-toc-number">13.</span> <span class="post-toc-text">google上android的mvp结构基本实现方式以及如何规范的运用</span></a></li></ol>
         </nav>
     </aside>
     
@@ -214,7 +214,7 @@ The geometry of a view is that of a rectangle. A view has a location, expressed 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="View学习中的一些难点记录"><a href="#View学习中的一些难点记录" class="headerlink" title="View学习中的一些难点记录"></a>View学习中的一些难点记录</h1><ul>
+            <h1 id="自定义View学习中的一些难点记录"><a href="#自定义View学习中的一些难点记录" class="headerlink" title="自定义View学习中的一些难点记录"></a>自定义View学习中的一些难点记录</h1><ul>
 <li>what is the different about getLeft(),getX()？  </li>
 </ul>
 <p><code>Position</code>  </p>
@@ -712,6 +712,20 @@ public class HScrollLayout extends ViewGroup {
 <li><p>如果子view能接收到DWON事件，并且在接收到事件事件后，调用requestDisallowInterceptTouchEvent(true)方法，ViewGroup无法再拦截事件，也就说requestDisallowInterceptTouchEvent优先级高于onInterceptTouchEvent，但是requestDisallowInterceptTouchEvent不能干预父view对DOWN事件的处理。对于DOWN事件onInterceptTouchEvent说了算。</p>
 </li>
 </ol>
+<h2 id="Matrix的使用"><a href="#Matrix的使用" class="headerlink" title="Matrix的使用"></a>Matrix的使用</h2><h3 id="mapPoints"><a href="#mapPoints" class="headerlink" title="mapPoints"></a>mapPoints</h3><p>void mapPoints (float[] pts)</p>
+<p>void mapPoints (float[] dst, float[] src)</p>
+<p>void mapPoints (float[] dst, int dstIndex,float[] src, int srcIndex, int pointCount)</p>
+<p>计算一组点基于当前Matrix变换后的位置，(由于是计算点，所以参数中的float数组长度一般都是偶数的,若为奇数，则最后一个数值不参与计算)。</p>
+<p>它有三个重载方法:</p>
+<ol>
+<li><p>void mapPoints (float[] pts) 方法仅有一个参数，pts数组作为参数传递原始数值，计算结果仍存放在pts中。</p>
+</li>
+<li><p>void mapPoints (float[] dst, float[] src) ，src作为参数传递原始数值，计算结果存放在dst中，src不变。<br>如果原始数据需要保留则一般使用这种方法。</p>
+</li>
+<li><p>void mapPoints (float[] dst, int dstIndex,float[] src, int srcIndex, int pointCount) 可以指定只计算一部分数值。</p>
+</li>
+</ol>
+<p>参数    摘要<br>dst    目标数据<br>dstIndex    目标数据存储位置起始下标<br>src    源数据<br>srcIndex    源数据存储位置起始下标<br>pointCount    计算的点个数</p>
 <h2 id="关于事件分发的规律总结-参考Android开发艺术探索"><a href="#关于事件分发的规律总结-参考Android开发艺术探索" class="headerlink" title="关于事件分发的规律总结(参考Android开发艺术探索)"></a>关于事件分发的规律总结(参考Android开发艺术探索)</h2><ol>
 <li><p><strong>同一个事件序列</strong>是指从手指触摸屏幕那一刻起，到手指离开屏幕的那一刻结束,所以一些列事件由：<br><code>一个DOWN + 不数量的MOVE + 一个UP事件(可能CANCEL)</code><br>组成</p>
 </li>
@@ -1016,7 +1030,7 @@ as.addAnimation(aniAlp);
 <ul>
 <li><a href="&quot;http://blog.zongwu233.com/the-touble-of-multidex&quot;"> 其实你不知道MultiDex到底有多坑 </a>  </li>
 </ul>
-<h1 id="9-使用multidex时会出现的一些坑点，以及解决方式和部署步骤"><a href="#9-使用multidex时会出现的一些坑点，以及解决方式和部署步骤" class="headerlink" title="9 使用multidex时会出现的一些坑点，以及解决方式和部署步骤"></a>9 使用multidex时会出现的一些坑点，以及解决方式和部署步骤</h1><p>汇集解决所有办法的关键文章与插件 </p>
+<h1 id="使用multidex时会出现的一些坑点，以及解决方式和部署步骤"><a href="#使用multidex时会出现的一些坑点，以及解决方式和部署步骤" class="headerlink" title="使用multidex时会出现的一些坑点，以及解决方式和部署步骤"></a>使用multidex时会出现的一些坑点，以及解决方式和部署步骤</h1><p>汇集解决所有办法的关键文章与插件 </p>
 <ul>
 <li><a href="&quot;https://github.com/TangXiaoLv/Android-Easy-MultiDex&quot;">Android傻瓜式分包插件</a> </li>
 </ul>
@@ -1067,12 +1081,17 @@ as.addAnimation(aniAlp);
 <ul>
 <li><a href="&quot;http://inloop.github.io/apk-method-count/&quot;"> APK method count的使用 </a>  </li>
 </ul>
+<p>一个用来检测Android出现oom的库，测试，平时可用。  </p>
+<ul>
+<li><p><a href="&quot;https://github.com/square/leakcanary&quot;">  自动检测oom的库 </a></p>
 <h1 id="gradle一些有用的学习资料"><a href="#gradle一些有用的学习资料" class="headerlink" title="gradle一些有用的学习资料"></a>gradle一些有用的学习资料</h1><ul>
 <li><p><a href="&quot;http://blog.csdn.net/sbsujjbcy/article/details/50782830&quot;"> 如何编写一个gradle插件 </a>  </p>
 </li>
 <li><p><a href="&quot;http://yifeng.studio/2016/09/06/apk-environment-separate&quot;"> gradle实现环境分离 </a>  </p>
 </li>
 <li><p><a href="&quot;http://www.infoq.com/cn/articles/android-in-depth-gradle&quot;"> 深入理解Android（一）：Gradle详解 </a>  </p>
+</li>
+</ul>
 </li>
 </ul>
 <h1 id="google上android的mvp结构基本实现方式以及如何规范的运用"><a href="#google上android的mvp结构基本实现方式以及如何规范的运用" class="headerlink" title="google上android的mvp结构基本实现方式以及如何规范的运用"></a>google上android的mvp结构基本实现方式以及如何规范的运用</h1>
@@ -1082,7 +1101,7 @@ as.addAnimation(aniAlp);
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-16T05:13:14.532Z" itemprop="dateUpdated">2017年1月16日 13:13</time>
+    最后更新时间：<time datetime="2017-01-19T10:10:26.080Z" itemprop="dateUpdated">2017年1月19日 18:10</time>
 </span><br>
 
 
