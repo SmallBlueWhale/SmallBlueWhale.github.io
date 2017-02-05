@@ -170,7 +170,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/05/ttf字体提取/">ttf文件字体提取</a>
+      <a class="post-title-link" href="/2017/02/05/ttf字体提取/">Android关于ttf文件字体应用以及提取</a>
     </h3>
   
 
@@ -185,6 +185,12 @@
 首先，安装sfnttool字体提取工具并集成java环境(废话)
 命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
 字符文件就被提取到同目录下的test_exact.ttf中
+
+ttf在Android Studio的应用
+Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。
+可以开始在代码中使用，如下所示：
+TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);tv.setTypeface(tupeface);
+
 
 
     
@@ -265,7 +271,7 @@ In addition, several convenience methods are offered to avoid unnecessary comput
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android表层知识里面的原理"
+            <article id="post-Android部分知识的原理"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -278,7 +284,7 @@ In addition, several convenience methods are offered to avoid unnecessary comput
 
         
 <span>
-    <a href="/2016/12/12/Android表层知识里面的原理/#comments" class="ds-thread-count" data-thread-key="Android表层知识里面的原理" data-count-type="comments"></a>
+    <a href="/2016/12/12/Android部分知识的原理/#comments" class="ds-thread-count" data-thread-key="Android部分知识的原理" data-count-type="comments"></a>
 </span>
 
 
@@ -289,7 +295,7 @@ In addition, several convenience methods are offered to avoid unnecessary comput
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android表层知识里面的原理/">Android表层知识里面的原理</a>
+      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android表层知识里面的原理</a>
     </h3>
   
 
@@ -316,7 +322,7 @@ SharePreference
 To do(后续补充)
     
 
-        <a href="/2016/12/12/Android表层知识里面的原理/" class="post-more waves-effect waves-button">
+        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>

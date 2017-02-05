@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-05T02:48:35.739Z</updated>
+  <updated>2017-02-05T03:11:14.455Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,17 +16,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ttf文件字体提取</title>
+    <title>Android关于ttf文件字体应用以及提取</title>
     <link href="http://yoursite.com/2017/02/05/ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
     <id>http://yoursite.com/2017/02/05/ttf字体提取/</id>
     <published>2017-02-05T03:23:00.000Z</published>
-    <updated>2017-02-05T02:48:35.739Z</updated>
+    <updated>2017-02-05T03:11:14.455Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
 <ul>
 <li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
 <li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
 <li>字符文件就被提取到同目录下的test_exact.ttf中</li>
+</ul>
+<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
+<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
+<li><p>可以开始在代码中使用，如下所示：</p>
+<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
+</li>
 </ul>
 ]]></content>
     
@@ -944,8 +950,8 @@ as.addAnimation(aniAlp);
   
   <entry>
     <title>Android表层知识里面的原理</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E8%A1%A8%E5%B1%82%E7%9F%A5%E8%AF%86%E9%87%8C%E9%9D%A2%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android表层知识里面的原理/</id>
+    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
     <published>2016-12-11T17:23:00.000Z</published>
     <updated>2017-01-16T05:13:04.750Z</updated>
     
