@@ -13,47 +13,35 @@
     
     
     
-    <title>Android表层知识里面的原理 | SmallBlueWhale&#39;s blog | null</title>
+    <title>ttf文件字体提取 | SmallBlueWhale&#39;s blog | null</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="Android">
-    <meta name="description" content="并发进程通信文件传输  
+    <meta name="keywords" content="Android,ttf,Sfnttool">
+    <meta name="description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
 
-writeObject的方式  
-
-bundle  
-SharePreference  
-
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的">
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android表层知识里面的原理">
-<meta property="og:url" content="http://yoursite.com/2016/12/12/Android表层知识里面的原理/index.html">
+<meta property="og:title" content="ttf文件字体提取">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/ttf字体提取/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="并发进程通信文件传输  
+<meta property="og:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
 
-writeObject的方式  
-
-bundle  
-SharePreference  
-
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的">
-<meta property="og:updated_time" content="2017-01-16T05:13:04.750Z">
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
+<meta property="og:updated_time" content="2017-02-05T02:48:35.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android表层知识里面的原理">
-<meta name="twitter:description" content="并发进程通信文件传输  
+<meta name="twitter:title" content="ttf文件字体提取">
+<meta name="twitter:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
 
-writeObject的方式  
-
-bundle  
-SharePreference  
-
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的">
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -137,7 +125,7 @@ SharePreference的进程访问不可靠
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android表层知识里面的原理</div>
+        <div class="flex-col header-title ellipsis">ttf文件字体提取</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -159,15 +147,13 @@ SharePreference的进程访问不可靠
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android表层知识里面的原理</h1>
+        <h1 class="title">ttf文件字体提取</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-12-11T17:23:00.000Z" itemprop="datePublished" class="page-time">
-  2016-12-12
+                <time datetime="2017-02-05T03:23:00.000Z" itemprop="datePublished" class="page-time">
+  2017-02-05
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
 
             
         </h5>
@@ -183,21 +169,19 @@ SharePreference的进程访问不可靠
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#并发进程通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">并发进程通信</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#To-do-后续补充"><span class="post-toc-number">2.</span> <span class="post-toc-text">To do(后续补充)</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ttf字体提取"><span class="post-toc-number">1.</span> <span class="post-toc-text">ttf字体提取</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android表层知识里面的原理"
+<article id="post-ttf字体提取"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android表层知识里面的原理</h1>
+        <h1 class="post-card-title">ttf文件字体提取</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+            <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
-
 
 
             
@@ -208,38 +192,30 @@ SharePreference的进程访问不可靠
 
             
 <span>
-    <a href="/2016/12/12/Android表层知识里面的原理/#comments" class="ds-thread-count" data-thread-key="Android表层知识里面的原理" data-count-type="comments"></a>
+    <a href="/2017/02/05/ttf字体提取/#comments" class="ds-thread-count" data-thread-key="ttf字体提取" data-count-type="comments"></a>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+            <h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
 <ul>
-<li>writeObject的方式  </li>
+<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
+<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
+<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
 </ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-16T05:13:04.750Z" itemprop="dateUpdated">2017年1月16日 13:13</time>
+    最后更新时间：<time datetime="2017-02-05T02:48:35.739Z" itemprop="dateUpdated">2017年2月5日 10:48</time>
 </span><br>
 
 
-        这里写留言或版权声明：<a href="/2016/12/12/Android表层知识里面的原理/" target="_blank" rel="external">http://yoursite.com/2016/12/12/Android表层知识里面的原理/</a>
+        这里写留言或版权声明：<a href="/2017/02/05/ttf字体提取/" target="_blank" rel="external">http://yoursite.com/2017/02/05/ttf字体提取/</a>
     </div>
     <footer>
         <a href="http://yoursite.com">
@@ -258,7 +234,7 @@ SharePreference的进程访问不可靠
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-ttf-Sfnttool/">Android,ttf,Sfnttool</a></li></ul>
 
 
             
@@ -268,7 +244,7 @@ SharePreference的进程访问不可靠
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&title=《Android表层知识里面的原理》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/05/ttf字体提取/&title=《ttf文件字体提取》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -278,22 +254,22 @@ SharePreference的进程访问不可靠
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&title=《Android表层知识里面的原理》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/05/ttf字体提取/&title=《ttf文件字体提取》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/12/Android表层知识里面的原理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/05/ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android表层知识里面的原理》 — SmallBlueWhale's blog&url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ttf文件字体提取》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/05/ttf字体提取/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/05/ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -313,16 +289,16 @@ SharePreference的进程访问不可靠
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/12/12/Android学习总结/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/12/Android学习总结/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Android学习总结</h4>
       </a>
     </div>
-  
-
   
 </nav>
 
@@ -331,7 +307,7 @@ SharePreference的进程访问不可靠
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="Android表层知识里面的原理" data-title="Android表层知识里面的原理" data-url="http://yoursite.com/2016/12/12/Android表层知识里面的原理/"></div>
+    <div class="ds-thread" data-thread-key="ttf字体提取" data-title="ttf文件字体提取" data-url="http://yoursite.com/2017/02/05/ttf字体提取/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -410,7 +386,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&title=《Android表层知识里面的原理》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/05/ttf字体提取/&title=《ttf文件字体提取》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -420,22 +396,22 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&title=《Android表层知识里面的原理》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/05/ttf字体提取/&title=《ttf文件字体提取》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/12/12/Android表层知识里面的原理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/05/ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android表层知识里面的原理》 — SmallBlueWhale's blog&url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ttf文件字体提取》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/05/ttf字体提取/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/12/12/Android表层知识里面的原理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/05/ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -446,7 +422,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACyElEQVR42u3aQW7bQAwFUN3/0i3QVYtAzv+kxmmCp5Vh2eN5sxBpktcVX7/+XH+/Tt65u/tx5Y/X3d3rxIWHh4c32nr+M8kR3K3/+pPt8b3eMx4eHt5pXh4Mks8nz+d863f7ifaAh4eH96W8hD1Lke8ODg8PD+8n8ZIN5UWHvJ6Ah4eH9//wkgf6rHZ6t0JyTLOAhIeHh3eaN2uAfe3r4/09PDw8vFFXPU+d24ZWcndW8vhnNTw8PLwDvLzhNNt6XrrdD1oV/xjw8PDw1ry8hZ//5KbQ0K4TBSo8PDy8R3mzEu2s6TULOckxfZJS4+Hh4R3g5Qlu0pSKmvqjRldyxHh4eHjneG07P09nXx/TrFyb7+GaTSvg4eHhxV2q9nHfFl7z4LEp10YpNR4eHt6alzfgZ438vEy8T76L/wp4eHh4C94sOc4LDZuGVpsVR1VnPDw8vDWv/dpTI1mb0YFh3MPDw8N7iNeGh9lAVVIyzsPDsNmGh4eHd4CXIPPiQrJOfgR5a+2TPwB4eHh4b+HlDadZMTc/gs3B4eHh4T3LyxPTdiphU25IkuaoqYaHh4d3mJcnrHkYeKoNNiuO4OHh4Z3j5Yu2qXPeNstHB4oLDw8P7wBvUybYFCBm9ZI2bODh4eE9y2uHqPJBqFnjKgkYRWjBw8PDO8DbbL1FzkYE2jJxNDqAh4eHt+DtN7cfApiFmeho8PDw8N7ImxUj2tQ8CQmP1Vfw8PDwHuLlae5miKod2NofEB4eHt453mygKkmO84T4RCi6Tanx8PDw1rzZwzcJHnkA2Jc2hiQ8PDy8Ba8tpyYjVvnwQTvylZROisQaDw8Pb8FrU9s2GOS8tjBRF3Dx8PDw3sjLg8GsgNvm/tF38fDw8L4hb/P+5sjw8PDwTvM2xYi2aJs3ydogUQ8Q4OHh4Y14+y/nQwaz4YOkq3VtLjw8PLyU9xuOwErfjziklAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3azW7CQAxFYd7/pVOJFQuanOtxqsZzskIIEn9Ucv0zrxe+jvf1+frzHfLJ82+ROzdcMmTIeCzjOL1+e8B5cDz088+T2GTIkLEPI02yPAXXguaxyZAhQwYv+EjJmCZoGTJkyOhlkCKSp28ZMmTIqDWxZDRWC5e3yg29uAwZMh7IqC0G/ub17fsNGTJk/HvGEV53DM4aopIhQ8ZoRteoq7aqJI10cCBDhgwZGzDSNrKroSUHONAPKkOGjM0YtXEYSY7pEY1gYCdDhozRDD5c44vPdJSfrgRQMSpDhoxBjK5DXSRN85TNk7gMGTL2YfDSjb9TKxx5ug8qXBkyZIxg8OawNg4jo7r0yJcMGTL2ZJAx/crj+fgsHtXJkCFjNGO91ew6fpGGLkOGjB0Y/Gvp2jI9qMGf/iUGGTJkjGaQQfwdq83a2hLFIEOGjHGMdHCfDv3J+7VW+eL/hgwZMjZgkFKMFHlp6clLyYvNhgwZMgYxau0iL+9WRvxpqSpDhoypjJVRWm24n64/0Z1lyJCxDYOPutLyLj7gFaZdGTJkzGaQxrWGT8PlEV48S4YMGeMYR3jxxcD62C5ofWXIkDGaUau4VpJsbXmQHviQIUPGPEZX+0pKuhXexV9AhgwZGzDSRFlbYfLlAW9lZciQIWM9aXYlYlQaypAhQ0YYFm9Q0/s3J1wZMmQ8hJE2sbX1ZArjCwYZMmTMZqSLgXRUl7amJNDioQ0ZMmQ8j/EDmGNb0eYk4vQAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

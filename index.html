@@ -148,20 +148,18 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Android表层知识里面的原理"
+            <article id="post-ttf字体提取"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+        <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
-
 
 
         
 <span>
-    <a href="/2016/12/12/Android表层知识里面的原理/#comments" class="ds-thread-count" data-thread-key="Android表层知识里面的原理" data-count-type="comments"></a>
+    <a href="/2017/02/05/ttf字体提取/#comments" class="ds-thread-count" data-thread-key="ttf字体提取" data-count-type="comments"></a>
 </span>
 
 
@@ -172,7 +170,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android表层知识里面的原理/">Android表层知识里面的原理</a>
+      <a class="post-title-link" href="/2017/02/05/ttf字体提取/">ttf文件字体提取</a>
     </h3>
   
 
@@ -182,31 +180,23 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        并发进程通信文件传输  
+        ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
 
-writeObject的方式  
-
-bundle  
-SharePreference  
-
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_exact.ttf中
 
 
-
-Messenger  
-SharePreference  
-To do(后续补充)
     
 
-        <a href="/2016/12/12/Android表层知识里面的原理/" class="post-more waves-effect waves-button">
+        <a href="/2017/02/05/ttf字体提取/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-ttf-Sfnttool/">Android,ttf,Sfnttool</a></li></ul>
 
     </div>
     
@@ -260,6 +250,73 @@ In addition, several convenience methods are offered to avoid unnecessary comput
     
 
         <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android表层知识里面的原理"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
+
+
+
+        
+<span>
+    <a href="/2016/12/12/Android表层知识里面的原理/#comments" class="ds-thread-count" data-thread-key="Android表层知识里面的原理" data-count-type="comments"></a>
+</span>
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/12/12/Android表层知识里面的原理/">Android表层知识里面的原理</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        并发进程通信文件传输  
+
+writeObject的方式  
+
+bundle  
+SharePreference  
+
+SharePreference的进程访问不可靠                             
+本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
+
+
+
+Messenger  
+SharePreference  
+To do(后续补充)
+    
+
+        <a href="/2016/12/12/Android表层知识里面的原理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>

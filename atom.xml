@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-16T05:13:04.750Z</updated>
+  <updated>2017-02-05T02:48:35.739Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,40 +16,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android表层知识里面的原理</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E8%A1%A8%E5%B1%82%E7%9F%A5%E8%AF%86%E9%87%8C%E9%9D%A2%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android表层知识里面的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-01-16T05:13:04.750Z</updated>
+    <title>ttf文件字体提取</title>
+    <link href="http://yoursite.com/2017/02/05/ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
+    <id>http://yoursite.com/2017/02/05/ttf字体提取/</id>
+    <published>2017-02-05T03:23:00.000Z</published>
+    <updated>2017-02-05T02:48:35.739Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+    <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
 <ul>
-<li>writeObject的方式  </li>
+<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
+<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
+<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
 </ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
+      &lt;h1 id=&quot;ttf字体提取&quot;&gt;&lt;a href=&quot;#ttf字体提取&quot; class=&quot;headerlink&quot; title=&quot;ttf字体提取&quot;&gt;&lt;/a&gt;ttf字体提取&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会
     
     </summary>
     
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
     
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android,ttf,Sfnttool" scheme="http://yoursite.com/tags/Android-ttf-Sfnttool/"/>
     
   </entry>
   
@@ -948,6 +936,44 @@ as.addAnimation(aniAlp);
 &lt;li&gt;what
     
     </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android表层知识里面的原理</title>
+    <link href="http://yoursite.com/2016/12/12/Android%E8%A1%A8%E5%B1%82%E7%9F%A5%E8%AF%86%E9%87%8C%E9%9D%A2%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2016/12/12/Android表层知识里面的原理/</id>
+    <published>2016-12-11T17:23:00.000Z</published>
+    <updated>2017-01-16T05:13:04.750Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+<ul>
+<li>writeObject的方式  </li>
+</ul>
+<p><strong>bundle</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<ul>
+<li>SharePreference的进程访问不可靠                             <ul>
+<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
+</ul>
+</li>
+</ul>
+<p><strong>Messenger</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;writeObject的方式  &lt;
+    
+    </summary>
+    
+      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
