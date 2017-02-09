@@ -180,7 +180,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        MVC每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑
+        背景(MVC)任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑，称之为半MVC好了。
+MVP模式正是如此才需要一个规范大家认可的MVP模式。其实可以遵循以下步骤就能很简单的快速写出MVP结构的项目。  
+首先，要区分下MVP的使用场景，并不是所有场景的activity都需要使用到mvp的，如果activity只是为了初始化fragment或则说activity以及fragment的逻辑相对简单那么我们可以稍微偷偷懒，直接用回我们习惯的开发方式就可以了。如果，相对复杂的activity或fragment，那么我还是认为MVP是很有必要的。
 
     
 

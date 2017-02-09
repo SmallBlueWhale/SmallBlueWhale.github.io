@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-09T07:30:08.454Z</updated>
+  <updated>2017-02-09T11:52:16.988Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,16 @@
     <link href="http://yoursite.com/2017/02/08/Android%20MVP%E7%AE%80%E5%8D%95%E6%98%93%E6%87%82%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2017/02/08/Android MVP简单易懂实践/</id>
     <published>2017-02-08T03:23:00.000Z</published>
-    <updated>2017-02-09T07:30:08.454Z</updated>
+    <updated>2017-02-09T11:52:16.988Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p><code>每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。</code><br><code>这应该是MVP模式大行其道的原因之一。</code><br><code>现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑</code></p>
+    <content type="html"><![CDATA[<h1 id="背景-MVC"><a href="#背景-MVC" class="headerlink" title="背景(MVC)"></a>背景(MVC)</h1><p><code>任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。</code><br><code>这应该是MVP模式大行其道的原因之一。</code><br><code>现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑，称之为半MVC好了。</code></p>
+<h1 id="MVP模式"><a href="#MVP模式" class="headerlink" title="MVP模式"></a>MVP模式</h1><p>正是如此才需要一个规范大家认可的MVP模式。其实可以遵循以下步骤就能很简单的快速写出MVP结构的项目。  </p>
+<p><strong>首先，要区分下MVP的使用场景，并不是所有场景的activity都需要使用到mvp的，如果activity只是为了初始化fragment或则说activity以及fragment的逻辑相对简单那么我们可以稍微偷偷懒，直接用回我们习惯的开发方式就可以了。如果，相对复杂的activity或fragment，那么我还是认为MVP是很有必要的。</strong></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;MVC&quot;&gt;&lt;a href=&quot;#MVC&quot; class=&quot;headerlink&quot; title=&quot;MVC&quot;&gt;&lt;/a&gt;MVC&lt;/h1&gt;&lt;p&gt;&lt;code&gt;每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个contr
+      &lt;h1 id=&quot;背景-MVC&quot;&gt;&lt;a href=&quot;#背景-MVC&quot; class=&quot;headerlink&quot; title=&quot;背景(MVC)&quot;&gt;&lt;/a&gt;背景(MVC)&lt;/h1&gt;&lt;p&gt;&lt;code&gt;任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragmen
     
     </summary>
     
