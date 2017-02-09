@@ -13,23 +13,23 @@
     
     
     
-    <title>Android中设计模式(developing) | SmallBlueWhale&#39;s blog | null</title>
+    <title>Android MVP简单易懂实践(developing) | SmallBlueWhale&#39;s blog | null</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="Android,设计模式">
-    <meta name="description" content="单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/">
+    <meta name="keywords" content="MVP,Android">
+    <meta name="description" content="MVC每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android中设计模式(developing)">
-<meta property="og:url" content="http://yoursite.com/2017/02/05/设计模式(developing)/index.html">
+<meta property="og:title" content="Android MVP简单易懂实践(developing)">
+<meta property="og:url" content="http://yoursite.com/2017/02/08/Android MVP简单易懂实践/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/">
-<meta property="og:updated_time" content="2017-02-07T03:37:29.234Z">
+<meta property="og:description" content="MVC每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑">
+<meta property="og:updated_time" content="2017-02-09T07:30:08.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中设计模式(developing)">
-<meta name="twitter:description" content="单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/">
+<meta name="twitter:title" content="Android MVP简单易懂实践(developing)">
+<meta name="twitter:description" content="MVC每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android中设计模式(developing)</div>
+        <div class="flex-col header-title ellipsis">Android MVP简单易懂实践(developing)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android中设计模式(developing)</h1>
+        <h1 class="title">Android MVP简单易懂实践(developing)</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-02-05T03:23:00.000Z" itemprop="datePublished" class="page-time">
-  2017-02-05
+                <time datetime="2017-02-08T03:23:00.000Z" itemprop="datePublished" class="page-time">
+  2017-02-08
 </time>
 
 
@@ -157,17 +157,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#单例模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">单例模式</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MVC"><span class="post-toc-number">1.</span> <span class="post-toc-text">MVC</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-设计模式(developing)"
+<article id="post-Android MVP简单易懂实践"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android中设计模式(developing)</h1>
+        <h1 class="post-card-title">Android MVP简单易懂实践(developing)</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
+            <time class="post-time" title="2017年02月08日 11:23" datetime="2017-02-08T03:23:00.000Z"  itemprop="datePublished">2017-02-08</time>
 
             
 
@@ -180,13 +180,13 @@
 
             
 <span>
-    <a href="/2017/02/05/设计模式(developing)/#comments" class="ds-thread-count" data-thread-key="设计模式(developing)" data-count-type="comments"></a>
+    <a href="/2017/02/08/Android MVP简单易懂实践/#comments" class="ds-thread-count" data-thread-key="Android MVP简单易懂实践" data-count-type="comments"></a>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p><a href="http://hujiandong.com/2016/12/21/design_pattern_singleton/" target="_blank" rel="external">http://hujiandong.com/2016/12/21/design_pattern_singleton/</a></p>
+            <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p><code>每次讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。</code><br><code>这应该是MVP模式大行其道的原因之一。</code><br><code>现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑</code></p>
 
         </div>
 
@@ -194,11 +194,11 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-07T03:37:29.234Z" itemprop="dateUpdated">2017年2月7日 11:37</time>
+    最后更新时间：<time datetime="2017-02-09T07:30:08.454Z" itemprop="dateUpdated">2017年2月9日 15:30</time>
 </span><br>
 
 
-        这里写留言或版权声明：<a href="/2017/02/05/设计模式(developing)/" target="_blank" rel="external">http://yoursite.com/2017/02/05/设计模式(developing)/</a>
+        这里写留言或版权声明：<a href="/2017/02/08/Android MVP简单易懂实践/" target="_blank" rel="external">http://yoursite.com/2017/02/08/Android MVP简单易懂实践/</a>
     </div>
     <footer>
         <a href="http://yoursite.com">
@@ -217,7 +217,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li></ul>
 
 
             
@@ -227,7 +227,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/05/设计模式(developing)/&title=《Android中设计模式(developing)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&title=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -237,22 +237,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/05/设计模式(developing)/&title=《Android中设计模式(developing)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&title=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/05/设计模式(developing)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android中设计模式(developing)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/05/设计模式(developing)/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/05/设计模式(developing)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -272,21 +272,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/02/05/ttf字体提取/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/12/12/Android学习总结/" id="post-next" class="post-nav-link">
+      <a href="/2017/02/05/ttf字体提取/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android学习总结</h4>
+        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
       </a>
     </div>
   
@@ -297,7 +290,7 @@
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="设计模式(developing)" data-title="Android中设计模式(developing)" data-url="http://yoursite.com/2017/02/05/设计模式(developing)/"></div>
+    <div class="ds-thread" data-thread-key="Android MVP简单易懂实践" data-title="Android MVP简单易懂实践(developing)" data-url="http://yoursite.com/2017/02/08/Android MVP简单易懂实践/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -376,7 +369,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/05/设计模式(developing)/&title=《Android中设计模式(developing)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&title=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -386,22 +379,22 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/05/设计模式(developing)/&title=《Android中设计模式(developing)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&title=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/05/设计模式(developing)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android中设计模式(developing)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/05/设计模式(developing)/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android MVP简单易懂实践(developing)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/05/设计模式(developing)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/02/08/Android MVP简单易懂实践/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -412,7 +405,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwEwP7/0+m1QGtnSSkFTI1PQetYHB8YkdTXV3y9fly//3J1Xd159eSre7ZdGBgYj2Xkodx/7rHvqUlsGBgY5zCuQrm/J0FeJdl7cB4bBgYGRh5onlLvV8fAwMBYYdwXmXnoveSLgYGB0UuXvQS9K6FjYGCcw8i77v//+SPzDQwMjEcxXsUr3zKuNPrLUWFgYIxm9EaYu9JlcmdSNmNgYMxmJEVp9cBEHkpvJICBgXEyI2/9J/VjL3U2j6NhYGCMZlS7WOv35KPTfAiBgYExm1E9NtFLzclzqkc9/ugaYmBgDGUkW65CMVksR6uv4E08GBgYQxl50bj3hENSDBd+BjAwMEYzkgSapL/qsYlmWHGJi4GBMYmRJ8Q84VYT68orw8DAOJmRb9dWEneegt+UshgYGKMZvZFkr4m2skp5LQwMjHGM3lGw/L/V7WO12YeBgTGbkTTIqs2vfBO58q1CLY6BgfFwRnWxpATtHZjIS9lmaY2BgfFwRhJWstX7RGq+XwsDA+M0Rq+tlrf+ey8lP3CGgYExm7HUq2uNJFdGpFHKxsDAGMR4Fa+83f+5lxLtbTEwMAYxqn316pfzgWXyy9AMHQMDYwSjmmTzJ/QGpdX2HwYGxjmMPF2uH4zYdUSj0BfEwMA4jFHdj/W2m9HYEgMDA6O4meu9gmq5i4GBcTJjVyG6qyitDiQwMDBmM3qlYzMtBiHmK2JgYBzA+AboYm+FZkfRFgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aO3LbQBAFQN7/0nTqwITem4VchWEjUoEisM1gan6vV3y9L6/8///+9Ppbr9+4MDAwHstIjvjpBdev/PSE6/vJp/94LwYGxhcwkkPk/588IQnH+bswMDAwTlLAJOzO3ouBgYExKztPYBgYGBjXjFm6Nit0T0rfG2pxDAyMBzLyrvv///tX5hsYGBiPYrzLq2363xteP54KAwNjNSMPcHnjrD10VKAmaxkYGBirGW2jPylQz0vikyUPDAyMfYy2pXXS8GpHocWPiIGBsZqRhLbz+yekIn3EwMBYx8iPkjfdkuA4G3zeEGQxMDCWMpIStB0q5GVwXXljYGCsZrTN/VlDbdbu/yEoY2BgrGbMUrFZytgOL5MFDgwMjG9mnKyC5SPJdgxQrFlgYGCsY7QF6l3DyFlTL0oKMTAwVjPa1O2kbXfyxo+DTAwMjHWMdjA5GyrM2v3FUAEDA2M1YzZWPFkFa3+OfF6JgYGxm9EmfHmJm9+/oYTGwMD4SsYsBLfLZHk4/gGDgYHxNYw2i0zK1Dw0z9JKDAyM72Tkx83XLK4L1zb49r03DAyMpzLe5TVb0SiC5iy5xMDAWM04ad+fhOn2W+1SCAYGxj5GXmrmjbA8QcyHlNHcFQMDYzUjD3wtY/b89rQYGBgYSZLXstuhKQYGBsYJI79z3pKLFlgxMDCWMu5aibhrnaIdgmJgYOxmtA/Nm3F5K6397tF8AwMD40mMPxi75POmnU4tAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
