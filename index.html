@@ -152,14 +152,14 @@
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年02月08日 11:23" datetime="2017-02-08T03:23:00.000Z"  itemprop="datePublished">2017-02-08</time>
+        <time class="post-time" title="2017年03月08日 11:23" datetime="2017-03-08T03:23:00.000Z"  itemprop="datePublished">2017-03-08</time>
 
         
 
 
         
 <span>
-    <a href="/2017/02/08/Android MVP简单易懂实践/#comments" class="ds-thread-count" data-thread-key="Android MVP简单易懂实践" data-count-type="comments"></a>
+    <a href="/2017/03/08/Android MVP简单易懂实践/#comments" class="ds-thread-count" data-thread-key="Android MVP简单易懂实践" data-count-type="comments"></a>
 </span>
 
 
@@ -170,7 +170,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/08/Android MVP简单易懂实践/">Android MVP简单易懂实践(developing)</a>
+      <a class="post-title-link" href="/2017/03/08/Android MVP简单易懂实践/">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
     </h3>
   
 
@@ -180,20 +180,23 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        背景(MVC)任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。这应该是MVP模式大行其道的原因之一。现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑，称之为半MVC好了。
-MVP模式正是如此才需要一个规范大家认可的MVP模式。其实可以遵循以下步骤就能很简单的快速写出MVP结构的项目。  
-首先，要区分下MVP的使用场景，并不是所有场景的activity都需要使用到mvp的，如果activity只是为了初始化fragment或则说activity以及fragment的逻辑相对简单那么我们可以稍微偷偷懒，直接用回我们习惯的开发方式就可以了。如果，相对复杂的activity或fragment，那么我还是认为MVP是很有必要的。
-
+        开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
+Material Design(module中)123456compile 'com.android.support:support-v4:23.+'compile 'com.android.support:support-annotations:23.+'compile 'com.android.support:design:23.+'compile 'com.android.support:cardview-v7:23.+'compile 'com.android.support:recyclerview-v7:23.+'compile 'com.android.support:appcompat-v7:23.+'
+Retrofit+Rxjava+Glide(module中):1234567compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'compile 'io.reactivex:rxjava:1.0.1'compile 'io.reactivex:rxandroid:1.0.1'compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'compile 'com.github.bumptech.glide:glide:3.7.0'
+Multidex(module中):1compile 'com.android.support:multidex:1.0.0'//分包
+ButterKnife(module中):1compile 'com.jakewharton:butterknife:7.0.1'//view注解
+Freeline*(project中的gradle):1classpath 'com.antfortune.freeline:gradle:0.8.6
+接着在项目的app module中:1apply p...
     
 
-        <a href="/2017/02/08/Android MVP简单易懂实践/" class="post-more waves-effect waves-button">
+        <a href="/2017/03/08/Android MVP简单易懂实践/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Glide/">Glide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/">Gradle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
 
     </div>
     

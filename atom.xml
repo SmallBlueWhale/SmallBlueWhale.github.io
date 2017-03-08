@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-09T11:52:16.988Z</updated>
+  <updated>2017-03-08T14:27:48.901Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,27 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android MVP简单易懂实践(developing)</title>
-    <link href="http://yoursite.com/2017/02/08/Android%20MVP%E7%AE%80%E5%8D%95%E6%98%93%E6%87%82%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://yoursite.com/2017/02/08/Android MVP简单易懂实践/</id>
-    <published>2017-02-08T03:23:00.000Z</published>
-    <updated>2017-02-09T11:52:16.988Z</updated>
+    <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</title>
+    <link href="http://yoursite.com/2017/03/08/Android%20MVP%E7%AE%80%E5%8D%95%E6%98%93%E6%87%82%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://yoursite.com/2017/03/08/Android MVP简单易懂实践/</id>
+    <published>2017-03-08T03:23:00.000Z</published>
+    <updated>2017-03-08T14:27:48.901Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="背景-MVC"><a href="#背景-MVC" class="headerlink" title="背景(MVC)"></a>背景(MVC)</h1><p><code>任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragment更多时候承载的是一个controller的角色，臃肿，一个fragment或则activity就能拥有上千行代码。</code><br><code>这应该是MVP模式大行其道的原因之一。</code><br><code>现在项目大部分结构，其实能这样去理解，view层是xml之类的结构，activity则承载了一部分view的功能又集合了业务逻辑，称之为半MVC好了。</code></p>
-<h1 id="MVP模式"><a href="#MVP模式" class="headerlink" title="MVP模式"></a>MVP模式</h1><p>正是如此才需要一个规范大家认可的MVP模式。其实可以遵循以下步骤就能很简单的快速写出MVP结构的项目。  </p>
-<p><strong>首先，要区分下MVP的使用场景，并不是所有场景的activity都需要使用到mvp的，如果activity只是为了初始化fragment或则说activity以及fragment的逻辑相对简单那么我们可以稍微偷偷懒，直接用回我们习惯的开发方式就可以了。如果，相对复杂的activity或fragment，那么我还是认为MVP是很有必要的。</strong></p>
+    <content type="html"><![CDATA[<h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
+<h5 id="Material-Design-module中"><a href="#Material-Design-module中" class="headerlink" title="Material Design(module中)"></a>Material Design(module中)</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
+<h5 id="Retrofit-Rxjava-Glide-module中"><a href="#Retrofit-Rxjava-Glide-module中" class="headerlink" title="Retrofit+Rxjava+Glide(module中):"></a>Retrofit+Rxjava+Glide(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></div><div class="line">compile <span class="string">'com.squareup.okhttp3:logging-interceptor:3.1.2'</span></div><div class="line">compile <span class="string">'io.reactivex:rxjava:1.0.1'</span></div><div class="line">compile <span class="string">'io.reactivex:rxandroid:1.0.1'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.github.bumptech.glide:glide:3.7.0'</span></div></pre></td></tr></table></figure>
+<h5 id="Multidex-module中"><a href="#Multidex-module中" class="headerlink" title="Multidex(module中):"></a>Multidex(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:multidex:1.0.0'</span><span class="comment">//分包</span></div></pre></td></tr></table></figure>
+<h5 id="ButterKnife-module中"><a href="#ButterKnife-module中" class="headerlink" title="ButterKnife(module中):"></a>ButterKnife(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.jakewharton:butterknife:7.0.1'</span><span class="comment">//view注解</span></div></pre></td></tr></table></figure>
+<h5 id="Freeline-project中的gradle"><a href="#Freeline-project中的gradle" class="headerlink" title="Freeline*(project中的gradle):"></a>Freeline*(project中的gradle):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath <span class="string">'com.antfortune.freeline:gradle:0.8.6</span></div></pre></td></tr></table></figure>
+<h5 id="接着在项目的app-module中"><a href="#接着在项目的app-module中" class="headerlink" title="接着在项目的app module中:"></a>接着在项目的app module中:</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.antfortune.freeline'</span></div></pre></td></tr></table></figure>
+<p># </p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;背景-MVC&quot;&gt;&lt;a href=&quot;#背景-MVC&quot; class=&quot;headerlink&quot; title=&quot;背景(MVC)&quot;&gt;&lt;/a&gt;背景(MVC)&lt;/h1&gt;&lt;p&gt;&lt;code&gt;任何文章讲MVP都会提到MVC，因为在Android上开发，activity和fragmen
+      &lt;h1 id=&quot;开始搭建&quot;&gt;&lt;a href=&quot;#开始搭建&quot; class=&quot;headerlink&quot; title=&quot;开始搭建&quot;&gt;&lt;/a&gt;开始搭建&lt;/h1&gt;&lt;h2 id=&quot;gradle配置&quot;&gt;&lt;a href=&quot;#gradle配置&quot; class=&quot;headerlink&quot; title=&quot;g
     
     </summary>
     
     
+      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
+    
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
+      <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
+    
+      <category term="Rxjava" scheme="http://yoursite.com/tags/Rxjava/"/>
+    
+      <category term="Material Design" scheme="http://yoursite.com/tags/Material-Design/"/>
+    
+      <category term="Glide" scheme="http://yoursite.com/tags/Glide/"/>
+    
+      <category term="Gradle" scheme="http://yoursite.com/tags/Gradle/"/>
     
   </entry>
   
