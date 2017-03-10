@@ -19,20 +19,25 @@
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="MVP,Android,Retrofit,Rxjava,Material Design,Glide,Gradle">
+    <meta name="keywords" content="Android,MVP,Retrofit,Rxjava,Material Design,Glide,Gradle">
     <meta name="description" content="开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
-Material Design(module中)123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+Material Design(module中)
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta property="og:url" content="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
 <meta property="og:description" content="开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
-Material Design(module中)123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
-<meta property="og:updated_time" content="2017-03-08T14:27:48.901Z">
+Material Design(module中)
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andr">
+<meta property="og:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
+<meta property="og:updated_time" content="2017-03-10T04:08:40.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta name="twitter:description" content="开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
-Material Design(module中)123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+Material Design(module中)
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andr">
+<meta name="twitter:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -160,7 +165,7 @@ Material Design(module中)123456compile &apos;com.android.support:support-v4:23.
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始搭建"><span class="post-toc-number">1.</span> <span class="post-toc-text">开始搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">gradle配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Material-Design-module中"><span class="post-toc-number">1.1.0.0.1.</span> <span class="post-toc-text">Material Design(module中)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Retrofit-Rxjava-Glide-module中"><span class="post-toc-number">1.1.0.0.2.</span> <span class="post-toc-text">Retrofit+Rxjava+Glide(module中):</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Multidex-module中"><span class="post-toc-number">1.1.0.0.3.</span> <span class="post-toc-text">Multidex(module中):</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ButterKnife-module中"><span class="post-toc-number">1.1.0.0.4.</span> <span class="post-toc-text">ButterKnife(module中):</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Freeline-project中的gradle"><span class="post-toc-number">1.1.0.0.5.</span> <span class="post-toc-text">Freeline*(project中的gradle):</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#接着在项目的app-module中"><span class="post-toc-number">1.1.0.0.6.</span> <span class="post-toc-text">接着在项目的app module中:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开始搭建"><span class="post-toc-number">1.</span> <span class="post-toc-text">开始搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">gradle配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目分包："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">项目分包：</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -190,12 +195,34 @@ Material Design(module中)123456compile &apos;com.android.support:support-v4:23.
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
-<h5 id="Material-Design-module中"><a href="#Material-Design-module中" class="headerlink" title="Material Design(module中)"></a>Material Design(module中)</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
-<h5 id="Retrofit-Rxjava-Glide-module中"><a href="#Retrofit-Rxjava-Glide-module中" class="headerlink" title="Retrofit+Rxjava+Glide(module中):"></a>Retrofit+Rxjava+Glide(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></div><div class="line">compile <span class="string">'com.squareup.okhttp3:logging-interceptor:3.1.2'</span></div><div class="line">compile <span class="string">'io.reactivex:rxjava:1.0.1'</span></div><div class="line">compile <span class="string">'io.reactivex:rxandroid:1.0.1'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.github.bumptech.glide:glide:3.7.0'</span></div></pre></td></tr></table></figure>
-<h5 id="Multidex-module中"><a href="#Multidex-module中" class="headerlink" title="Multidex(module中):"></a>Multidex(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:multidex:1.0.0'</span><span class="comment">//分包</span></div></pre></td></tr></table></figure>
-<h5 id="ButterKnife-module中"><a href="#ButterKnife-module中" class="headerlink" title="ButterKnife(module中):"></a>ButterKnife(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.jakewharton:butterknife:7.0.1'</span><span class="comment">//view注解</span></div></pre></td></tr></table></figure>
-<h5 id="Freeline-project中的gradle"><a href="#Freeline-project中的gradle" class="headerlink" title="Freeline*(project中的gradle):"></a>Freeline*(project中的gradle):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath <span class="string">'com.antfortune.freeline:gradle:0.8.6</span></div></pre></td></tr></table></figure>
-<h5 id="接着在项目的app-module中"><a href="#接着在项目的app-module中" class="headerlink" title="接着在项目的app module中:"></a>接着在项目的app module中:</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.antfortune.freeline'</span></div></pre></td></tr></table></figure>
+<p><strong>Material Design(module中)</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
+<p><strong>Retrofit+Rxjava+Glide(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></div><div class="line">compile <span class="string">'com.squareup.okhttp3:logging-interceptor:3.1.2'</span></div><div class="line">compile <span class="string">'io.reactivex:rxjava:1.0.1'</span></div><div class="line">compile <span class="string">'io.reactivex:rxandroid:1.0.1'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.github.bumptech.glide:glide:3.7.0'</span></div></pre></td></tr></table></figure>
+<p><strong>Multidex(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:multidex:1.0.0'</span><span class="comment">//分包</span></div></pre></td></tr></table></figure>
+<p><strong>ButterKnife(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.jakewharton:butterknife:7.0.1'</span><span class="comment">//view注解</span></div></pre></td></tr></table></figure>
+<p><strong>Freeline*(project中的gradle):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath <span class="string">'com.antfortune.freeline:gradle:0.8.6</span></div></pre></td></tr></table></figure>
+<p><strong>接着在项目的app module中:</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.antfortune.freeline'</span></div></pre></td></tr></table></figure>
+<p>这个是一个完整的mvp项目该有的样子，可以看到业务业务相关的代码全部被移到了presenter中，activity实现减负。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
+<p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
+<p>app：项目单独的application</p>
+<p>bean：负责实体类的定义</p>
+<p>db：负责view和接口层</p>
+<p>ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。</p>
+<p>util：负责项目一些公有的项目大部分功能。</p>
+<p>widget：项目中的自定义控件</p>
 <p># </p>
 
         </div>
@@ -204,7 +231,7 @@ Material Design(module中)123456compile &apos;com.android.support:support-v4:23.
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-08T14:27:48.901Z" itemprop="dateUpdated">2017年3月8日 22:27</time>
+    最后更新时间：<time datetime="2017-03-10T04:08:40.208Z" itemprop="dateUpdated">2017年3月10日 12:08</time>
 </span><br>
 
 

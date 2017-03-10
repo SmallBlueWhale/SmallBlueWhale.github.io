@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-08T14:27:48.901Z</updated>
+  <updated>2017-03-10T04:08:40.208Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,15 +20,37 @@
     <link href="http://yoursite.com/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)/"/>
     <id>http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/</id>
     <published>2017-03-08T03:23:00.000Z</published>
-    <updated>2017-03-08T14:27:48.901Z</updated>
+    <updated>2017-03-10T04:08:40.208Z</updated>
     
     <content type="html"><![CDATA[<h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
-<h5 id="Material-Design-module中"><a href="#Material-Design-module中" class="headerlink" title="Material Design(module中)"></a>Material Design(module中)</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
-<h5 id="Retrofit-Rxjava-Glide-module中"><a href="#Retrofit-Rxjava-Glide-module中" class="headerlink" title="Retrofit+Rxjava+Glide(module中):"></a>Retrofit+Rxjava+Glide(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></div><div class="line">compile <span class="string">'com.squareup.okhttp3:logging-interceptor:3.1.2'</span></div><div class="line">compile <span class="string">'io.reactivex:rxjava:1.0.1'</span></div><div class="line">compile <span class="string">'io.reactivex:rxandroid:1.0.1'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.github.bumptech.glide:glide:3.7.0'</span></div></pre></td></tr></table></figure>
-<h5 id="Multidex-module中"><a href="#Multidex-module中" class="headerlink" title="Multidex(module中):"></a>Multidex(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:multidex:1.0.0'</span><span class="comment">//分包</span></div></pre></td></tr></table></figure>
-<h5 id="ButterKnife-module中"><a href="#ButterKnife-module中" class="headerlink" title="ButterKnife(module中):"></a>ButterKnife(module中):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.jakewharton:butterknife:7.0.1'</span><span class="comment">//view注解</span></div></pre></td></tr></table></figure>
-<h5 id="Freeline-project中的gradle"><a href="#Freeline-project中的gradle" class="headerlink" title="Freeline*(project中的gradle):"></a>Freeline*(project中的gradle):</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath <span class="string">'com.antfortune.freeline:gradle:0.8.6</span></div></pre></td></tr></table></figure>
-<h5 id="接着在项目的app-module中"><a href="#接着在项目的app-module中" class="headerlink" title="接着在项目的app module中:"></a>接着在项目的app module中:</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.antfortune.freeline'</span></div></pre></td></tr></table></figure>
+<p><strong>Material Design(module中)</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
+<p><strong>Retrofit+Rxjava+Glide(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.squareup.retrofit2:retrofit:2.0.0-beta3'</span></div><div class="line">compile <span class="string">'com.squareup.okhttp3:logging-interceptor:3.1.2'</span></div><div class="line">compile <span class="string">'io.reactivex:rxjava:1.0.1'</span></div><div class="line">compile <span class="string">'io.reactivex:rxandroid:1.0.1'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:converter-gson:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'</span></div><div class="line">compile <span class="string">'com.github.bumptech.glide:glide:3.7.0'</span></div></pre></td></tr></table></figure>
+<p><strong>Multidex(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:multidex:1.0.0'</span><span class="comment">//分包</span></div></pre></td></tr></table></figure>
+<p><strong>ButterKnife(module中):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.jakewharton:butterknife:7.0.1'</span><span class="comment">//view注解</span></div></pre></td></tr></table></figure>
+<p><strong>Freeline*(project中的gradle):</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath <span class="string">'com.antfortune.freeline:gradle:0.8.6</span></div></pre></td></tr></table></figure>
+<p><strong>接着在项目的app module中:</strong></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply <span class="string">plugin:</span> <span class="string">'com.antfortune.freeline'</span></div></pre></td></tr></table></figure>
+<p>这个是一个完整的mvp项目该有的样子，可以看到业务业务相关的代码全部被移到了presenter中，activity实现减负。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
+<p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
+<p>app：项目单独的application</p>
+<p>bean：负责实体类的定义</p>
+<p>db：负责view和接口层</p>
+<p>ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。</p>
+<p>util：负责项目一些公有的项目大部分功能。</p>
+<p>widget：项目中的自定义控件</p>
 <p># </p>
 ]]></content>
     
@@ -39,9 +61,9 @@
     </summary>
     
     
-      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
-    
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
     
       <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
     
@@ -115,49 +137,11 @@
   </entry>
   
   <entry>
-    <title>Android部分知识的原理</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-02-07T03:28:34.287Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
-<ul>
-<li>writeObject的方式  </li>
-</ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
-    
-    </summary>
-    
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android学习总结</title>
     <link href="http://yoursite.com/2016/12/12/Android%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/12/12/Android学习总结/</id>
     <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-01-19T10:10:26.080Z</updated>
+    <updated>2017-03-10T06:26:33.094Z</updated>
     
     <content type="html"><![CDATA[<h1 id="自定义View学习中的一些难点记录"><a href="#自定义View学习中的一些难点记录" class="headerlink" title="自定义View学习中的一些难点记录"></a>自定义View学习中的一些难点记录</h1><ul>
 <li>what is the different about getLeft(),getX()？  </li>
@@ -182,55 +166,41 @@ bottom = top + height;
 <li><p>关于自定义view中onMeasure方法的模板  </p>
 <pre><code>private Bitmap mBitmap;
  private void init() {
-mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);
-}
+  mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);
+  }
 
-@Override
-protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-// 获取宽度测量规格中的mode和size
-int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-// 声明一个临时变量来存储计算出的测量值
-int  heightResult = 0;
-int widthResult = 0;
+  @Override
+  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+  // 获取宽度测量规格中的mode和size
+  int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+  int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+  int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+  int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+  // 声明一个临时变量来存储计算出的测量值
+  int  heightResult = 0;
+  int widthResult = 0;
 
- /*
- * 如果父容器心里有数
- */
-if (widthMode == MeasureSpec.EXACTLY) {
-    // 那么子view就用父容器给定尺寸
-    widthResult = widthSize;
-}
-/*
- * 如果父容器不确定自身大小
- */
-else{
-    // 那么子view可要自己看看自己需要多大了
-    widthResult = mBitmap.getWidth()+getPaddingLeft()+getPaddingRight();
-    /*
-       * 如果爹给儿子的是一个限制值
-     */
-    if (widthMode == MeasureSpec.AT_MOST) {
-        // 那么儿子自己的需求就要跟爹的限制比比看谁小要谁
-        widthResult = Math.min(widthSize, widthResult);
-    }
-}
-
-if (heightMode == MeasureSpec.EXACTLY) {
-    heightResult = widthSize;
-}else{
-    //考虑padding
-    heightResult = mBitmap.getHeight()+getPaddingBottom()+getPaddingTop();
-    if (heightMode == MeasureSpec.AT_MOST) {
-        heightResult = Math.min(widthSize, heightResult);
-    }
-}
-// 设置测量尺寸
-setMeasuredDimension(widthResult, heightResult);
-}
-</code></pre></li>
+   /*
+</code></pre><ul>
+<li><p>如果父容器心里有数<br>*/<br> if (widthMode == MeasureSpec.EXACTLY) {</p>
+<pre><code>// 那么子view就用父容器给定尺寸
+widthResult = widthSize;
+</code></pre><p> }<br> /*</p>
+<ul>
+<li><p>如果父容器不确定自身大小<br><em>/<br>else{<br> // 那么子view可要自己看看自己需要多大了<br> widthResult = mBitmap.getWidth()+getPaddingLeft()+getPaddingRight();<br> /</em></p>
+<pre><code>* 如果爹给儿子的是一个限制值
+</code></pre><p>  */<br> if (widthMode == MeasureSpec.AT_MOST) {</p>
+<pre><code>// 那么儿子自己的需求就要跟爹的限制比比看谁小要谁
+widthResult = Math.min(widthSize, widthResult);
+</code></pre><p> }<br>}</p>
+<p>if (heightMode == MeasureSpec.EXACTLY) {<br> heightResult = widthSize;<br>}else{<br> //考虑padding<br> heightResult = mBitmap.getHeight()+getPaddingBottom()+getPaddingTop();<br> if (heightMode == MeasureSpec.AT_MOST) {</p>
+<pre><code>heightResult = Math.min(widthSize, heightResult);
+</code></pre><p> }<br>}<br>// 设置测量尺寸<br>setMeasuredDimension(widthResult, heightResult);<br>}</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>关于自定义View滑动冲突的拦截以及模板总结、</p>
 </li>
 </ul>
@@ -281,11 +251,13 @@ private boolean needIntercept(MotionEvent event) {
 <ol>
 <li>首先ACTION_DOWN必须返回false，否则子view无法接收到事件，事件都会由自己处理</li>
 <li>对应ACTION_MOVE则对自己根据情况处理，需要就拦截，否则不拦截</li>
-<li>最后是ACTION_UP，必须返回false，原因有：<ul>
+<li>最后是ACTION_UP，必须返回false，原因有：</li>
+</ol>
+<ul>
 <li>ACTION_UP的返回值对自身并没有影响，自身始终能接收到事件</li>
 <li>如果子一些列事件中，ViewGroup都始终没有拦截事件，却在ACTION_UP中返回true，这样导致子view无法接收到UP事件，那么就会影响子view的click事件，或者其他逻辑处理</li>
 </ul>
-</li>
+<ol>
 <li><p>是否需要拦截事件都交给needIntercept方法处理，这个处理是根据业务来处理的，还可如果我们无法确定某些因素，还可以通过设置回调接口来处理，让其他对象通过接口来告知感兴趣的事。</p>
 <p>如下面代码：</p>
 <pre><code> private boolean needIntercept(MotionEvent event) {
@@ -668,9 +640,9 @@ public class HScrollLayout extends ViewGroup {
 <li><p>void mapPoints (float[] dst, float[] src) ，src作为参数传递原始数值，计算结果存放在dst中，src不变。<br>如果原始数据需要保留则一般使用这种方法。</p>
 </li>
 <li><p>void mapPoints (float[] dst, int dstIndex,float[] src, int srcIndex, int pointCount) 可以指定只计算一部分数值。</p>
+<p>参数摘要<br>dst目标数据<br>dstIndex目标数据存储位置起始下标<br>src源数据<br>srcIndex源数据存储位置起始下标<br>pointCount计算的点个数</p>
 </li>
 </ol>
-<p>参数    摘要<br>dst    目标数据<br>dstIndex    目标数据存储位置起始下标<br>src    源数据<br>srcIndex    源数据存储位置起始下标<br>pointCount    计算的点个数</p>
 <h2 id="关于事件分发的规律总结-参考Android开发艺术探索"><a href="#关于事件分发的规律总结-参考Android开发艺术探索" class="headerlink" title="关于事件分发的规律总结(参考Android开发艺术探索)"></a>关于事件分发的规律总结(参考Android开发艺术探索)</h2><ol>
 <li><p><strong>同一个事件序列</strong>是指从手指触摸屏幕那一刻起，到手指离开屏幕的那一刻结束,所以一些列事件由：<br><code>一个DOWN + 不数量的MOVE + 一个UP事件(可能CANCEL)</code><br>组成</p>
 </li>
@@ -678,11 +650,13 @@ public class HScrollLayout extends ViewGroup {
 </li>
 <li><p>如果一个ViewGroup能接收到事件，并且开始拦截事件，那么这一系列事件只能由它来处理。并且他的onInterceptTouchEvent方法不会再被调用。</p>
 <p>关于ViewGroup能否接收到事件又分为两种：</p>
+</li>
+</ol>
 <ul>
 <li>在DOWN就开始拦截事件</li>
 <li>在DOWN没有拦截事件，但是子view处理了DOWN事件并且没有改变FLAG_DISALLOW_INTERCEPT这个标志位来不允许父View拦截事件，之后ViewGroup的onInterceptTouchEvent依然会被调用，如果返回true，ViewGroup还是可以拦截事件，之后可接收事件的子View收到一个CANCEL事件，然后在ViewGroup中被置为null</li>
 </ul>
-</li>
+<ol>
 <li><p>FLAG_DISALLOW_INTERCEPT 和 touchTarget在一系列事件的开始和结尾都会被重置,也就是说子View无法使用requestDisallowInterceptTouchEvent方法来要影响DOWN事件，如果ViewGroup在DOWN就开始拦截事件，子view不可能再得到事件</p>
 </li>
 <li><p>如果一个View开始接收事件，如果它不消费DOWN事件(DOWN中返回false)，那么它不会接收到同系列事件中接下来的事件，在源码中的体现就是，ViewGroup在DOWN事件中没有找到可以处理事件的子view，接下来的同系列事件就会自己处理，即他的onTouchEvent方法被调用</p>
@@ -692,10 +666,12 @@ public class HScrollLayout extends ViewGroup {
 <li><p>View不拦截事件，它接收到事件会里面调用onTouchEvent方法，ViewGroup默认不拦截事件</p>
 </li>
 <li><p>如果一个View是可以被click或者longClick的，那么它的onTouchEvent方法默认都会消费事件，即使它是不可用的(disable)，disable只会导致click或者longClick不被调用：</p>
+</li>
+</ol>
 <ul>
 <li>onClick发生前提，View可以点击，View能接收到Down和Up事件</li>
 </ul>
-</li>
+<ol>
 <li><p>focus对View的点击事件有影响，View的isFocusable和isFocusableInTouchMode为true并且当前没有获取到焦点，则会先请求焦点，此次点击不会响应click等事件</p>
 </li>
 <li><p>事件是由外到内进行传递的，由内到外进行处理的，即事件总是先传给根View，再由根View传递给子View，而默认的处理顺序是子View到根View，ViewGroup可以全部拦截事件，子View可以调用requestDisallowInterceptTouchEvent干预父View的事件分发(DOWN事件无法被干预)</p>
@@ -743,46 +719,42 @@ public class HScrollLayout extends ViewGroup {
 <p>类似SlidMenu加ViewPager加ListFragment</p>
 <p>###解决滑动冲突的规则</p>
 <ul>
-<li><p>对于场景1有以下方法来解决</p>
-<ul>
+<li>对于场景1有以下方法来解决</li>
 <li>判断滑动路径与水平方向夹角</li>
 <li>判断水平方向与垂直方向的距离差(常用)</li>
-<li>判断水平方向与垂直方向的速度差</li>
-</ul>
+<li><p>判断水平方向与垂直方向的速度差</p>
 </li>
 <li><p>对于场景2</p>
-<ul>
-<li>这能通过业务需求来解决，比如某个情况只允许哪个View滑动</li>
-</ul>
 </li>
+<li>这能通过业务需求来解决，比如某个情况只允许哪个View滑动</li>
 </ul>
 <h1 id="关于动画一些内容-下次用的时候可以直接从这里copy代码"><a href="#关于动画一些内容-下次用的时候可以直接从这里copy代码" class="headerlink" title="关于动画一些内容(下次用的时候可以直接从这里copy代码)"></a>关于动画一些内容(下次用的时候可以直接从这里copy代码)</h1><ul>
 <li><p>贝塞尔以及其它类型动画的一些总结  </p>
 <p>  <a href="&quot;http://www.jianshu.com/p/420da0f6e279&quot;">各种常用动画效果的汇总</a>  </p>
 </li>
 <li><p>AnimationSet  </p>
-<p>  多个动画的组合  </p>
+<p>多个动画的组合  </p>
 <pre><code>AnimationSet as = new AnimationSet(true);
 </code></pre></li>
 <li><p>ScaleAnimation  </p>
-<p>  变大变小动画</p>
+<p>变大变小动画</p>
 <pre><code>ScaleAnimation sa = new ScaleAnimation(1f, 1.5f, 1f, 1.5f, ScaleAnimation.RELATIVE_TO_SELF,
         0.5f, ScaleAnimation.RELATIVE_TO_SELF, 0.5f);
 sa.setDuration(ANIMATIONEACHOFFSET * 3);
 sa.setRepeatCount(10);// 设置循环
 </code></pre></li>
 <li><p>AlphaAnimation  </p>
-<p>  透明度动画  </p>
+<p>透明度动画  </p>
 <pre><code>AlphaAnimation aniAlp = new AlphaAnimation(1, 0.1f);
 aniAlp.setRepeatCount(10);// 设置循环
 as.setDuration(ANIMATIONEACHOFFSET * 3);
-</code></pre><p>  最后用一个addAnimation讲动画加进这个控件中  </p>
+</code></pre><p>最后用一个addAnimation讲动画加进这个控件中  </p>
 <pre><code>as.addAnimation(sa);
 as.addAnimation(aniAlp);
-</code></pre><p>  开始一个动画labelicon是一个view  </p>
+</code></pre><p>开始一个动画labelicon是一个view  </p>
 <pre><code>labelIcon.startAnimation(as);
 </code></pre></li>
-<li>怎么让多个组合动画重复执行？<br>stackoverflow：<br><a href="&quot;http://stackoverflow.com/questions/17622333/repeat-animatorset&quot;">第二个回答，给animatorset加一个监听器</a>   </li>
+<li>怎么让多个组合动画重复执行？<br>stackoverflow：<br> <a href="&quot;http://stackoverflow.com/questions/17622333/repeat-animatorset&quot;">第二个回答，给animatorset加一个监听器</a>   </li>
 </ul>
 <p>示例：  </p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
@@ -831,21 +803,8 @@ as.addAnimation(aniAlp);
         android:valueTo=&quot;-20&quot;
         &gt;
     &lt;/objectAnimator&gt;
-
-
-
-    &lt;!--Second Stage  --&gt;
-    &lt;objectAnimator 
-        android:valueType=&quot;floatType&quot;
-        android:startOffset=&quot;500&quot;
-        android:duration=&quot;500&quot;
-        android:propertyName=&quot;alpha&quot;
-        android:valueFrom=&quot;0.8&quot;
-        android:valueTo=&quot;0.65&quot;
-        &gt;
-    &lt;/objectAnimator&gt;
-
-    &lt;objectAnimator 
+</code></pre><p>​<br>        <!--Second Stage  --><br>        <objectanimator android:valuetype="floatType" android:startoffset="500" android:duration="500" android:propertyname="alpha" android:valuefrom="0.8" android:valueto="0.65"><br>        </objectanimator></p>
+<pre><code>    &lt;objectAnimator 
         android:startOffset=&quot;500&quot;
         android:valueType=&quot;floatType&quot;
         android:duration=&quot;500&quot;
@@ -923,38 +882,28 @@ as.addAnimation(aniAlp);
         &gt;
     &lt;/objectAnimator&gt;
 &lt;/set&gt;
-</code></pre><p>android代码部分：  </p>
-<pre><code>AnimatorSet animator =    (AnimatorSet) AnimatorInflater.loadAnimator(this,
-            R.animator.clock_rotate);
-    animator.setTarget(mFloatingImageView);
-    animator.addListener(new AnimatorListener() {
-        @Override
-        public void onAnimationStart(Animator animation) {
-            // TODO Auto-generated method stub
-            mCanceled = false;
-        }
+</code></pre><p>android代码部分：<br>​<br>    AnimatorSet animator =    (AnimatorSet) AnimatorInflater.loadAnimator(this,<br>                R.animator.clock_rotate);<br>        animator.setTarget(mFloatingImageView);<br>        animator.addListener(new AnimatorListener() {<br>            @Override<br>            public void onAnimationStart(Animator animation) {<br>                // TODO Auto-generated method stub<br>                mCanceled = false;<br>            }</p>
+<pre><code>    @Override
+    public void onAnimationRepeat(Animator animation) {
+        // TODO Auto-generated method stub
 
-        @Override
-        public void onAnimationRepeat(Animator animation) {
-            // TODO Auto-generated method stub
+    }
 
-        }
+    @Override
+    public void onAnimationEnd(Animator animation) {
+        // TODO Auto-generated method stub
+        if (!mCanceled) {
+            animation.start();
+          }
+    }
 
-        @Override
-        public void onAnimationEnd(Animator animation) {
-            // TODO Auto-generated method stub
-            if (!mCanceled) {
-                animation.start();
-              }
-        }
-
-        @Override
-        public void onAnimationCancel(Animator animation) {
-            // TODO Auto-generated method stub
-            mCanceled = true;
-        }
-    });
-    animator.start();
+    @Override
+    public void onAnimationCancel(Animator animation) {
+        // TODO Auto-generated method stub
+        mCanceled = true;
+    }
+});
+animator.start();
 </code></pre><h1 id="Android-Splash秒开以及Activity白屏，黑屏的原因和过程"><a href="#Android-Splash秒开以及Activity白屏，黑屏的原因和过程" class="headerlink" title="Android Splash秒开以及Activity白屏，黑屏的原因和过程"></a>Android Splash秒开以及Activity白屏，黑屏的原因和过程</h1><ul>
 <li><a href="&quot;http://blog.csdn.net/yanzhenjie1003/article/details/52201896&quot;"> Android Splash页秒开</a> </li>
 </ul>
@@ -1029,7 +978,7 @@ as.addAnimation(aniAlp);
 <p>一个用来检测Android出现oom的库，测试，平时可用。  </p>
 <ul>
 <li><p><a href="&quot;https://github.com/square/leakcanary&quot;">  自动检测oom的库 </a></p>
-<h1 id="gradle一些有用的学习资料"><a href="#gradle一些有用的学习资料" class="headerlink" title="gradle一些有用的学习资料"></a>gradle一些有用的学习资料</h1><ul>
+<h1 id="gradle一些有用的学习资料"><a href="#gradle一些有用的学习资料" class="headerlink" title="gradle一些有用的学习资料"></a>gradle一些有用的学习资料</h1></li>
 <li><p><a href="&quot;http://blog.csdn.net/sbsujjbcy/article/details/50782830&quot;"> 如何编写一个gradle插件 </a>  </p>
 </li>
 <li><p><a href="&quot;http://yifeng.studio/2016/09/06/apk-environment-separate&quot;"> gradle实现环境分离 </a>  </p>
@@ -1037,9 +986,9 @@ as.addAnimation(aniAlp);
 <li><p><a href="&quot;http://www.infoq.com/cn/articles/android-in-depth-gradle&quot;"> 深入理解Android（一）：Gradle详解 </a>  </p>
 </li>
 </ul>
-</li>
-</ul>
-<h1 id="google上android的mvp结构基本实现方式以及如何规范的运用"><a href="#google上android的mvp结构基本实现方式以及如何规范的运用" class="headerlink" title="google上android的mvp结构基本实现方式以及如何规范的运用"></a>google上android的mvp结构基本实现方式以及如何规范的运用</h1>]]></content>
+<h1 id="google上android的mvp结构基本实现方式以及如何规范的运用"><a href="#google上android的mvp结构基本实现方式以及如何规范的运用" class="headerlink" title="google上android的mvp结构基本实现方式以及如何规范的运用"></a>google上android的mvp结构基本实现方式以及如何规范的运用</h1><p><a href="&quot;http://dev.qq.com/topic/57bfef673c1174283d60bac0&quot;"> 基于RxJava的一种MVP实现 </a>  </p>
+<p><a href="&quot;https://github.com/googlesamples/android-architecture/&quot;"> google规范mvp模式的运用 </a>  </p>
+]]></content>
     
     <summary type="html">
     
@@ -1047,6 +996,44 @@ as.addAnimation(aniAlp);
 &lt;li&gt;what
     
     </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android部分知识的原理</title>
+    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
+    <published>2016-12-11T17:23:00.000Z</published>
+    <updated>2017-02-07T03:28:34.287Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+<ul>
+<li>writeObject的方式  </li>
+</ul>
+<p><strong>bundle</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<ul>
+<li>SharePreference的进程访问不可靠                             <ul>
+<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
+</ul>
+</li>
+</ul>
+<p><strong>Messenger</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;writeObject的方式  &lt;
+    
+    </summary>
+    
+      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
