@@ -19,7 +19,7 @@
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="Android,MVP,Retrofit,Rxjava,Material Design,Glide,Gradle">
+    <meta name="keywords" content="MVP,Android,Retrofit,Rxjava,Material Design,Glide,Gradle">
     <meta name="description" content="开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
 123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andr">
@@ -31,7 +31,7 @@ Material Design(module中)
 Material Design(module中)
 123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andr">
 <meta property="og:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
-<meta property="og:updated_time" content="2017-03-10T04:08:40.208Z">
+<meta property="og:updated_time" content="2017-03-10T09:22:27.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta name="twitter:description" content="开始搭建gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
@@ -223,6 +223,9 @@ Material Design(module中)
 <p>ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。</p>
 <p>util：负责项目一些公有的项目大部分功能。</p>
 <p>widget：项目中的自定义控件</p>
+<p>部分参考自google mvp architecture 以及bugly文章</p>
+<p><a href="http://dev.qq.com/topic/57bfef673c1174283d60bac0" target="_blank" rel="external">http://dev.qq.com/topic/57bfef673c1174283d60bac0</a></p>
+<p><a href="https://github.com/googlesamples/android-architecture/" target="_blank" rel="external">https://github.com/googlesamples/android-architecture/</a></p>
 <p># </p>
 
         </div>
@@ -231,7 +234,7 @@ Material Design(module中)
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-10T04:08:40.208Z" itemprop="dateUpdated">2017年3月10日 12:08</time>
+    最后更新时间：<time datetime="2017-03-10T09:22:27.395Z" itemprop="dateUpdated">2017年3月10日 17:22</time>
 </span><br>
 
 
