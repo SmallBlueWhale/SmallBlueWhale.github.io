@@ -13,33 +13,30 @@
     
     
     
-    <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) | SmallBlueWhale&#39;s blog | null</title>
+    <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) | SmallBlueWhale&#39;s blog | null</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
     <meta name="keywords" content="Android,MVP,Retrofit,Rxjava,Material Design,Glide,Gradle">
-    <meta name="description" content="# 
-gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
+    <meta name="description" content="gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.android.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
-<meta property="og:url" content="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/index.html">
+<meta property="og:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="# 
-gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
+<meta property="og:description" content="gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.android.">
 <meta property="og:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
-<meta property="og:updated_time" content="2017-03-10T09:28:52.952Z">
+<meta property="og:updated_time" content="2017-03-10T09:28:05.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
-<meta name="twitter:description" content="# 
-gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
+<meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)">
+<meta name="twitter:description" content="gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.android.">
 <meta name="twitter:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
@@ -124,7 +121,7 @@ Material Design(module中)
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</div>
+        <div class="flex-col header-title ellipsis">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -146,7 +143,7 @@ Material Design(module中)
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</h1>
+        <h1 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h1>
         <h5 class="subtitle">
             
                 <time datetime="2017-03-08T03:23:00.000Z" itemprop="datePublished" class="page-time">
@@ -168,15 +165,15 @@ Material Design(module中)
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">gradle配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目分包"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目分包</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">gradle配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目分包："><span class="post-toc-number">2.</span> <span class="post-toc-text">项目分包：</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)"
+<article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) "
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</h1>
+        <h1 class="post-card-title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h1>
         <div class="post-meta">
             <time class="post-time" title="2017年03月08日 11:23" datetime="2017-03-08T03:23:00.000Z"  itemprop="datePublished">2017-03-08</time>
 
@@ -191,14 +188,13 @@ Material Design(module中)
 
             
 <span>
-    <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/#comments" class="ds-thread-count" data-thread-key="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)" data-count-type="comments"></a>
+    <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /#comments" class="ds-thread-count" data-thread-key="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) " data-count-type="comments"></a>
 </span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p># </p>
-<h1 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h1><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
+            <h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
 <p><strong>Material Design(module中)</strong></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
 <p><strong>Retrofit+Rxjava+Glide(module中):</strong></p>
@@ -219,7 +215,7 @@ Material Design(module中)
                 </div>
                 <div class="image-caption">img</div>
             </figure>
-<h1 id="项目分包"><a href="#项目分包" class="headerlink" title="项目分包"></a>项目分包</h1><p>为了让项目更加清晰</p>
+<h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
 <p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
 <p>app：项目单独的application</p>
 <p>bean：负责实体类的定义</p>
@@ -238,7 +234,7 @@ Material Design(module中)
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-10T09:28:52.952Z" itemprop="dateUpdated">2017年3月10日 17:28</time>
+    最后更新时间：<time datetime="2017-03-10T09:28:05.291Z" itemprop="dateUpdated">2017年3月10日 17:28</time>
 </span><br>
 
 
@@ -271,7 +267,7 @@ Material Design(module中)
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,22 +277,22 @@ Material Design(module中)
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -316,14 +312,21 @@ Material Design(module中)
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" id="post-next" class="post-nav-link">
+      <a href="/2017/02/05/ttf字体提取/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h4>
+        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
       </a>
     </div>
   
@@ -334,7 +337,7 @@ Material Design(module中)
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)" data-title="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)" data-url="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/"></div>
+    <div class="ds-thread" data-thread-key="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) " data-title="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)" data-url="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -413,7 +416,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -423,22 +426,22 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&title=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)》 — SmallBlueWhale's blog&url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -449,7 +452,7 @@ lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAElElEQVR42u3aW3LbMBAEQN3/0s4FImpmAScE1fxyqSQSaLoK+3q94uvnzXX9/eST6/tcr+T6ue9W2z7xhQkTJkyYDmf6ubyuF7drEevbm73CZO+YMGHChOkZTMntrh+TLzcJF5Jf5dtO9vXhWZgwYcKE6SuZkqQ0CTWS9HgdNw8yMGHChAnTNzO1JeBiKWVhNz/+N6wNEyZMmDAdztTeLk+M81eSFJfzYm57/221cEyYMGHCdDOmWbvxGX9vvjBhwoQJ082YfsorL8W2h2veBM1T3Nke/3IfTJgwYcJ0LFPbFFxPRNvDeBbjzNLvD2VlTJgwYcJ0LNM/OlAvF/Ebd75OfZNhIEyYMGHCdDpT3kScNT7z76wc3ruasm/XjAkTJkyYDmfKj+o2dcwhZk+5BkpGhaLPMWHChAnT45iSHyeF3SS9zKFnbddhJQATJkyYMD2IKU9c24etp6Pta5s9/cPaMGHChAnTsUz5sZ2XbvPkOWlP5huehRR5cIMJEyZMmE5kSo7b/HZ5AJG3NmfhSP6r6BNMmDBhwnQsU956zFPchK9NO9u2axQHtS8GEyZMmDAdyJQnritH6WwYaBYQrK8cEyZMmDA9iakd9GxT1nZYpx0wakvDefjyIQHGhAkTJkyHMOVNx98+dHeFJntLw5gwYcKE6UlMKwfwrHSbBAF5+XjWlI1AMWHChAnT4Uztob6Sjq5sYNc4UV4PwIQJEyZMz2BqN7m3/dkWeWchQruv4eMxYcKECdMtmfLjObppu4hRotuGMrN9RXETJkyYMGG6MdNvtw/bpSf010f+LG2OXjwmTJgwYTqQaRYQrCTJyScJwax8/E/jJkyYMGHCdAOm9jDOl5W3P9eLvO2RP1whJkyYMGF6HFM+YLqyxPWn52l8khK/DRQwYcKECdOxTHtTx7w0vOs7LV/basWECRMmTKczteOe+fby+7TJbU7WvsioyIsJEyZMmI5ias++dqttYjxrdrZF25XSNiZMmDBhOoUpH/TcVaidpa8rIz5t+xMTJkyYMD2PadeYS77QfPMJ+m+EI5gwYcKE6RlM7aGeNztbyjYtb5ug7UtamnLChAkTJkw3Zmqbgm1inBy66wOvu8ZkX7t6p5gwYcKE6b8ytYOb7ahNntDOEu/8aF8JejBhwoQJ04lMs+GYn/KatTZXyr4rJekN3VRMmDBhwnQbphYi+X6b9LaBxaxpmr+2D2kwJkyYMGE6iqlNQWdNzdmic7JZy7NYOSZMmDBhegRTnoiuJ5krfG27dCWgwYQJEyZMpzO1y13/VTtS044W1RsevXJMmDBhwnQK06wxOUuJE772WbPics2NCRMmTJiOZdp7GK8UZxPiPEyZPeu1K4LAhAkTJkw3Y0qCgFlAkAcZeaOxnUtaH+XBhAkTJkzPYFo5pNsm6Ky8u5KarhSUMWHChAnTtzG16eXKYTxro660Wt/eDRMmTJgwfQ1Tssm2ZZgkrm2JeWXYaHPchAkTJkyYbsCUF2FnoUNOvLKZNrAoitqYMGHChOlYplmRdDbK07Y8Zy3J/J+gLRZjwoQJE6ajmP4Axn+qOzXvXbYAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEk0lEQVR42u3aS27kMAwFwNz/0j3bGQTd8x7pAJZTXgUNf6RSAJEUv77i6/XX9f2X77+/+/vd9e5byZ3ts9+fuuzChAkTJky3ZMpf/XlY+SDyCSccn5ft89fzJcGECRMmTKczJa/7/JlkuMk0ctx82vkCvP0dEyZMmDD9eqZZ0PAZrk19c0RMmDBhwoQpT2jzhDlPUJMwYlMyxoQJEyZMv42pfd1sg8+PIX8O+sdr4ZgwYcKE6WZMbYH1SX9ffGHChAkTppsxvcorSReT0CEPCNqCb7vlR7PGhAkTJkzHMrWHgvtEtN2M9y0+m0NQTJgwYcL0DKbZdl5vqMkgyq+0y5kHFtGhJiZMmDBhuj1Te4iYT6MtuRYNNKNKbB4cRBUCTJgwYcJ0FFM7jaQp5/Pn2y18BpSUpKPfMWHChAnTI5g2CXCy3W7KwZtj12ElABMmTJgwPYhp3y7TtunkW3L+bBJq5G09UZEXEyZMmDDdnmk/rHbLnxVz20PNPKRIlhMTJkyYMJ3L1Ca0m0R3Fkxs3jz7bhQKYMKECROmQ5jawRVRRvxU2zyUp+hXlZIxYcKECdO5TJuA4KqjzWJLLhuD2vdjwoQJE6bnMc2O/Wbl2mR7nhWg236bvAyNCRMmTJiewZSnmpsS8OxgchOaJEXetnyMCRMmTJhOZGrTws3R4FWl4c3WPgPFhAkTJkwnMs1Kn8nHPnNcW0RujznzJcSECRMmTKcz5ZvrbKr5IeVPhwizeX21MQgmTJgwYboxU5Iiti+dtePMmlA3xdz6nwYTJkyYMB3CtDmezNt99mFEvuW3oxqmu5gwYcKE6RCmJL9rWzyTiSUl4zZcaJdhFTdhwoQJE6ajmPJBzO5flVODIm+75Q8TdUyYMGHC9DimWULbQiTNQO3b2jajaPkxYcKECdOxTMm22t4zS0RnI2n5VgEKJkyYMGE6kCkpreafbFtz8hBk1vSTL2RR5MWECRMmTEcxtQR5oJC/Z5OU5gu2LwRjwoQJE6azmPLtM59GyzdLcWeNqsMkHxMmTJgwHc7UbpOzdDFPXDeL16bZ0TgxYcKECdOxTHlauD8+nGXk+XdnoUYeRmDChAkTphOZ2rJs3Q00OlDcf6tdkv/cjwkTJkyYHsHUTqMt3bbvnE3sFVzJU//cgwkTJkyYjmWalVk3RdW21Lt556zEXGThmDBhwoTpQKYWbtZYc9UCzMaZj/BtQIAJEyZMmA5hSgaUJKibhps2nZ4dba4aejBhwoQJ0yOY8kS0LbnOUt88uW2DjDqFxoQJEyZMxzKtip7lRhttvYuxzUY+Kw1jwoQJE6ZTmF7l1Z70zRp38m/tS8nRSDBhwoQJ07FMs824TXH3yXMecORp9iwowYQJEyZMJzIlQcCszDo7zszJ2kLzqqCMCRMmTJgOZ9ocUuYb+SylnLXvRFXtOADChAkTJkyY2gnkrLMDztlR69u3YcKECROmX8PUpr5tupsUi/fhQj0qTJgwYcJ0OFM+pXZjnjX95MelmzEURW1MmDBhwnQs06ZIOktW86aczf15ufmyLidMmDBhwnQvpj/epmKDzq+epwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
