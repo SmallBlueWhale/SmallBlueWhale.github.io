@@ -21,25 +21,28 @@
     
     <meta name="keywords" content="Android,MVP,Retrofit,Rxjava,Material Design,Glide,Gradle">
     <meta name="description" content="# 
+前言很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得
 gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:supp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta property="og:url" content="http://yoursite.com/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
 <meta property="og:description" content="# 
+前言很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得
 gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:supp">
 <meta property="og:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
-<meta property="og:updated_time" content="2017-03-10T09:28:52.952Z">
+<meta property="og:updated_time" content="2017-03-10T10:06:29.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta name="twitter:description" content="# 
+前言很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得
 gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
-123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:support-annotations:23.+&apos;compile &apos;com.andro">
+123456compile &apos;com.android.support:support-v4:23.+&apos;compile &apos;com.android.support:supp">
 <meta name="twitter:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
@@ -168,7 +171,7 @@ Material Design(module中)
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">gradle配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目分包"><span class="post-toc-number">2.</span> <span class="post-toc-text">项目分包</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gradle配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">gradle配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目分包"><span class="post-toc-number">3.</span> <span class="post-toc-text">项目分包</span></a></li></ol>
         </nav>
     </aside>
     
@@ -198,6 +201,7 @@ Material Design(module中)
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p># </p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得</strong></p>
 <h1 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h1><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
 <p><strong>Material Design(module中)</strong></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
@@ -238,7 +242,7 @@ Material Design(module中)
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-10T09:28:52.952Z" itemprop="dateUpdated">2017年3月10日 17:28</time>
+    最后更新时间：<time datetime="2017-03-10T10:06:29.762Z" itemprop="dateUpdated">2017年3月10日 18:06</time>
 </span><br>
 
 
@@ -321,9 +325,9 @@ Material Design(module中)
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二) /" id="post-next" class="post-nav-link">
+      <a href="/2017/02/05/ttf字体提取/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h4>
+        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
       </a>
     </div>
   
