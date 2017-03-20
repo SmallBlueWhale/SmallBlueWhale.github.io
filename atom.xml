@@ -99,9 +99,9 @@
     </summary>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
       <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
       <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
     
