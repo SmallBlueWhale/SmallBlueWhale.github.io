@@ -148,6 +148,66 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Android日常开发bug记录"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年03月20日 11:23" datetime="2017-03-20T03:23:00.000Z"  itemprop="datePublished">2017-03-20</time>
+
+        
+
+
+        
+<span>
+    <a href="/2017/03/20/Android日常开发bug记录/#comments" class="ds-thread-count" data-thread-key="Android日常开发bug记录" data-count-type="comments"></a>
+</span>
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/03/20/Android日常开发bug记录/">Android日常开发bug记录</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Android日常开发bug记录1.某些工具类需要用到一个context上下文，为了简便我们可以不用传context变量，这时，Application全局的context为null以及如何正确获取？
+
+首先设置manifest中设置application:name，设置成你一开始创建的那个application的名字。
+
+然后直接在application中的oncreate方法设置context.
+context = getApplicationContext();
+return context;
+
+
+
+    
+
+        <a href="/2017/03/20/Android日常开发bug记录/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug/">bug</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)"
   class="article-card article-type-post" itemprop="blogPost">
 
