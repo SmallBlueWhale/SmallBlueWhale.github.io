@@ -99,9 +99,9 @@
     </summary>
     
     
-      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
-    
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="MVP" scheme="http://yoursite.com/tags/MVP/"/>
     
       <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
     
@@ -112,53 +112,6 @@
       <category term="Glide" scheme="http://yoursite.com/tags/Glide/"/>
     
       <category term="Gradle" scheme="http://yoursite.com/tags/Gradle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中设计模式(developing)</title>
-    <link href="http://yoursite.com/2017/02/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(developing)/"/>
-    <id>http://yoursite.com/2017/02/05/设计模式(developing)/</id>
-    <published>2017-02-05T03:23:00.000Z</published>
-    <updated>2017-03-21T06:26:00.342Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Android设计模式"><a href="#Android设计模式" class="headerlink" title="Android设计模式"></a>Android设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><a href="http://hujiandong.com/2016/12/21/design_pattern_singleton/" target="_blank" rel="external">http://hujiandong.com/2016/12/21/design_pattern_singleton/</a></p>
-<p><strong>大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式</strong></p>
-<ul>
-<li>懒汉式</li>
-<li>饿汉式</li>
-<li>双重校验锁</li>
-<li>静态内部类</li>
-</ul>
-<p>下面我总结前三种比较常用的设计模式的方式</p>
-<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> SingleInstance singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">  	</div><div class="line">  <span class="function"><span class="keyword">public</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> singleInstance;</div><div class="line">  	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>当类的构造中有大量的逻辑操作或其它操作的时候，这个类加载的速度会变得更加慢。</li>
-<li>当类只是被实例化不做任何操作的时候，会占用并浪费资源。</li>
-</ol>
-<h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>这种方式去加载的话，类的资源只有第一次加载才需要进行初始化。</li>
-</ol>
-<p>如果需要同步锁校验的话代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但是这种方式相对来说会影响getInstance的效率，不能每一次都对getInstance进行检查。</p>
-<p>那么就需要下面这一种</p>
-<h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       <span class="keyword">synchronized</span>(SingleInstance.class)&#123;</div><div class="line">         	<span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       			singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">             &#125;</div><div class="line">     	&#125;</div><div class="line">      &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这一种再singleinstance为空的时候才进行校验，解决了每次都要检查同步锁的问题，只有在singleinstance没有进行初始化的时候才进行校验.</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般情况下我们使用<strong>饿汉式</strong>就可以了，如果构造函数有过多的操作，那么我觉得使用<strong>懒汉式</strong>或则<strong>双重校验锁</strong>会更加合适。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Android设计模式&quot;&gt;&lt;a href=&quot;#Android设计模式&quot; class=&quot;headerlink&quot; title=&quot;Android设计模式&quot;&gt;&lt;/a&gt;Android设计模式&lt;/h1&gt;&lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -199,40 +152,51 @@
   </entry>
   
   <entry>
-    <title>Android部分知识的原理</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-02-07T03:28:34.287Z</updated>
+    <title>Android中设计模式(developing)</title>
+    <link href="http://yoursite.com/2017/02/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(developing)/"/>
+    <id>http://yoursite.com/2017/02/05/设计模式(developing)/</id>
+    <published>2017-02-05T03:23:00.000Z</published>
+    <updated>2017-03-21T06:30:36.422Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+    <content type="html"><![CDATA[<h1 id="Android设计模式"><a href="#Android设计模式" class="headerlink" title="Android设计模式"></a>Android设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式</strong></p>
 <ul>
-<li>writeObject的方式  </li>
+<li>懒汉式</li>
+<li>饿汉式</li>
+<li>双重校验锁</li>
+<li>静态内部类</li>
 </ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+<p>下面我总结前三种比较常用的设计模式的方式</p>
+<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> SingleInstance singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">  	</div><div class="line">  <span class="function"><span class="keyword">public</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> singleInstance;</div><div class="line">  	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>当类的构造中有大量的逻辑操作或其它操作的时候，这个类加载的速度会变得更加慢。</li>
+<li>当类只是被实例化不做任何操作的时候，会占用并浪费资源。</li>
+</ol>
+<h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>这种方式去加载的话，类的资源只有第一次加载才需要进行初始化。</li>
+</ol>
+<p>如果需要同步锁校验的话代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是这种方式相对来说会影响getInstance的效率，不能每一次都对getInstance进行检查。</p>
+<p>那么就需要下面这一种</p>
+<h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       <span class="keyword">synchronized</span>(SingleInstance.class)&#123;</div><div class="line">         	<span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       			singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">             &#125;</div><div class="line">     	&#125;</div><div class="line">      &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这一种再singleinstance为空的时候才进行校验，解决了每次都要检查同步锁的问题，只有在singleinstance没有进行初始化的时候才进行校验.</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般情况下我们使用<strong>饿汉式</strong>就可以了，如果构造函数有过多的操作，那么我觉得使用<strong>懒汉式</strong>或则<strong>双重校验锁</strong>会更加合适。</p>
+<blockquote>
+<p><a href="http://hujiandong.com/2016/12/21/design_pattern_singleton/" target="_blank" rel="external">http://hujiandong.com/2016/12/21/design_pattern_singleton/</a></p>
+</blockquote>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
+      &lt;h1 id=&quot;Android设计模式&quot;&gt;&lt;a href=&quot;#Android设计模式&quot; class=&quot;headerlink&quot; title=&quot;Android设计模式&quot;&gt;&lt;/a&gt;Android设计模式&lt;/h1&gt;&lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;
     
     </summary>
     
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -1096,6 +1060,44 @@ animator.start();
 &lt;li&gt;what
     
     </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android部分知识的原理</title>
+    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
+    <published>2016-12-11T17:23:00.000Z</published>
+    <updated>2017-02-07T03:28:34.287Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+<ul>
+<li>writeObject的方式  </li>
+</ul>
+<p><strong>bundle</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<ul>
+<li>SharePreference的进程访问不可靠                             <ul>
+<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
+</ul>
+</li>
+</ul>
+<p><strong>Messenger</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;writeObject的方式  &lt;
+    
+    </summary>
+    
+      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>

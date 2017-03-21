@@ -271,76 +271,6 @@ Freeline*(project中的gradle):
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-设计模式(developing)"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
-
-        
-
-
-        
-<span>
-    <a href="/2017/02/05/设计模式(developing)/#comments" class="ds-thread-count" data-thread-key="设计模式(developing)" data-count-type="comments"></a>
-</span>
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/05/设计模式(developing)/">Android中设计模式(developing)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Android设计模式单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/
-大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
-
-懒汉式
-饿汉式
-双重校验锁
-静态内部类
-
-下面我总结前三种比较常用的设计模式的方式
-饿汉式1234567class SingleInstance&#123;  private final static SingleInstance singleInstance = new SingleInstance();  	  public SingleInstance getInstance()&#123;    	return singleInstance;  	&#125;&#125;
-
-当类的构造中有大量的逻辑操作或其它操作的时候，这个类加载的速度会变得更加慢。
-当类只是被实例化不做任何操作的时候，会占用并浪费资源。
-
-懒汉式12345678910 class SingleInstance&#123;   private static SingleInstance singleInstance;   public SingleInstance()&#123;&#125;   public static SingleInstance getInstance()&#123;     if(null==singleInstance)&#123;       singleInstance = new SingleInstance();     &#125;     return singleInstance;   &#125;&#125;
-
-这种方式去加载的话，类的资源只有第一次加载才需要进行初始化。
-
-如果需要同步锁校验的话代码如下：
-12345678910 class SingleInstance&#123;   private static SingleInstance singleInstance;   public SingleInstance()&#123;&#125;   public static synchronized SingleInstance getInstance()&#123;     if(null==singleInstance)...
-    
-
-        <a href="/2017/02/05/设计模式(developing)/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-ttf字体提取"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -404,20 +334,18 @@ TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAsse
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android部分知识的原理"
+            <article id="post-设计模式(developing)"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+        <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
-
 
 
         
 <span>
-    <a href="/2016/12/12/Android部分知识的原理/#comments" class="ds-thread-count" data-thread-key="Android部分知识的原理" data-count-type="comments"></a>
+    <a href="/2017/02/05/设计模式(developing)/#comments" class="ds-thread-count" data-thread-key="设计模式(developing)" data-count-type="comments"></a>
 </span>
 
 
@@ -428,7 +356,7 @@ TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAsse
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android部分知识的原理</a>
+      <a class="post-title-link" href="/2017/02/05/设计模式(developing)/">Android中设计模式(developing)</a>
     </h3>
   
 
@@ -438,31 +366,35 @@ TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAsse
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        并发进程通信文件传输  
+        Android设计模式单例模式大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
 
-writeObject的方式  
+懒汉式
+饿汉式
+双重校验锁
+静态内部类
 
-bundle  
-SharePreference  
+下面我总结前三种比较常用的设计模式的方式
+饿汉式1234567class SingleInstance&#123;  private final static SingleInstance singleInstance = new SingleInstance();  	  public SingleInstance getInstance()&#123;    	return singleInstance;  	&#125;&#125;
 
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
+当类的构造中有大量的逻辑操作或其它操作的时候，这个类加载的速度会变得更加慢。
+当类只是被实例化不做任何操作的时候，会占用并浪费资源。
 
+懒汉式12345678910 class SingleInstance&#123;   private static SingleInstance singleInstance;   public SingleInstance()&#123;&#125;   public static SingleInstance getInstance()&#123;     if(null==singleInstance)&#123;       singleInstance = new SingleInstance();     &#125;     return singleInstance;   &#125;&#125;
 
+这种方式去加载的话，类的资源只有第一次加载才需要进行初始化。
 
-Messenger  
-SharePreference  
-To do(后续补充)
+如果需要同步锁校验的话代码如下：
+12345678910 class SingleInstance&#123;   private static SingleInstance singleInstance;   public SingleInstance()&#123;&#125;   public static synchronized SingleInstance getInstance()&#123;     if(null==singleInstance)&#123;       singleInstance = new SingleInstance();     &#1...
     
 
-        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
+        <a href="/2017/02/05/设计模式(developing)/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
 
     </div>
     
@@ -516,6 +448,73 @@ In addition, several convenience methods are offered to avoid unnecessary comput
     
 
         <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android部分知识的原理"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
+
+
+
+        
+<span>
+    <a href="/2016/12/12/Android部分知识的原理/#comments" class="ds-thread-count" data-thread-key="Android部分知识的原理" data-count-type="comments"></a>
+</span>
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android部分知识的原理</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        并发进程通信文件传输  
+
+writeObject的方式  
+
+bundle  
+SharePreference  
+
+SharePreference的进程访问不可靠                             
+本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
+
+
+
+Messenger  
+SharePreference  
+To do(后续补充)
+    
+
+        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>

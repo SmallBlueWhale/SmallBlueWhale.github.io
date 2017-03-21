@@ -20,8 +20,7 @@
     
     
     <meta name="keywords" content="Android,设计模式">
-    <meta name="description" content="Android设计模式单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/
-大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
+    <meta name="description" content="Android设计模式单例模式大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
 
 懒汉式
 饿汉式
@@ -29,13 +28,12 @@
 静态内部类
 
 下面我总结前三种比较常用的设计模式的方式
-饿汉式1234567class SingleInstance&amp;#123;  private final">
+饿汉式1234567class SingleInstance&amp;#123;  private final static SingleInstance singleInstance = new SingleInstance()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中设计模式(developing)">
 <meta property="og:url" content="http://yoursite.com/2017/02/05/设计模式(developing)/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="Android设计模式单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/
-大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
+<meta property="og:description" content="Android设计模式单例模式大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
 
 懒汉式
 饿汉式
@@ -43,12 +41,11 @@
 静态内部类
 
 下面我总结前三种比较常用的设计模式的方式
-饿汉式1234567class SingleInstance&amp;#123;  private final">
-<meta property="og:updated_time" content="2017-03-21T06:26:00.342Z">
+饿汉式1234567class SingleInstance&amp;#123;  private final static SingleInstance singleInstance = new SingleInstance()">
+<meta property="og:updated_time" content="2017-03-21T06:30:36.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中设计模式(developing)">
-<meta name="twitter:description" content="Android设计模式单例模式http://hujiandong.com/2016/12/21/design_pattern_singleton/
-大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
+<meta name="twitter:description" content="Android设计模式单例模式大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式
 
 懒汉式
 饿汉式
@@ -56,7 +53,7 @@
 静态内部类
 
 下面我总结前三种比较常用的设计模式的方式
-饿汉式1234567class SingleInstance&amp;#123;  private final">
+饿汉式1234567class SingleInstance&amp;#123;  private final static SingleInstance singleInstance = new SingleInstance()">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -213,8 +210,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Android设计模式"><a href="#Android设计模式" class="headerlink" title="Android设计模式"></a>Android设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><a href="http://hujiandong.com/2016/12/21/design_pattern_singleton/" target="_blank" rel="external">http://hujiandong.com/2016/12/21/design_pattern_singleton/</a></p>
-<p><strong>大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式</strong></p>
+            <h1 id="Android设计模式"><a href="#Android设计模式" class="headerlink" title="Android设计模式"></a>Android设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式</strong></p>
 <ul>
 <li>懒汉式</li>
 <li>饿汉式</li>
@@ -238,6 +234,9 @@
 <h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance singleInstance;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">SingleInstance</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       <span class="keyword">synchronized</span>(SingleInstance.class)&#123;</div><div class="line">         	<span class="keyword">if</span>(<span class="keyword">null</span>==singleInstance)&#123;</div><div class="line">       			singleInstance = <span class="keyword">new</span> SingleInstance();</div><div class="line">             &#125;</div><div class="line">     	&#125;</div><div class="line">      &#125;</div><div class="line">     <span class="keyword">return</span> singleInstance;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这一种再singleinstance为空的时候才进行校验，解决了每次都要检查同步锁的问题，只有在singleinstance没有进行初始化的时候才进行校验.</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般情况下我们使用<strong>饿汉式</strong>就可以了，如果构造函数有过多的操作，那么我觉得使用<strong>懒汉式</strong>或则<strong>双重校验锁</strong>会更加合适。</p>
+<blockquote>
+<p><a href="http://hujiandong.com/2016/12/21/design_pattern_singleton/" target="_blank" rel="external">http://hujiandong.com/2016/12/21/design_pattern_singleton/</a></p>
+</blockquote>
 
         </div>
 
@@ -245,7 +244,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-21T06:26:00.342Z" itemprop="dateUpdated">2017年3月21日 14:26</time>
+    最后更新时间：<time datetime="2017-03-21T06:30:36.422Z" itemprop="dateUpdated">2017年3月21日 14:30</time>
 </span><br>
 
 
@@ -326,18 +325,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" id="post-prev" class="post-nav-link">
+      <a href="/2017/02/05/ttf字体提取/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</h4>
+        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/02/05/ttf字体提取/" id="post-next" class="post-nav-link">
+      <a href="/2016/12/12/Android学习总结/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android关于ttf文件字体应用以及提取</h4>
+        <h4 class="title">Android学习总结</h4>
       </a>
     </div>
   
