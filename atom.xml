@@ -116,6 +116,42 @@
   </entry>
   
   <entry>
+    <title>Android关于ttf文件字体应用以及提取</title>
+    <link href="http://yoursite.com/2017/02/05/ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
+    <id>http://yoursite.com/2017/02/05/ttf字体提取/</id>
+    <published>2017-02-05T03:23:00.000Z</published>
+    <updated>2017-02-07T03:28:17.672Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
+<ul>
+<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
+<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
+<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
+</ul>
+<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
+<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
+<li><p>可以开始在代码中使用，如下所示：</p>
+<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ttf字体提取&quot;&gt;&lt;a href=&quot;#ttf字体提取&quot; class=&quot;headerlink&quot; title=&quot;ttf字体提取&quot;&gt;&lt;/a&gt;ttf字体提取&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="ttf" scheme="http://yoursite.com/tags/ttf/"/>
+    
+      <category term="Sfnttool" scheme="http://yoursite.com/tags/Sfnttool/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android中设计模式(developing)</title>
     <link href="http://yoursite.com/2017/02/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(developing)/"/>
     <id>http://yoursite.com/2017/02/05/设计模式(developing)/</id>
@@ -161,80 +197,6 @@
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
       <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android关于ttf文件字体应用以及提取</title>
-    <link href="http://yoursite.com/2017/02/05/ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
-    <id>http://yoursite.com/2017/02/05/ttf字体提取/</id>
-    <published>2017-02-05T03:23:00.000Z</published>
-    <updated>2017-02-07T03:28:17.672Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
-<ul>
-<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
-<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
-<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
-</ul>
-<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
-<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
-<li><p>可以开始在代码中使用，如下所示：</p>
-<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;ttf字体提取&quot;&gt;&lt;a href=&quot;#ttf字体提取&quot; class=&quot;headerlink&quot; title=&quot;ttf字体提取&quot;&gt;&lt;/a&gt;ttf字体提取&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="ttf" scheme="http://yoursite.com/tags/ttf/"/>
-    
-      <category term="Sfnttool" scheme="http://yoursite.com/tags/Sfnttool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android部分知识的原理</title>
-    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-02-07T03:28:34.287Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
-<ul>
-<li>writeObject的方式  </li>
-</ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
-    
-    </summary>
-    
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
   </entry>
   
@@ -1098,6 +1060,44 @@ animator.start();
 &lt;li&gt;what
     
     </summary>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android部分知识的原理</title>
+    <link href="http://yoursite.com/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2016/12/12/Android部分知识的原理/</id>
+    <published>2016-12-11T17:23:00.000Z</published>
+    <updated>2017-02-07T03:28:34.287Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+<ul>
+<li>writeObject的方式  </li>
+</ul>
+<p><strong>bundle</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<ul>
+<li>SharePreference的进程访问不可靠                             <ul>
+<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
+</ul>
+</li>
+</ul>
+<p><strong>Messenger</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;writeObject的方式  &lt;
+    
+    </summary>
+    
+      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
