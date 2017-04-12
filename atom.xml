@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smallbluewhale.github.io/"/>
-  <updated>2017-03-20T09:18:44.573Z</updated>
+  <updated>2017-04-05T08:11:12.010Z</updated>
   <id>https://smallbluewhale.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</title>
+    <link href="https://smallbluewhale.github.io/2017/04/01/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%BA%8C)/"/>
+    <id>https://smallbluewhale.github.io/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/</id>
+    <published>2017-04-01T03:23:00.000Z</published>
+    <updated>2017-04-05T08:11:12.010Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Rxjava生命周期管理"><a href="#Rxjava生命周期管理" class="headerlink" title="Rxjava生命周期管理"></a>Rxjava生命周期管理</h1><p>对于这个大量运用mvp,rxjava的项目，我们很容易出现内存泄漏的问题，因此需要一个统一管理rxjava生命周期的类。命名为rxmanager。</p>
+<p>这里我们可以使用compositeSubscription这个类的unsubscribe方法来管理生命周期。</p>
+<p><strong>RxManager</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.hyx.whale.whalenote.base;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="keyword">import</span> rx.Observable;</div><div class="line"><span class="keyword">import</span> rx.Subscription;</div><div class="line"><span class="keyword">import</span> rx.android.schedulers.AndroidSchedulers;</div><div class="line"><span class="keyword">import</span> rx.functions.Action;</div><div class="line"><span class="keyword">import</span> rx.functions.Action1;</div><div class="line"><span class="keyword">import</span> rx.subscriptions.CompositeSubscription;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * funtion :用于管理单个presenter的rxbus事件和rxjava相关代码的生命周期处理。</div><div class="line"> * author  :smallbluewhale.</div><div class="line"> * date    :2017/4/5 0005.</div><div class="line"> * version :1.0.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RxManager</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> RxBus mRxbus = RxBus.getInstance();</div><div class="line">    <span class="comment">/*</span></div><div class="line">    * 管理Observable和Subscribe订阅</div><div class="line">    * 取消以及注册订阅</div><div class="line">    * */</div><div class="line">    <span class="keyword">private</span> CompositeSubscription compositeSubscription = <span class="keyword">new</span> CompositeSubscription();</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">    * 单纯的obserables和subscribers管理</div><div class="line">    * */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Subscription subscription)</span></span>&#123;</div><div class="line">        <span class="comment">/*订阅管理*/</span></div><div class="line">        compositeSubscription.add(subscription);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 单个presenter生命周期结束，取消订阅和所有rxbus观察</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</div><div class="line">        compositeSubscription.unsubscribe();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="RxBus"><a href="#RxBus" class="headerlink" title="RxBus"></a>RxBus</h2><p><strong>另外我觉得一个项目免不了事件传递和事件发送，因此我们可以利用rxjava来编写一个类似eventbus的事件处理类，代码很简洁，也很简单，相应的注释都写在类的头部</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.hyx.whale.whalenote.base;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.support.annotation.NonNull;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Collection;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ConcurrentHashMap;</div><div class="line"></div><div class="line"><span class="keyword">import</span> rx.Observable;</div><div class="line"><span class="keyword">import</span> rx.android.schedulers.AndroidSchedulers;</div><div class="line"><span class="keyword">import</span> rx.functions.Action;</div><div class="line"><span class="keyword">import</span> rx.functions.Action1;</div><div class="line"><span class="keyword">import</span> rx.subjects.PublishSubject;</div><div class="line"><span class="keyword">import</span> rx.subjects.Subject;</div><div class="line"></div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> android.R.attr.tag;</div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> android.R.string.no;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * funtion :用rxbus和rxandroid实现的一个事件监听的类</div><div class="line"> * author  :smallbluewhale.</div><div class="line"> * date    :2017/3/21 0021.</div><div class="line"> * version :1.0.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RxBus</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> RxBus instance;</div><div class="line"></div><div class="line"></div><div class="line">    RxBus()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RxBus <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span>==instance)&#123;</div><div class="line">            <span class="keyword">synchronized</span> (RxBus.class)&#123;</div><div class="line">                instance = <span class="keyword">new</span> RxBus();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>  instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//每一种tag类型有一个同种类型事件的lsit</span></div><div class="line">    <span class="keyword">private</span> ConcurrentHashMap&lt;Object , List&lt;Subject&gt;&gt; subjectMapper = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 订阅事件源</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> mObservable</div><div class="line">     * <span class="doctag">@param</span> mAction1</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> RxBus <span class="title">onEvent</span><span class="params">(Observable&lt;?&gt; mObservable , Action1&lt;Object&gt; mAction1)</span></span>&#123;</div><div class="line">        mObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(mAction1, <span class="keyword">new</span> Action1&lt;Throwable&gt;() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Throwable throwable)</span> </span>&#123;</div><div class="line">                throwable.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">return</span> getInstance();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 注册事件源</div><div class="line">     * 1.将事件按照tag标志放置在一个map中，然后不同tag事件对应不同一个subjectlist</div><div class="line">     * 2.再创建一个tag对应的subject放在</div><div class="line">     * <span class="doctag">@param</span> tag</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> &lt;T&gt; <span class="function">Observable&lt;T&gt; <span class="title">register</span><span class="params">(@NonNull Object tag)</span></span>&#123;</div><div class="line">        List&lt;Subject&gt; subjectList = subjectMapper.get(tag);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == subjectList)&#123;</div><div class="line">            subjectList = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">            subjectMapper.put(tag,subjectList);</div><div class="line">        &#125;</div><div class="line">        Subject&lt;T,T&gt; subject = PublishSubject.create();</div><div class="line">        subjectList.add(subject);</div><div class="line">        <span class="keyword">return</span> subject;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">    * 简单发送事件</div><div class="line">    * 默认设置content的类名为tag标志</div><div class="line">    * */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">(@NonNull Object content)</span></span>&#123;</div><div class="line">        post(content.getClass().getName(),content);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 触发事件</div><div class="line">     * 遍历全部相同tag事件的list，然后将相同的时间全部post出去，利用subject的一些有用的特性，例如可以构造一个无发送事件的observable</div><div class="line">     * <span class="doctag">@param</span> content</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">(@NonNull Object tag,@NonNull Object content)</span></span>&#123;</div><div class="line">        List&lt;Subject&gt; subjectList = subjectMapper.get(tag);</div><div class="line">        <span class="keyword">if</span>(!isEmpty(subjectList))&#123;</div><div class="line">            <span class="keyword">for</span> (Subject subject :</div><div class="line">                    subjectList) &#123;</div><div class="line">                subject.onNext(content);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 解绑事件</div><div class="line">     * <span class="doctag">@param</span> content</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unRegister</span><span class="params">(@NonNull Object content)</span></span>&#123;</div><div class="line">        List&lt;Subject&gt; subjectList = subjectMapper.get(content);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != subjectList)&#123;</div><div class="line">            subjectMapper.remove(content);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 取消监听</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> tag</div><div class="line">     * <span class="doctag">@param</span> observable</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> RxBus <span class="title">unRegister</span><span class="params">(@NonNull Object tag , @NonNull Observable&lt;?&gt;observable)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == observable)&#123;</div><div class="line">            getInstance();</div><div class="line">        &#125;</div><div class="line">        List&lt;Subject&gt; subjectList = subjectMapper.get(tag);</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != subjectList)&#123;</div><div class="line">            subjectList.remove((Subject&lt;?,?&gt;)observable);</div><div class="line">            <span class="keyword">if</span>(isEmpty(subjectList))&#123;</div><div class="line">                subjectMapper.remove(tag);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> getInstance();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">(Collection&lt;Subject&gt; collection)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span> == collection || collection.isEmpty();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，我们可以用rxmanager再统一处理rxbus。建立一个map存储</p>
+<p># </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Rxjava生命周期管理&quot;&gt;&lt;a href=&quot;#Rxjava生命周期管理&quot; class=&quot;headerlink&quot; title=&quot;Rxjava生命周期管理&quot;&gt;&lt;/a&gt;Rxjava生命周期管理&lt;/h1&gt;&lt;p&gt;对于这个大量运用mvp,rxjava的项目，我们很容易出现内
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
+    
+      <category term="MVP" scheme="https://smallbluewhale.github.io/tags/MVP/"/>
+    
+      <category term="Retrofit" scheme="https://smallbluewhale.github.io/tags/Retrofit/"/>
+    
+      <category term="Rxjava" scheme="https://smallbluewhale.github.io/tags/Rxjava/"/>
+    
+      <category term="Material Design" scheme="https://smallbluewhale.github.io/tags/Material-Design/"/>
+    
+      <category term="Glide" scheme="https://smallbluewhale.github.io/tags/Glide/"/>
+    
+      <category term="Gradle" scheme="https://smallbluewhale.github.io/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java常见疑点</title>
+    <link href="https://smallbluewhale.github.io/2017/03/22/Android%20ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
+    <id>https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/</id>
+    <published>2017-03-22T03:23:00.000Z</published>
+    <updated>2017-03-24T03:08:00.862Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线程安全和线程不安全"><a href="#线程安全和线程不安全" class="headerlink" title="线程安全和线程不安全"></a>线程安全和线程不安全</h1><p><a href="http://blog.csdn.net/xiao__gui/article/details/8934832" target="_blank" rel="external">http://blog.csdn.net/xiao__gui/article/details/8934832</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;线程安全和线程不安全&quot;&gt;&lt;a href=&quot;#线程安全和线程不安全&quot; class=&quot;headerlink&quot; title=&quot;线程安全和线程不安全&quot;&gt;&lt;/a&gt;线程安全和线程不安全&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/xiao__gu
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
+    
+      <category term="ttf" scheme="https://smallbluewhale.github.io/tags/ttf/"/>
+    
+      <category term="Sfnttool" scheme="https://smallbluewhale.github.io/tags/Sfnttool/"/>
+    
+  </entry>
   
   <entry>
     <title>Android日常开发bug记录</title>
@@ -48,14 +113,12 @@
   
   <entry>
     <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</title>
-    <link href="https://smallbluewhale.github.io/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)/"/>
-    <id>https://smallbluewhale.github.io/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/</id>
+    <link href="https://smallbluewhale.github.io/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)%20/"/>
+    <id>https://smallbluewhale.github.io/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /</id>
     <published>2017-03-08T03:23:00.000Z</published>
-    <updated>2017-03-10T10:06:29.762Z</updated>
+    <updated>2017-04-12T02:20:43.280Z</updated>
     
-    <content type="html"><![CDATA[<p># </p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得</strong></p>
-<h1 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h1><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
+    <content type="html"><![CDATA[<h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><p>首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。</p>
 <p><strong>Material Design(module中)</strong></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.android.support:support-v4:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:support-annotations:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:design:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:cardview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:recyclerview-v7:23.+'</span></div><div class="line">compile <span class="string">'com.android.support:appcompat-v7:23.+'</span></div></pre></td></tr></table></figure>
 <p><strong>Retrofit+Rxjava+Glide(module中):</strong></p>
@@ -76,7 +139,7 @@
                 </div>
                 <div class="image-caption">img</div>
             </figure>
-<h1 id="项目分包"><a href="#项目分包" class="headerlink" title="项目分包"></a>项目分包</h1><p>为了让项目更加清晰</p>
+<h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
 <p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
 <p>app：项目单独的application</p>
 <p>bean：负责实体类的定义</p>
@@ -92,9 +155,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;# &lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得&lt;/strong&gt;&lt;/p&gt;
-&lt;h
+      &lt;h2 id=&quot;gradle配置&quot;&gt;&lt;a href=&quot;#gradle配置&quot; class=&quot;headerlink&quot; title=&quot;gradle配置&quot;&gt;&lt;/a&gt;gradle配置&lt;/h2&gt;&lt;p&gt;首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。&lt;/p&gt;
+&lt;
     
     </summary>
     
@@ -116,47 +178,11 @@
   </entry>
   
   <entry>
-    <title>Android关于ttf文件字体应用以及提取</title>
-    <link href="https://smallbluewhale.github.io/2017/02/05/ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
-    <id>https://smallbluewhale.github.io/2017/02/05/ttf字体提取/</id>
+    <title>Android设计模式(developing)</title>
+    <link href="https://smallbluewhale.github.io/2017/02/05/Android%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(developing)/"/>
+    <id>https://smallbluewhale.github.io/2017/02/05/Android设计模式(developing)/</id>
     <published>2017-02-05T03:23:00.000Z</published>
-    <updated>2017-02-07T03:28:17.672Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
-<ul>
-<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
-<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
-<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
-</ul>
-<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
-<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
-<li><p>可以开始在代码中使用，如下所示：</p>
-<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;ttf字体提取&quot;&gt;&lt;a href=&quot;#ttf字体提取&quot; class=&quot;headerlink&quot; title=&quot;ttf字体提取&quot;&gt;&lt;/a&gt;ttf字体提取&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
-    
-      <category term="ttf" scheme="https://smallbluewhale.github.io/tags/ttf/"/>
-    
-      <category term="Sfnttool" scheme="https://smallbluewhale.github.io/tags/Sfnttool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中设计模式(developing)</title>
-    <link href="https://smallbluewhale.github.io/2017/02/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F(developing)/"/>
-    <id>https://smallbluewhale.github.io/2017/02/05/设计模式(developing)/</id>
-    <published>2017-02-05T03:23:00.000Z</published>
-    <updated>2017-03-21T06:30:36.422Z</updated>
+    <updated>2017-04-12T02:22:46.575Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Android设计模式"><a href="#Android设计模式" class="headerlink" title="Android设计模式"></a>Android设计模式</h1><h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>大概分成以下这几种实现方式，加锁和未加锁分别有不同的实现方式</strong></p>
 <ul>
@@ -1060,44 +1086,6 @@ animator.start();
 &lt;li&gt;what
     
     </summary>
-    
-    
-      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android部分知识的原理</title>
-    <link href="https://smallbluewhale.github.io/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>https://smallbluewhale.github.io/2016/12/12/Android部分知识的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-02-07T03:28:34.287Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
-<ul>
-<li>writeObject的方式  </li>
-</ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
-    
-    </summary>
-    
-      <category term="tips" scheme="https://smallbluewhale.github.io/categories/tips/"/>
     
     
       <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>

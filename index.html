@@ -148,6 +148,104 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年04月01日 11:23" datetime="2017-04-01T03:23:00.000Z"  itemprop="datePublished">2017-04-01</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Rxjava生命周期管理对于这个大量运用mvp,rxjava的项目，我们很容易出现内存泄漏的问题，因此需要一个统一管理rxjava生命周期的类。命名为rxmanager。
+这里我们可以使用compositeSubscription这个类的unsubscribe方法来管理生命周期。
+RxManager
+12345678910111213141516171819202122232425262728293031323334353637383940414243package com.hyx.whale.whalenote.base;import java.util.HashMap;import java.util.Map;import rx.Observable;import rx.Subscription;import rx.android.schedulers.AndroidSchedulers;import rx.functions.Action;import rx.functions.Action1;import rx.subscriptions.CompositeSubscription;/** * funtion :用于管理单个presenter的rxbus事件和rxjava相关代码的生命周期处理。 * author  :smallbluewhale. * date    :2017/4/5 0005. * version :1.0. */public class RxManager &#123;    public RxBus mRxbus = RxBus.getInstance();    /*    * 管理Observable和Subscribe订阅    * 取消以及注册订阅    * */    private CompositeSubscription compositeSubscription = new CompositeSubscription();    /*    * 单纯的obserables和subscribers管理    * */    public void add(Subscription subscription)&#123;        /*订阅管理*/        compositeSubscription.a...
+    
+
+        <a href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Glide/">Glide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/">Gradle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android ttf字体提取"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年03月22日 11:23" datetime="2017-03-22T03:23:00.000Z"  itemprop="datePublished">2017-03-22</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/03/22/Android ttf字体提取/">Java常见疑点</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        线程安全和线程不安全http://blog.csdn.net/xiao__gui/article/details/8934832
+
+    
+
+        <a href="/2017/03/22/Android ttf字体提取/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sfnttool/">Sfnttool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ttf/">ttf</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Android日常开发bug记录"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -204,7 +302,7 @@ return context;
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)"
+            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) "
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -222,7 +320,7 @@ return context;
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
+      <a class="post-title-link" href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
     </h3>
   
 
@@ -232,9 +330,7 @@ return context;
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        # 
-前言很早之前就在构建一个属于自己的项目，构建过程顺便分享一下自己的过程和心得
-gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
+        gradle配置首先项目的开始，我们需要先就项目需要用到的第三方库对gradle进行相应的配置。
 Material Design(module中)
 123456compile 'com.android.support:support-v4:23.+'compile 'com.android.support:support-annotations:23.+'compile 'com.android.support:design:23.+'compile 'com.android.support:cardview-v7:23.+'compile 'com.android.support:recyclerview-v7:23.+'compile 'com.android.support:appcompat-v7:23.+'
 Retrofit+Rxjava+Glide(module中):
@@ -244,10 +340,12 @@ Multidex(module中):
 ButterKnife(module中):
 1compile 'com.jakewharton:butterknife:7.0.1'//view注解
 Freeline*(project中的gradle):
-1classpath 'com.antfortune.freel...
+1classpath 'com.antfortune.freeline:gradle:0.8.6
+接着在项目的app module中:
+1apply...
     
 
-        <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" class="post-more waves-effect waves-button">
+        <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -263,7 +361,7 @@ Freeline*(project中的gradle):
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-ttf字体提取"
+            <article id="post-Android设计模式(developing)"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -281,66 +379,7 @@ Freeline*(project中的gradle):
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/05/ttf字体提取/">Android关于ttf文件字体应用以及提取</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
-
-首先，安装sfnttool字体提取工具并集成java环境(废话)
-命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
-字符文件就被提取到同目录下的test_exact.ttf中
-
-ttf在Android Studio的应用
-Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。
-可以开始在代码中使用，如下所示：
-TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);tv.setTypeface(tupeface);
-
-
-
-    
-
-        <a href="/2017/02/05/ttf字体提取/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sfnttool/">Sfnttool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ttf/">ttf</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-设计模式(developing)"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/02/05/设计模式(developing)/">Android中设计模式(developing)</a>
+      <a class="post-title-link" href="/2017/02/05/Android设计模式(developing)/">Android设计模式(developing)</a>
     </h3>
   
 
@@ -371,7 +410,7 @@ TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAsse
 12345678910 class SingleInstance&#123;   private static SingleInstance singleInstance;   public SingleInstance()&#123;&#125;   public static synchronized SingleInstance getInstance()&#123;     if(null==singleInstance)&#123;       singleInstance = new SingleInstance();     &#1...
     
 
-        <a href="/2017/02/05/设计模式(developing)/" class="post-more waves-effect waves-button">
+        <a href="/2017/02/05/Android设计模式(developing)/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -428,69 +467,6 @@ In addition, several convenience methods are offered to avoid unnecessary comput
     
 
         <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Android部分知识的原理"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android部分知识的原理</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        并发进程通信文件传输  
-
-writeObject的方式  
-
-bundle  
-SharePreference  
-
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
-
-
-
-Messenger  
-SharePreference  
-To do(后续补充)
-    
-
-        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>

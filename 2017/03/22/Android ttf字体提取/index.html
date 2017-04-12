@@ -13,35 +13,23 @@
     
     
     
-    <title>Android关于ttf文件字体应用以及提取 | SmallBlueWhale&#39;s blog | Real Life</title>
+    <title>Java常见疑点 | SmallBlueWhale&#39;s blog | Real Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
     <meta name="keywords" content="Android,ttf,Sfnttool">
-    <meta name="description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
-
-首先，安装sfnttool字体提取工具并集成java环境(废话)
-命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
-字符文件就被提取到同目录下的test_e">
+    <meta name="description" content="线程安全和线程不安全http://blog.csdn.net/xiao__gui/article/details/8934832">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android关于ttf文件字体应用以及提取">
-<meta property="og:url" content="https://smallbluewhale.github.io/2017/02/05/ttf字体提取/index.html">
+<meta property="og:title" content="Java常见疑点">
+<meta property="og:url" content="https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
-
-首先，安装sfnttool字体提取工具并集成java环境(废话)
-命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
-字符文件就被提取到同目录下的test_e">
-<meta property="og:updated_time" content="2017-02-07T03:28:17.672Z">
+<meta property="og:description" content="线程安全和线程不安全http://blog.csdn.net/xiao__gui/article/details/8934832">
+<meta property="og:updated_time" content="2017-03-24T03:08:00.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android关于ttf文件字体应用以及提取">
-<meta name="twitter:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
-
-首先，安装sfnttool字体提取工具并集成java环境(废话)
-命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
-字符文件就被提取到同目录下的test_e">
+<meta name="twitter:title" content="Java常见疑点">
+<meta name="twitter:description" content="线程安全和线程不安全http://blog.csdn.net/xiao__gui/article/details/8934832">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -125,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android关于ttf文件字体应用以及提取</div>
+        <div class="flex-col header-title ellipsis">Java常见疑点</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android关于ttf文件字体应用以及提取</h1>
+        <h1 class="title">Java常见疑点</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-02-05T03:23:00.000Z" itemprop="datePublished" class="page-time">
-  2017-02-05
+                <time datetime="2017-03-22T03:23:00.000Z" itemprop="datePublished" class="page-time">
+  2017-03-22
 </time>
 
 
@@ -169,17 +157,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ttf字体提取"><span class="post-toc-number">1.</span> <span class="post-toc-text">ttf字体提取</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ttf在Android-Studio的应用"><span class="post-toc-number">2.</span> <span class="post-toc-text">ttf在Android Studio的应用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程安全和线程不安全"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程安全和线程不安全</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-ttf字体提取"
+<article id="post-Android ttf字体提取"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android关于ttf文件字体应用以及提取</h1>
+        <h1 class="post-card-title">Java常见疑点</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年02月05日 11:23" datetime="2017-02-05T03:23:00.000Z"  itemprop="datePublished">2017-02-05</time>
+            <time class="post-time" title="2017年03月22日 11:23" datetime="2017-03-22T03:23:00.000Z"  itemprop="datePublished">2017-03-22</time>
 
             
 
@@ -194,18 +182,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
-<ul>
-<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
-<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
-<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
-</ul>
-<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
-<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
-<li><p>可以开始在代码中使用，如下所示：</p>
-<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
-</li>
-</ul>
+            <h1 id="线程安全和线程不安全"><a href="#线程安全和线程不安全" class="headerlink" title="线程安全和线程不安全"></a>线程安全和线程不安全</h1><p><a href="http://blog.csdn.net/xiao__gui/article/details/8934832" target="_blank" rel="external">http://blog.csdn.net/xiao__gui/article/details/8934832</a></p>
 
         </div>
 
@@ -213,7 +190,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-07T03:28:17.672Z" itemprop="dateUpdated">2017年2月7日 11:28</time>
+    最后更新时间：<time datetime="2017-03-24T03:08:00.862Z" itemprop="dateUpdated">2017年3月24日 11:08</time>
 </span><br>
 
 
@@ -246,7 +223,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&title=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&title=《Java常见疑点》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -256,22 +233,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&title=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&title=《Java常见疑点》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java常见疑点》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -294,18 +271,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/" id="post-prev" class="post-nav-link">
+      <a href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</h4>
+        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/02/05/设计模式(developing)/" id="post-next" class="post-nav-link">
+      <a href="/2017/03/20/Android日常开发bug记录/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android中设计模式(developing)</h4>
+        <h4 class="title">Android日常开发bug记录</h4>
       </a>
     </div>
   
@@ -395,7 +372,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&title=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&title=《Java常见疑点》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -405,22 +382,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&title=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&title=《Java常见疑点》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android关于ttf文件字体应用以及提取》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java常见疑点》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/02/05/ttf字体提取/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/03/22/Android ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -431,7 +408,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aS3LjMAwFwNz/0pqqbDPiPADyVEQ2Vy5/ZLUXzwCJr694Xd/r5zPr5+/ec3fl5P2jhYGB8VrGtVzVL7uClf80yXUwMDDOYUyiMI/X9fXXj/9xzxgYGBg34ZiUickV1oGLgYGB0QvcSZH3i/43MDAwXsVIGs51Cbh+fy/cP9KLY2BgvJDxiYbzqccfPN/AwMB4CeMqrnkIzq//l09hYGBszcg3wvICLgfkrXIUxxgYGAcweiMRvaGKyQFDOcsxMDBezqhu9z/VoK5vNw9uDAyMcxi9Mm4yNpHHehTKGBgYWzMm9VXecPYC/T+ViRgYGC9hNDfi44B+9rO3PwQGBsamjF4bmeMnR5iFcMfAwNiakWzHTzbOqiXmAx05BgbGdozq9lm14KsOp2JgYGAkgZu3kT1AdbRitN2GgYGxBSO3Jk1pdcwif7X8v4GBgbE1Iy8Ee+Vj9VPRgSgGBsYBjKQpzWuw5LbyAjEaucDAwNiaUW1le6Vh3vT2xmExMDD2ZuRxlredvavlox63220YGBhbM6pjXtUms7oBVw53DAyMrRm96EwazurW/zpkm+0rBgbGFoyruCaFXd7cll/FwMDYmpGv3pFAj10tJTEwME5g5CHbu91qrdo8UsXAwDiAMRkOqzar8/b1NnAxMDCOZ/RuvVcslmtbDAwMjPi25pHaHNfAwMA4gNEbsKju5+XUfOQCAwPjBMbkYGBSIE7C+uHzDQwMjN/L+APtdr2LD7mYDQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQXLjMAwEQP3/07vX7GGVGYB0+dA6uWJGYtNVJATgeeLrz48rGdNe7/f5+ffnxoWHh4e3mPr7rZOpJEvwvnD55+jpeHh4eNd471M5O+Z9ZEv9xYKHh4f3xbz3gHg23f188PDw8L6Nl//XPkDHw8PD+zbe/tZJEjZPLiSh9uFcCx4eHl7MO7vdf+bzlfoeHh4e3rqqvinwz1b6HVPPFg8PD+8Cr02hzgLZWTA9a7rCw8PDu81rN98obRrDZmOKdAkeHh7eBV5SdsqD4HzMqaaraM54eHh4F3izLTsPgpPDYz8++g3x8PDw1rx8y2636Tojsh65OpHw8PDwRrX1tsiUB8fJU5LlzmeLh4eHd4/X3mgWEO+bq9pQGw8PD+8eb7Y1t8uRtG3lpa8i+YuHh4d3jZefIXnIOyun7fdzPDw8vNu8Tep2dgDM2qdmRw4eHh7eDV6eDmgnuknUtkfR0/4yeHh4eAte8sK/2dBnxbC8pSBKWODh4eEd5eWlpjyR2i5WG9bnRxceHh7eDV6bRJildIvwN1iCtpELDw8P7yxvFtrWzU+jRWyX5peQGg8PD+8or03Fttv0PmSfJZfx8PDwPs+bbffJ1JOFyHsf/vt0PDw8vAu8Wcjbpidm6docFr0M4OHh4R3ltQH0DNAi25aC6EjAw8PDO8q7nVqdHQkHnoKHh4d3mbd/+Z8Vq/LGgrYgh4eHh3eWtymA7UPhoi8s/vafz3h4eHgXeO3mm7QIJN/uUxibQB8PDw9vz0s29DyBu9noz94NDw8P7zavLVnlKYz8LGqD+OJgwMPDw/sCXpvGnR0A+VOK+h4eHh7ex3l5KDxj5HeODg88PDy8a7zZpNuAu037tu0OqzQuHh4eXsybvfDnDQF56rYNxJ9TFx4eHl7K+wsP9nOo20f8vQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
