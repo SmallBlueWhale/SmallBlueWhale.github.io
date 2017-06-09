@@ -148,11 +148,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Android ttf字体提取"
+            <article id="post-Android常见内存泄漏原因以及解决方法"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年06月05日 11:23" datetime="2017-06-05T03:23:00.000Z"  itemprop="datePublished">2017-06-05</time>
+        <time class="post-time" title="2017年06月09日 11:23" datetime="2017-06-09T03:23:00.000Z"  itemprop="datePublished">2017-06-09</time>
 
         
 
@@ -166,7 +166,58 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/05/Android ttf字体提取/">Android TTF格式字体提取(避免添加整个字体包)</a>
+      <a class="post-title-link" href="/2017/06/09/Android常见内存泄漏原因以及解决方法/">Android常见内存泄漏原因以及解决方法</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
+123456new Thread(new Runnable()&#123;  @Override  public void run()&#123;      &#125;&#125;).start();
+Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面
+Non-static Inner Class非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。
+
+    
+
+        <a href="/2017/06/09/Android常见内存泄漏原因以及解决方法/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Context/">Context</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handler-InnerClass/">Handler && InnerClass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memory-Leak/">Memory Leak</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Static/">Static</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android ttf字体提取"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年06月03日 11:23" datetime="2017-06-03T03:23:00.000Z"  itemprop="datePublished">2017-06-03</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/03/Android ttf字体提取/">Android TTF格式字体提取(避免添加整个字体包)</a>
     </h3>
   
 
@@ -191,7 +242,7 @@ TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAsse
 
     
 
-        <a href="/2017/06/05/Android ttf字体提取/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/03/Android ttf字体提取/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>

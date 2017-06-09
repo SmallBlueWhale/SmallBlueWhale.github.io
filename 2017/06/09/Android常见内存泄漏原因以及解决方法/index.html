@@ -13,26 +13,26 @@
     
     
     
-    <title>Android环境分离(分离测试和正式环境) | SmallBlueWhale&#39;s blog | Real Life</title>
+    <title>Android常见内存泄漏原因以及解决方法 | SmallBlueWhale&#39;s blog | Real Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="Android,gradle">
-    <meta name="description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
+    <meta name="keywords" content="Android,Context,Handler &amp;&amp; InnerClass,Memory Leak,Static">
+    <meta name="description" content="HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
+123456new Thread(new Runnable()&amp;#123;  @Override  public void run()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android环境分离(分离测试和正式环境)">
-<meta property="og:url" content="https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/index.html">
+<meta property="og:title" content="Android常见内存泄漏原因以及解决方法">
+<meta property="og:url" content="https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
-<meta property="og:updated_time" content="2017-04-13T01:45:41.809Z">
+<meta property="og:description" content="HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
+123456new Thread(new Runnable()&amp;#123;  @Override  public void run()">
+<meta property="og:updated_time" content="2017-06-09T07:35:00.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android环境分离(分离测试和正式环境)">
-<meta name="twitter:description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
+<meta name="twitter:title" content="Android常见内存泄漏原因以及解决方法">
+<meta name="twitter:description" content="HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
+123456new Thread(new Runnable()&amp;#123;  @Override  public void run()">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -116,7 +116,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android环境分离(分离测试和正式环境)</div>
+        <div class="flex-col header-title ellipsis">Android常见内存泄漏原因以及解决方法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,11 +138,11 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android环境分离(分离测试和正式环境)</h1>
+        <h1 class="title">Android常见内存泄漏原因以及解决方法</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-04-11T03:23:00.000Z" itemprop="datePublished" class="page-time">
-  2017-04-11
+                <time datetime="2017-06-09T03:23:00.000Z" itemprop="datePublished" class="page-time">
+  2017-06-09
 </time>
 
 
@@ -160,17 +160,17 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android环境分离"><span class="post-toc-number">1.</span> <span class="post-toc-text">Android环境分离</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Build-Variants"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Build Variants</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Product-flavors"><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">Product flavors</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Handler"><span class="post-toc-number">1.</span> <span class="post-toc-text">Handler</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Non-static-Inner-Class"><span class="post-toc-number">2.</span> <span class="post-toc-text">Non-static Inner Class</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android环境分离(分离测试和正式环境)"
+<article id="post-Android常见内存泄漏原因以及解决方法"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android环境分离(分离测试和正式环境)</h1>
+        <h1 class="post-card-title">Android常见内存泄漏原因以及解决方法</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年04月11日 11:23" datetime="2017-04-11T03:23:00.000Z"  itemprop="datePublished">2017-04-11</time>
+            <time class="post-time" title="2017年06月09日 11:23" datetime="2017-06-09T03:23:00.000Z"  itemprop="datePublished">2017-06-09</time>
 
             
 
@@ -185,9 +185,10 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Android环境分离"><a href="#Android环境分离" class="headerlink" title="Android环境分离"></a>Android环境分离</h1><p><strong>昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。</strong></p>
-<h3 id="Build-Variants"><a href="#Build-Variants" class="headerlink" title="Build Variants"></a>Build Variants</h3><h4 id="Product-flavors"><a href="#Product-flavors" class="headerlink" title="Product flavors"></a>Product flavors</h4><p>1.可以用视图去控制(和你在gradle中使用代码控制是一样的)</p>
-<p>首先第一种方式，用flavors去控制环境分离</p>
+            <h1 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h1><p><strong>Handler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
+<p><strong>Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面</strong></p>
+<h1 id="Non-static-Inner-Class"><a href="#Non-static-Inner-Class" class="headerlink" title="Non-static Inner Class"></a>Non-static Inner Class</h1><p><strong>非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。</strong></p>
 
         </div>
 
@@ -195,7 +196,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-13T01:45:41.809Z" itemprop="dateUpdated">2017年4月13日 9:45</time>
+    最后更新时间：<time datetime="2017-06-09T07:35:00.296Z" itemprop="dateUpdated">2017年6月9日 15:35</time>
 </span><br>
 
 
@@ -218,7 +219,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Context/">Context</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handler-InnerClass/">Handler && InnerClass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memory-Leak/">Memory Leak</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Static/">Static</a></li></ul>
 
 
             
@@ -228,7 +229,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&title=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -238,22 +239,22 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&title=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -273,21 +274,14 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/06/03/Android ttf字体提取/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android TTF格式字体提取(避免添加整个字体包)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/" id="post-next" class="post-nav-link">
+      <a href="/2017/06/03/Android ttf字体提取/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h4>
+        <h4 class="title">Android TTF格式字体提取(避免添加整个字体包)</h4>
       </a>
     </div>
   
@@ -377,7 +371,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&title=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -387,22 +381,22 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&title=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android常见内存泄漏原因以及解决方法》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -413,7 +407,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADHElEQVR42u3aQW6DQAwF0Nz/0um2UkX0bUMFzmNVtRPgTRauv+f1iq/3n6u65uivyfr8Nydf2NjY2A9hvz9eySM/f/b3+qOnH605962wsbGxd7PzF6q+aP6svLDlG3f4e2xsbOwvZuf/1U+KUI+KjY2Njd1rEvJXTFZW2xtsbGxs7DxUyluIZGUyNqg2PJdkadjY2Ni3Z+dT0fv/fMl8GxsbG/vG7Hfx6gVPk2Ht5G0Pn4uNjY29iJ0XgNEDDjaoOn7offZwK7GxsbEXsauRfS/WqQZSva1pBknY2NjYD2fnwU1yuzysT9qPfINGRQsbGxv7sew8BsrXVMP6Cb5X2LCxsbE3sasPrt46OXZTbYGSwhZtDTY2NvYidm8oOw/3J6OFXoHExsbG3sdODuJMmpPquHdyFRoYbGxs7EXsXgGbBPf5puTblIyHsbGxsb+H3Ssb1WM3VUBSaOcHNLGxsbF3sOdBTx7Nf75zXrryQS82Njb2bnZ1KJs3Enl0lYdTpw2MsbGxsR/OThblsVFSZnoBUI99eB9sbGzsRew8yplENpOIvzd4KARJ2NjY2A9nX8ebNB6TZiZqY7CxsbEXsXuHb/J2pXroJ29mqk3L6JvHxsbGvj17cuCmtyYfM/eak6gQYmNjY69g583GfCg7GQMkW1AonNjY2NhfwE4KUl6EJqPi6kGi5FPY2NjYm9i9MlaNivKgfzJmzoscNjY29iZ23h7kL907WNl7SvnAJTY2NvY6dn6OpXdVg/5q7Y2mH7kIGxsb++HsqwOgXgxUHTmMvmFsbGzsx7Lz0H/SHiSw6jv0GidsbGzsrex8mFoeqRZL5tV3xsbGxt7NziOeSUnL2fkQuvp1YmNjY+9gv4vXvIGZRFHVZqYwEsDGxsZ+LPuKtqEXS+Wx0WTkUN4CbGxs7Iewk6J14ZHHQfGrNi3Y2NjYu9mTwpAXv//ZsigIw8bGxv5iduHWg+bkrIKKjY2NjV2N489tJ5K7NeMwbGxs7HXspGDkI9W8/ZisrLZJ2NjY2FvZ1bYhOaYzL37JhubNz2i+jY2NjX1f9g8O7l3JRFRV2QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMklEQVR42u3awY7iQAwEUP7/p9nL3mY3VNkgTZqXU6Qh0K+Rxrjcj0d8PX9cP//avv7nX5NX/u96fOLCxsbGvgk7ebsWcP3UNfL6Ha6fKrYGGxsb+zj29bKutyDhXS8uRyZrS7YYGxsb+5vZbXFKClVbtPLPwsbGxsbOf+7Poqi8kXhXwcPGxsY+lZ18QFLA8oYkHxW0T705S8PGxsb+9ex8Kvr77z8y38bGxsb+xexneeUfk7cus+HB5sLGxsY+id0y2qA/2YjZAGD2NWBjY2Ofzc7j+2v2bHjwrq0pgiRsbGzsg9izOP5drUJ+ACjfoGTMjI2NjX0G+73BTQJo24xZoS0O62BjY2N/ATupgUnklI8Eiqobbw02Njb22ez2B33SGLSxVNuE5JHTfwsYNjY29nHsfHzbjntbfL6qnB1NtrGxsbFvzv5cQzJb9CcOA/29x8bGxj6OvQn9kzgpLzB5qzMb/UYfiY2NjX0rdlt42p/+s2KWL322cmxsbOyT2Hm4MxvZ5u+QwGZfzD/eARsbG/s49iysnx21yQcP7ei3CKqwsbGxD2In4c5m9NsGRrOxcbL+R14hsbGxsW/F3jQVmyOV+0JYH9PBxsbG/gJ2flBmFjC1pa4th0mc9CJLw8bGxr4hOy8h+/g+39DZyKEdPGBjY2Ofwc7/0edNxazUJa1FPn54sUHY2NjYx7H3ZSkpJJsDQG25enGPjY2NfRB7E9a/LdYpx8x5y9SOKLCxsbHvy94MWfOmYhb9t99e8RQ2Njb20ezhhGEdM30OiY2NjX02e7agNvTPW5d2VLyJxrCxsbHPYOeNRNta5Adx2hK1OUKEjY2NfSp7H+jPytgwEhqVruK8EjY2NvYN2W3AlEf57bP7MlYc0MHGxsa+OftZXvstm5XA9nhQMQ/BxsbGvjm7HdDmi2uDp327km8xNjY29nnsfBA7C3qeo6sdIbyIkNosDRsbG/uG7PwQz6zUzUKrx+J6UQ6xsbGxv5idDwM2DUkeJyX32NjY2NhtALTZmrbJmZVVbGxs7PPY+3CnbUj2r5wVWmxsbOzz2DmjHQDnTcVswLw/ToSNjY19c/Yf729KFWQt+isAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

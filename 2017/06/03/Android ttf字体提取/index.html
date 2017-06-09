@@ -13,26 +13,35 @@
     
     
     
-    <title>Android环境分离(分离测试和正式环境) | SmallBlueWhale&#39;s blog | Real Life</title>
+    <title>Android TTF格式字体提取(避免添加整个字体包) | SmallBlueWhale&#39;s blog | Real Life</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#99CCFF">
     
     
-    <meta name="keywords" content="Android,gradle">
-    <meta name="description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
+    <meta name="keywords" content="Android,TTF,font">
+    <meta name="description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
+
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android环境分离(分离测试和正式环境)">
-<meta property="og:url" content="https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/index.html">
+<meta property="og:title" content="Android TTF格式字体提取(避免添加整个字体包)">
+<meta property="og:url" content="https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
-<meta property="og:updated_time" content="2017-04-13T01:45:41.809Z">
+<meta property="og:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
+
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
+<meta property="og:updated_time" content="2017-06-09T07:34:51.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android环境分离(分离测试和正式环境)">
-<meta name="twitter:description" content="Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
-Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控">
+<meta name="twitter:title" content="Android TTF格式字体提取(避免添加整个字体包)">
+<meta name="twitter:description" content="ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
+
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_e">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -116,7 +125,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android环境分离(分离测试和正式环境)</div>
+        <div class="flex-col header-title ellipsis">Android TTF格式字体提取(避免添加整个字体包)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,11 +147,11 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android环境分离(分离测试和正式环境)</h1>
+        <h1 class="title">Android TTF格式字体提取(避免添加整个字体包)</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-04-11T03:23:00.000Z" itemprop="datePublished" class="page-time">
-  2017-04-11
+                <time datetime="2017-06-03T03:23:00.000Z" itemprop="datePublished" class="page-time">
+  2017-06-03
 </time>
 
 
@@ -160,17 +169,17 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android环境分离"><span class="post-toc-number">1.</span> <span class="post-toc-text">Android环境分离</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Build-Variants"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Build Variants</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Product-flavors"><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">Product flavors</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ttf字体提取"><span class="post-toc-number">1.</span> <span class="post-toc-text">ttf字体提取</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ttf在Android-Studio的应用"><span class="post-toc-number">2.</span> <span class="post-toc-text">ttf在Android Studio的应用</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android环境分离(分离测试和正式环境)"
+<article id="post-Android ttf字体提取"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android环境分离(分离测试和正式环境)</h1>
+        <h1 class="post-card-title">Android TTF格式字体提取(避免添加整个字体包)</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年04月11日 11:23" datetime="2017-04-11T03:23:00.000Z"  itemprop="datePublished">2017-04-11</time>
+            <time class="post-time" title="2017年06月03日 11:23" datetime="2017-06-03T03:23:00.000Z"  itemprop="datePublished">2017-06-03</time>
 
             
 
@@ -185,9 +194,18 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Android环境分离"><a href="#Android环境分离" class="headerlink" title="Android环境分离"></a>Android环境分离</h1><p><strong>昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。</strong></p>
-<h3 id="Build-Variants"><a href="#Build-Variants" class="headerlink" title="Build Variants"></a>Build Variants</h3><h4 id="Product-flavors"><a href="#Product-flavors" class="headerlink" title="Product flavors"></a>Product flavors</h4><p>1.可以用视图去控制(和你在gradle中使用代码控制是一样的)</p>
-<p>首先第一种方式，用flavors去控制环境分离</p>
+            <h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
+<ul>
+<li>首先，安装sfnttool字体提取工具并集成java环境(废话)</li>
+<li>命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  </li>
+<li>字符文件就被提取到同目录下的test_exact.ttf中</li>
+</ul>
+<h1 id="ttf在Android-Studio的应用"><a href="#ttf在Android-Studio的应用" class="headerlink" title="ttf在Android Studio的应用"></a>ttf在Android Studio的应用</h1><ul>
+<li>Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。</li>
+<li><p>可以开始在代码中使用，如下所示：</p>
+<p><strong>TextView tv = getTextView();<br>Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);<br>tv.setTypeface(tupeface);</strong></p>
+</li>
+</ul>
 
         </div>
 
@@ -195,7 +213,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-13T01:45:41.809Z" itemprop="dateUpdated">2017年4月13日 9:45</time>
+    最后更新时间：<time datetime="2017-06-09T07:34:51.421Z" itemprop="dateUpdated">2017年6月9日 15:34</time>
 </span><br>
 
 
@@ -218,7 +236,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TTF/">TTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/font/">font</a></li></ul>
 
 
             
@@ -228,7 +246,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&title=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -238,22 +256,22 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&title=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -276,18 +294,18 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/03/Android ttf字体提取/" id="post-prev" class="post-nav-link">
+      <a href="/2017/06/09/Android常见内存泄漏原因以及解决方法/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android TTF格式字体提取(避免添加整个字体包)</h4>
+        <h4 class="title">Android常见内存泄漏原因以及解决方法</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/" id="post-next" class="post-nav-link">
+      <a href="/2017/04/11/Android环境分离(分离测试和正式环境)/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)</h4>
+        <h4 class="title">Android环境分离(分离测试和正式环境)</h4>
       </a>
     </div>
   
@@ -377,7 +395,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&title=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -387,22 +405,22 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&title=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&title=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android环境分离(分离测试和正式环境)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android TTF格式字体提取(避免添加整个字体包)》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/&via=https://smallbluewhale.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/04/11/Android环境分离(分离测试和正式环境)/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -413,7 +431,7 @@ Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADHElEQVR42u3aQW6DQAwF0Nz/0um2UkX0bUMFzmNVtRPgTRauv+f1iq/3n6u65uivyfr8Nydf2NjY2A9hvz9eySM/f/b3+qOnH605962wsbGxd7PzF6q+aP6svLDlG3f4e2xsbOwvZuf/1U+KUI+KjY2Njd1rEvJXTFZW2xtsbGxs7DxUyluIZGUyNqg2PJdkadjY2Ni3Z+dT0fv/fMl8GxsbG/vG7Hfx6gVPk2Ht5G0Pn4uNjY29iJ0XgNEDDjaoOn7offZwK7GxsbEXsauRfS/WqQZSva1pBknY2NjYD2fnwU1yuzysT9qPfINGRQsbGxv7sew8BsrXVMP6Cb5X2LCxsbE3sasPrt46OXZTbYGSwhZtDTY2NvYidm8oOw/3J6OFXoHExsbG3sdODuJMmpPquHdyFRoYbGxs7EXsXgGbBPf5puTblIyHsbGxsb+H3Ssb1WM3VUBSaOcHNLGxsbF3sOdBTx7Nf75zXrryQS82Njb2bnZ1KJs3Enl0lYdTpw2MsbGxsR/OThblsVFSZnoBUI99eB9sbGzsRew8yplENpOIvzd4KARJ2NjY2A9nX8ebNB6TZiZqY7CxsbEXsXuHb/J2pXroJ29mqk3L6JvHxsbGvj17cuCmtyYfM/eak6gQYmNjY69g583GfCg7GQMkW1AonNjY2NhfwE4KUl6EJqPi6kGi5FPY2NjYm9i9MlaNivKgfzJmzoscNjY29iZ23h7kL907WNl7SvnAJTY2NvY6dn6OpXdVg/5q7Y2mH7kIGxsb++HsqwOgXgxUHTmMvmFsbGzsx7Lz0H/SHiSw6jv0GidsbGzsrex8mFoeqRZL5tV3xsbGxt7NziOeSUnL2fkQuvp1YmNjY+9gv4vXvIGZRFHVZqYwEsDGxsZ+LPuKtqEXS+Wx0WTkUN4CbGxs7Iewk6J14ZHHQfGrNi3Y2NjYu9mTwpAXv//ZsigIw8bGxv5iduHWg+bkrIKKjY2NjV2N489tJ5K7NeMwbGxs7HXspGDkI9W8/ZisrLZJ2NjY2FvZ1bYhOaYzL37JhubNz2i+jY2NjX1f9g8O7l3JRFRV2QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQW7jMBAEQP//01lgz7HcPSMqCVA8GZYssXgg6R6+XnH7+t+Sb65b8uS8D7c1PDw8vFHXrzs0u6d9Yz6gxSDi4eHhHeNdT8RJV96Bk3tmv4oWDzw8PLwf5eUTdHs16QkeHh7e3+XlkcE1po0b8PDw8H4bL5nEkyk7jxKSqX8TjuDh4eGd4+2n++c/H6zv4eHh4S2q6vkikRwO2CwtX6OGh4eHd4I3KzK1B6Ge2RYX/xjw8PDwFrw8RNhEA/kz2/d+KI/h4eHhHePlRf22fNUePsivRj3Hw8PDO8DbZ6HXm+a7jgXkS0Id+OLh4eGtefkCkGyC9+FFvtHfBTJ4eHh4Ke+uY1X70CHpdBtJ4OHh4Z3g5V2ZbanbgGMWeQyrfHh4eHgj3qxDeWi7CSDa6v83V/Hw8PAO8GZnkzbb3DYjmUUbb/834OHh4a15dwUNyaS/DzvqJQcPDw/vAC8vO7WVtM1wtAtPtOTg4eHh3cpLSLNpvS5TxQcF8lgEDw8P715eXuJKYMWx0XgL3g7uNwUwPDw8vGO8WTl/FiK0G/Q2SsbDw8M7x8vL+fmmti7t3xRnRAsSHh4e3prXHiFt8dctBw+HDw8PD+8RXvLKTUDQfp+Uxz7k03h4eHi38vJpN/nDP7tzVh5L3o6Hh4d3gpe/Ji93JRFwux0fLlp4eHh4j/Dy0lcbrW4ODbRgPDw8vHO86+7OtsLtUYME+bqr4eHh4a1595as2nLarLhVPBMPDw/vAO/ejW+Oz3+bDAQeHh7e87z8xXVtLR6yzRGED0/Gw8PDO8ZLFoPN4pEPUz4E0ZDh4eHh/Sgvn47zriexb7tNx8PDw/ttvHZCn31uS3Fv78fDw8M7xsvDiFnpK/k+X0KKRQgPDw/vAG9TAFs9NMDMBuu16QQeHh7eFe8flGzkKX1XDV8AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

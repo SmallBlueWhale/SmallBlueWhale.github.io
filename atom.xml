@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smallbluewhale.github.io/"/>
-  <updated>2017-06-09T03:25:10.065Z</updated>
+  <updated>2017-06-09T07:35:00.296Z</updated>
   <id>https://smallbluewhale.github.io/</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android常见内存泄漏原因以及解决方法</title>
+    <link href="https://smallbluewhale.github.io/2017/06/09/Android%E5%B8%B8%E8%A7%81%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%8E%9F%E5%9B%A0%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://smallbluewhale.github.io/2017/06/09/Android常见内存泄漏原因以及解决方法/</id>
+    <published>2017-06-09T03:23:00.000Z</published>
+    <updated>2017-06-09T07:35:00.296Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h1><p><strong>Handler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
+<p><strong>Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面</strong></p>
+<h1 id="Non-static-Inner-Class"><a href="#Non-static-Inner-Class" class="headerlink" title="Non-static Inner Class"></a>Non-static Inner Class</h1><p><strong>非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Handler&quot;&gt;&lt;a href=&quot;#Handler&quot; class=&quot;headerlink&quot; title=&quot;Handler&quot;&gt;&lt;/a&gt;Handler&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Handler出现内存泄漏的原因，handler内部持有了一个context对象，同
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
+    
+      <category term="Context" scheme="https://smallbluewhale.github.io/tags/Context/"/>
+    
+      <category term="Handler &amp;&amp; InnerClass" scheme="https://smallbluewhale.github.io/tags/Handler-InnerClass/"/>
+    
+      <category term="Memory Leak" scheme="https://smallbluewhale.github.io/tags/Memory-Leak/"/>
+    
+      <category term="Static" scheme="https://smallbluewhale.github.io/tags/Static/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android TTF格式字体提取(避免添加整个字体包)</title>
-    <link href="https://smallbluewhale.github.io/2017/06/05/Android%20ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
-    <id>https://smallbluewhale.github.io/2017/06/05/Android ttf字体提取/</id>
-    <published>2017-06-05T03:23:00.000Z</published>
-    <updated>2017-06-09T03:25:10.065Z</updated>
+    <link href="https://smallbluewhale.github.io/2017/06/03/Android%20ttf%E5%AD%97%E4%BD%93%E6%8F%90%E5%8F%96/"/>
+    <id>https://smallbluewhale.github.io/2017/06/03/Android ttf字体提取/</id>
+    <published>2017-06-03T03:23:00.000Z</published>
+    <updated>2017-06-09T07:34:51.421Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ttf字体提取"><a href="#ttf字体提取" class="headerlink" title="ttf字体提取"></a>ttf字体提取</h1><p><strong>Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？</strong></p>
 <ul>
