@@ -180,6 +180,7 @@
 123456new Thread(new Runnable()&#123;  @Override  public void run()&#123;      &#125;&#125;).start();
 Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面
 Non-static Inner Class非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。
+ 内存泄漏之Handler &amp; InnerClass
 
     
 

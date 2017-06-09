@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="SmallBlueWhale's blog">
 <meta property="og:description" content="HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
 123456new Thread(new Runnable()&amp;#123;  @Override  public void run()">
-<meta property="og:updated_time" content="2017-06-09T07:35:00.296Z">
+<meta property="og:updated_time" content="2017-06-09T07:37:25.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android常见内存泄漏原因以及解决方法">
 <meta name="twitter:description" content="HandlerHandler出现内存泄漏的原因，handler内部持有了一个context对象，同时如果这个对象因为handler消息未发送完成导致context对象一直无法被销毁，出现内存泄漏，同时如果我们新开一个线程去发送消息的话，也会因此出现内存泄漏。如下：
@@ -189,6 +189,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">&#125;).start();</div></pre></td></tr></table></figure>
 <p><strong>Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面</strong></p>
 <h1 id="Non-static-Inner-Class"><a href="#Non-static-Inner-Class" class="headerlink" title="Non-static Inner Class"></a>Non-static Inner Class</h1><p><strong>非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。</strong></p>
+<p><a href="http://www.androiddesignpatterns.com/2013/01/inner-class-handler-memory-leak.html" target="_blank" rel="external"> 内存泄漏之Handler &amp; InnerClass</a></p>
 
         </div>
 
@@ -196,7 +197,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-06-09T07:35:00.296Z" itemprop="dateUpdated">2017年6月9日 15:35</time>
+    最后更新时间：<time datetime="2017-06-09T07:37:25.456Z" itemprop="dateUpdated">2017年6月9日 15:37</time>
 </span><br>
 
 
