@@ -46,7 +46,7 @@ The geometry of a view is that of a rectangle. A view has a location, expressed 
 <meta property="og:image" content="https://smallbluewhale.github.io/img/008_左右上下冲突.png">
 <meta property="og:image" content="https://smallbluewhale.github.io/img/008_同向冲突.png">
 <meta property="og:image" content="https://smallbluewhale.github.io/img/008_复杂冲突.png">
-<meta property="og:updated_time" content="2017-03-10T06:26:33.094Z">
+<meta property="og:updated_time" content="2017-04-24T03:30:33.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习总结">
 <meta name="twitter:description" content="自定义View学习中的一些难点记录
@@ -230,43 +230,30 @@ bottom = top + height;
 <li><a href="&quot;http://gold.xitu.io/entry/576a264f80dda4005fb17639&quot;">关于getscrollX以及ScrollX的理解和梳理</a> </li>
 </ul>
 </li>
-<li><p>关于自定义view中onMeasure方法的模板  </p>
-<pre><code>private Bitmap mBitmap;
- private void init() {
-  mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);
-  }
-
-  @Override
-  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-  // 获取宽度测量规格中的mode和size
-  int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-  int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-  int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-  int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-  // 声明一个临时变量来存储计算出的测量值
-  int  heightResult = 0;
-  int widthResult = 0;
-
-   /*
-</code></pre><ul>
-<li><p>如果父容器心里有数<br>*/<br> if (widthMode == MeasureSpec.EXACTLY) {</p>
-<pre><code>// 那么子view就用父容器给定尺寸
-widthResult = widthSize;
-</code></pre><p> }<br> /*</p>
+<li><p>关于自定义view中onMeasure方法的模板<br>​                 private Bitmap mBitmap;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">private void init() &#123;</div><div class="line">    mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) &#123;</div><div class="line">    // 获取宽度测量规格中的mode和size</div><div class="line">    int widthMode = MeasureSpec.getMode(widthMeasureSpec);</div><div class="line">    int widthSize = MeasureSpec.getSize(widthMeasureSpec);</div><div class="line">    int heightMode = MeasureSpec.getMode(heightMeasureSpec);</div><div class="line">    int heightSize = MeasureSpec.getSize(heightMeasureSpec);</div><div class="line">    // 声明一个临时变量来存储计算出的测量值</div><div class="line">    int  heightResult = 0;</div><div class="line">    int widthResult = 0;</div><div class="line">  </div><div class="line">     /*</div></pre></td></tr></table></figure>
 <ul>
-<li><p>如果父容器不确定自身大小<br><em>/<br>else{<br> // 那么子view可要自己看看自己需要多大了<br> widthResult = mBitmap.getWidth()+getPaddingLeft()+getPaddingRight();<br> /</em></p>
-<pre><code>* 如果爹给儿子的是一个限制值
-</code></pre><p>  */<br> if (widthMode == MeasureSpec.AT_MOST) {</p>
-<pre><code>// 那么儿子自己的需求就要跟爹的限制比比看谁小要谁
-widthResult = Math.min(widthSize, widthResult);
-</code></pre><p> }<br>}</p>
-<p>if (heightMode == MeasureSpec.EXACTLY) {<br> heightResult = widthSize;<br>}else{<br> //考虑padding<br> heightResult = mBitmap.getHeight()+getPaddingBottom()+getPaddingTop();<br> if (heightMode == MeasureSpec.AT_MOST) {</p>
-<pre><code>heightResult = Math.min(widthSize, heightResult);
-</code></pre><p> }<br>}<br>// 设置测量尺寸<br>setMeasuredDimension(widthResult, heightResult);<br>}</p>
-</li>
+<li><p>如果父容器心里有数<br>*/<br> if (widthMode == MeasureSpec.EXACTLY) {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 那么子view就用父容器给定尺寸</div><div class="line">widthResult = widthSize;</div></pre></td></tr></table></figure>
+<p> }<br> /*</p>
+<ul>
+<li>如果父容器不确定自身大小<br><em>/<br>else{<br> // 那么子view可要自己看看自己需要多大了<br> widthResult = mBitmap.getWidth()+getPaddingLeft()+getPaddingRight();<br> /</em><ul>
+<li>如果爹给儿子的是一个限制值</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*/</div></pre></td></tr></table></figure>
+<p>   if (widthMode == MeasureSpec.AT_MOST) {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 那么儿子自己的需求就要跟爹的限制比比看谁小要谁</div><div class="line">widthResult = Math.min(widthSize, widthResult);</div></pre></td></tr></table></figure>
+<p>   }<br>}</p>
+<p> if (heightMode == MeasureSpec.EXACTLY) {</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">heightResult = widthSize;</div></pre></td></tr></table></figure>
+<p>   }else{</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//考虑padding</div><div class="line">heightResult = mBitmap.getHeight()+getPaddingBottom()+getPaddingTop();</div><div class="line">if (heightMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">    heightResult = Math.min(widthSize, heightResult);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   }<br>   // 设置测量尺寸<br>   setMeasuredDimension(widthResult, heightResult);</p>
+<p>}</p>
 </li>
 <li><p>关于自定义View滑动冲突的拦截以及模板总结、</p>
 </li>
@@ -1062,7 +1049,7 @@ animator.start();
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-10T06:26:33.094Z" itemprop="dateUpdated">2017年3月10日 14:26</time>
+    最后更新时间：<time datetime="2017-04-24T03:30:33.539Z" itemprop="dateUpdated">2017年4月24日 11:30</time>
 </span><br>
 
 
@@ -1150,6 +1137,13 @@ animator.start();
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/12/Android部分知识的原理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android部分知识的原理</h4>
+      </a>
+    </div>
   
 </nav>
 

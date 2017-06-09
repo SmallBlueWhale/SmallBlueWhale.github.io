@@ -148,6 +148,115 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Android ttf字体提取"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年06月05日 11:23" datetime="2017-06-05T03:23:00.000Z"  itemprop="datePublished">2017-06-05</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/05/Android ttf字体提取/">Android TTF格式字体提取(避免添加整个字体包)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        ttf字体提取Android或则其它地方需要用到一些特殊字体，然后字体库都是几兆的大小，全部导入会导致包的大小激增，如何解决这个问题？
+
+首先，安装sfnttool字体提取工具并集成java环境(废话)
+命令行到sfnttool目录下，输入java -jar sfnttool.jar  -s ‘字符提取’ test.ttf test_exact.ttf  
+字符文件就被提取到同目录下的test_exact.ttf中
+
+ttf在Android Studio的应用
+Android studio project的assets目录下有一个fonts目录,没有的话就新建一个fonts目录并且将ttf文件导入到fonts目录下。
+可以开始在代码中使用，如下所示：
+TextView tv = getTextView();Typeface typeface = Typeface.createFromAsset(getAssets(),”fonts/bluewhale.ttf”);tv.setTypeface(tupeface);
+
+
+
+    
+
+        <a href="/2017/06/05/Android ttf字体提取/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TTF/">TTF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/font/">font</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android环境分离(分离测试和正式环境)"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年04月11日 11:23" datetime="2017-04-11T03:23:00.000Z"  itemprop="datePublished">2017-04-11</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/04/11/Android环境分离(分离测试和正式环境)/">Android环境分离(分离测试和正式环境)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Android环境分离昨天项目写了个bug,这里原因其实是测试环境以及正式环境总是变换导致各种第三方id以及url在测试中忘记改回来，然后我觉得人总是没有机器智能的，因此代码的控制对我们程序员还是很有必要的，在这里记录一下Android的环境分离，下一次就不会因为忘记改回来出现bug了。
+Build VariantsProduct flavors1.可以用视图去控制(和你在gradle中使用代码控制是一样的)
+首先第一种方式，用flavors去控制环境分离
+
+    
+
+        <a href="/2017/04/11/Android环境分离(分离测试和正式环境)/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -178,8 +287,7 @@
     
         Rxjava生命周期管理对于这个大量运用mvp,rxjava的项目，我们很容易出现内存泄漏的问题，因此需要一个统一管理rxjava生命周期的类。命名为rxmanager。
 这里我们可以使用compositeSubscription这个类的unsubscribe方法来管理生命周期。
-RxManager
-12345678910111213141516171819202122232425262728293031323334353637383940414243package com.hyx.whale.whalenote.base;import java.util.HashMap;import java.util.Map;import rx.Observable;import rx.Subscription;import rx.android.schedulers.AndroidSchedulers;import rx.functions.Action;import rx.functions.Action1;import rx.subscriptions.CompositeSubscription;/** * funtion :用于管理单个presenter的rxbus事件和rxjava相关代码的生命周期处理。 * author  :smallbluewhale. * date    :2017/4/5 0005. * version :1.0. */public class RxManager &#123;    public RxBus mRxbus = RxBus.getInstance();    /*    * 管理Observable和Subscribe订阅    * 取消以及注册订阅    * */    private CompositeSubscription compositeSubscription = new CompositeSubscription();    /*    * 单纯的obserables和subscribers管理    * */    public void add(Subscription subscription)&#123;        /*订阅管理*/        compositeSubscription.a...
+RxManager12345678910111213141516171819202122232425262728293031323334353637383940414243package com.hyx.whale.whalenote.base;import java.util.HashMap;import java.util.Map;import rx.Observable;import rx.Subscription;import rx.android.schedulers.AndroidSchedulers;import rx.functions.Action;import rx.functions.Action1;import rx.subscriptions.CompositeSubscription;/** * funtion :用于管理单个presenter的rxbus事件和rxjava相关代码的生命周期处理。 * author  :smallbluewhale. * date    :2017/4/5 0005. * version :1.0. */public class RxManager &#123;    public RxBus mRxbus = RxBus.getInstance();    /*    * 管理Observable和Subscribe订阅    * 取消以及注册订阅    * */    private CompositeSubscription compositeSubscription = new CompositeSubscription();    /*    * 单纯的obserables和subscribers管理    * */    public void add(Subscription subscription)&#123;        /*订阅管理*/        compositeSubscription.ad...
     
 
         <a href="/2017/04/01/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(二)/" class="post-more waves-effect waves-button">
@@ -190,54 +298,6 @@ RxManager
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Glide/">Glide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/">Gradle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Android ttf字体提取"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017年03月22日 11:23" datetime="2017-03-22T03:23:00.000Z"  itemprop="datePublished">2017-03-22</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/03/22/Android ttf字体提取/">Java常见疑点</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        线程安全和线程不安全http://blog.csdn.net/xiao__gui/article/details/8934832
-
-    
-
-        <a href="/2017/03/22/Android ttf字体提取/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sfnttool/">Sfnttool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ttf/">ttf</a></li></ul>
 
     </div>
     
@@ -294,6 +354,58 @@ return context;
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug/">bug</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Rxjava学习记录"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年03月20日 11:23" datetime="2017-03-20T03:23:00.000Z"  itemprop="datePublished">2017-03-20</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/03/20/Rxjava学习记录/">Rxjava学习记录</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Rxjava学习记录map操作符和flatmap操作符其实都是转化用的，区别是
+
+map是一个一对一转化.       例：提取一个文件夹下的一张图片，就只要把file转化成bitmap.
+flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，这个时候如果不能用flatmap,所以我们用flatmap将file转化成List.
+
+
+    
+
+        <a href="/2017/03/20/Rxjava学习记录/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
 
     </div>
     
@@ -467,6 +579,69 @@ In addition, several convenience methods are offered to avoid unnecessary comput
     
 
         <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android部分知识的原理"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android部分知识的原理</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        并发进程通信文件传输  
+
+writeObject的方式  
+
+bundle  
+SharePreference  
+
+SharePreference的进程访问不可靠                             
+本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
+
+
+
+Messenger  
+SharePreference  
+To do(后续补充)
+    
+
+        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
