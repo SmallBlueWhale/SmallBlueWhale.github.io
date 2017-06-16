@@ -148,6 +148,66 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) "
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年06月20日 11:23" datetime="2017-06-20T03:23:00.000Z"  itemprop="datePublished">2017-06-20</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        封装一个网络框架(Rxjava + Retrofit 2 +  )
+项目分包：为了让项目更加清晰
+api：负责网络服务，例如定义网络接口，以及固定常量。
+app：项目单独的application
+bean：负责实体类的定义
+db：负责view和接口层
+ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。
+util：负责项目一些公有的项目大部分功能。
+widget：项目中的自定义控件
+部分参考自：
+RxJava+Retrofit+OkHttp封装
+Android RxJava之网络处理专栏
+# 
+
+    
+
+        <a href="/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Glide/">Glide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/">Gradle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Android常见内存泄漏原因以及解决方法"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -466,7 +526,7 @@ flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) "
+            <article id="post-Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)  - 副本"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -484,7 +544,7 @@ flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
+      <a class="post-title-link" href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)  - 副本/">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
     </h3>
   
 
@@ -509,7 +569,7 @@ Freeline*(project中的gradle):
 1apply...
     
 
-        <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /" class="post-more waves-effect waves-button">
+        <a href="/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)  - 副本/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -590,62 +650,6 @@ Freeline*(project中的gradle):
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android学习总结"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android学习总结/">Android学习总结</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        自定义View学习中的一些难点记录
-what is the different about getLeft(),getX()？  
-
-Position  
-
-这个部分可以参照这个地方去理解 
-
-The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top coordinates, and two dimensions, expressed as a width and a height. The unit for location and dimensions is the pixel.
-It is possible to retrieve the location of a view by invoking the methods getLeft() and getTop(). The former returns the left, or X, coordinate of the rectangle representing the view. The latter returns the top, or Y, coordinate of the rectangle representing the view. These methods both return the location of the view relative to its parent. For instance, when getLeft() returns 20, that means the view is located 20 pixels to the right of the left edge of its direct parent.
-In addition, several convenience methods are offered to avoid unnecessary computations, namely getRight() and getBottom(). These methods return the coordinates of the right and bottom edges of the ...
-    
-
-        <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-Android部分知识的原理"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -711,6 +715,12 @@ To do(后续补充)
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 

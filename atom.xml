@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smallbluewhale.github.io/"/>
-  <updated>2017-06-09T07:37:25.456Z</updated>
+  <updated>2017-06-09T08:23:03.602Z</updated>
   <id>https://smallbluewhale.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</title>
+    <link href="https://smallbluewhale.github.io/2017/06/20/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%89)%20/"/>
+    <id>https://smallbluewhale.github.io/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /</id>
+    <published>2017-06-20T03:23:00.000Z</published>
+    <updated>2017-06-09T08:23:03.602Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="封装一个网络框架-Rxjava-Retrofit-2"><a href="#封装一个网络框架-Rxjava-Retrofit-2" class="headerlink" title="封装一个网络框架(Rxjava + Retrofit 2 +  )"></a>封装一个网络框架(Rxjava + Retrofit 2 +  )</h2><p><img src="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg" alt="img"></p>
+<h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
+<p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
+<p>app：项目单独的application</p>
+<p>bean：负责实体类的定义</p>
+<p>db：负责view和接口层</p>
+<p>ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。</p>
+<p>util：负责项目一些公有的项目大部分功能。</p>
+<p>widget：项目中的自定义控件</p>
+<p>部分参考自：</p>
+<p><a href="https://yuanjunli.github.io/2016/11/26/rxjava+retrofit+OkHttp%E5%B0%81%E8%A3%85/" target="_blank" rel="external">RxJava+Retrofit+OkHttp封装</a></p>
+<p><a href="http://blog.csdn.net/column/details/13297.html" target="_blank" rel="external">Android RxJava之网络处理专栏</a></p>
+<p># </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;封装一个网络框架-Rxjava-Retrofit-2&quot;&gt;&lt;a href=&quot;#封装一个网络框架-Rxjava-Retrofit-2&quot; class=&quot;headerlink&quot; title=&quot;封装一个网络框架(Rxjava + Retrofit 2 +  )&quot;&gt;&lt;/a&gt;封
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
+    
+      <category term="MVP" scheme="https://smallbluewhale.github.io/tags/MVP/"/>
+    
+      <category term="Retrofit" scheme="https://smallbluewhale.github.io/tags/Retrofit/"/>
+    
+      <category term="Rxjava" scheme="https://smallbluewhale.github.io/tags/Rxjava/"/>
+    
+      <category term="Material Design" scheme="https://smallbluewhale.github.io/tags/Material-Design/"/>
+    
+      <category term="Glide" scheme="https://smallbluewhale.github.io/tags/Glide/"/>
+    
+      <category term="Gradle" scheme="https://smallbluewhale.github.io/tags/Gradle/"/>
+    
+  </entry>
   
   <entry>
     <title>Android常见内存泄漏原因以及解决方法</title>
@@ -208,8 +253,8 @@
   
   <entry>
     <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</title>
-    <link href="https://smallbluewhale.github.io/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)%20/"/>
-    <id>https://smallbluewhale.github.io/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一) /</id>
+    <link href="https://smallbluewhale.github.io/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)%20%20-%20%E5%89%AF%E6%9C%AC/"/>
+    <id>https://smallbluewhale.github.io/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)  - 副本/</id>
     <published>2017-03-08T03:23:00.000Z</published>
     <updated>2017-04-12T02:20:43.280Z</updated>
     
@@ -318,6 +363,44 @@
       <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
     
       <category term="设计模式" scheme="https://smallbluewhale.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android部分知识的原理</title>
+    <link href="https://smallbluewhale.github.io/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>https://smallbluewhale.github.io/2016/12/12/Android部分知识的原理/</id>
+    <published>2016-12-11T17:23:00.000Z</published>
+    <updated>2017-02-07T03:28:34.287Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
+<ul>
+<li>writeObject的方式  </li>
+</ul>
+<p><strong>bundle</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<ul>
+<li>SharePreference的进程访问不可靠                             <ul>
+<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
+</ul>
+</li>
+</ul>
+<p><strong>Messenger</strong>  </p>
+<p><strong>SharePreference</strong>  </p>
+<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;writeObject的方式  &lt;
+    
+    </summary>
+    
+      <category term="tips" scheme="https://smallbluewhale.github.io/categories/tips/"/>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
     
   </entry>
   
@@ -1168,44 +1251,6 @@ animator.start();
 &lt;li&gt;what
     
     </summary>
-    
-    
-      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android部分知识的原理</title>
-    <link href="https://smallbluewhale.github.io/2016/12/12/Android%E9%83%A8%E5%88%86%E7%9F%A5%E8%AF%86%E7%9A%84%E5%8E%9F%E7%90%86/"/>
-    <id>https://smallbluewhale.github.io/2016/12/12/Android部分知识的原理/</id>
-    <published>2016-12-11T17:23:00.000Z</published>
-    <updated>2017-02-07T03:28:34.287Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="并发进程通信"><a href="#并发进程通信" class="headerlink" title="并发进程通信"></a>并发进程通信</h1><p><strong>文件传输</strong>  </p>
-<ul>
-<li>writeObject的方式  </li>
-</ul>
-<p><strong>bundle</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<ul>
-<li>SharePreference的进程访问不可靠                             <ul>
-<li>本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了</li>
-</ul>
-</li>
-</ul>
-<p><strong>Messenger</strong>  </p>
-<p><strong>SharePreference</strong>  </p>
-<h1 id="To-do-后续补充"><a href="#To-do-后续补充" class="headerlink" title="To do(后续补充)"></a>To do(后续补充)</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;并发进程通信&quot;&gt;&lt;a href=&quot;#并发进程通信&quot; class=&quot;headerlink&quot; title=&quot;并发进程通信&quot;&gt;&lt;/a&gt;并发进程通信&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;文件传输&lt;/strong&gt;  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;writeObject的方式  &lt;
-    
-    </summary>
-    
-      <category term="tips" scheme="https://smallbluewhale.github.io/categories/tips/"/>
     
     
       <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
