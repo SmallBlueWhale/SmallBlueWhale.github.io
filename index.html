@@ -64,16 +64,16 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                归档
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
+              <a href="https://www.zhihu.com/people/jin-hui-18-8/activities"  >
+                <i class="icon icon-lg icon-archives"></i>
+                知乎
               </a>
             </li>
         
@@ -176,7 +176,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        封装一个网络框架(Rxjava + Retrofit 2 +  )
+        封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)图片UML类图
+
 项目分包：为了让项目更加清晰
 api：负责网络服务，例如定义网络接口，以及固定常量。
 app：项目单独的application
@@ -650,15 +651,13 @@ Freeline*(project中的gradle):
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Android部分知识的原理"
+            <article id="post-Android学习总结"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2016年12月12日 1:23" datetime="2016-12-11T17:23:00.000Z"  itemprop="datePublished">2016-12-12</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tips/">tips</a></li></ul>
-
 
 
         
@@ -670,7 +669,7 @@ Freeline*(project中的gradle):
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/12/Android部分知识的原理/">Android部分知识的原理</a>
+      <a class="post-title-link" href="/2016/12/12/Android学习总结/">Android学习总结</a>
     </h3>
   
 
@@ -680,24 +679,19 @@ Freeline*(project中的gradle):
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        并发进程通信文件传输  
+        自定义View学习中的一些难点记录
+what is the different about getLeft(),getX()？  
 
-writeObject的方式  
+Position  
 
-bundle  
-SharePreference  
+这个部分可以参照这个地方去理解 
 
-SharePreference的进程访问不可靠                             
-本质上shareprefence属于文件的一种，但由于系统对它的读写有一定的缓存策略，即在内存中会有一份SharePrefences文件的缓存，因此在多线程模式下，系统对它的读写就变的不可靠了
-
-
-
-Messenger  
-SharePreference  
-To do(后续补充)
+The geometry of a view is that of a rectangle. A view has a location, expressed as a pair of left and top coordinates, and two dimensions, expressed as a width and a height. The unit for location and dimensions is the pixel.
+It is possible to retrieve the location of a view by invoking the methods getLeft() and getTop(). The former returns the left, or X, coordinate of the rectangle representing the view. The latter returns the top, or Y, coordinate of the rectangle representing the view. These methods both return the location of the view relative to its parent. For instance, when getLeft() returns 20, that means the view is located 20 pixels to the right of the left edge of its direct parent.
+In addition, several convenience methods are offered to avoid unnecessary computations, namely getRight() and getBottom(). These methods return the coordinates of the right and bottom edges of the ...
     
 
-        <a href="/2016/12/12/Android部分知识的原理/" class="post-more waves-effect waves-button">
+        <a href="/2016/12/12/Android学习总结/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -715,12 +709,6 @@ To do(后续补充)
     </ul>
 
     
-<nav id="page-nav">
-    <div class="inner">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-    </div>
-</nav>
-
 
 </div>
 

@@ -20,36 +20,39 @@
     
     
     <meta name="keywords" content="Android,MVP,Retrofit,Rxjava,Material Design,Glide,Gradle">
-    <meta name="description" content="封装一个网络框架(Rxjava + Retrofit 2 +  )
+    <meta name="description" content="封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)图片UML类图
+
 项目分包：为了让项目更加清晰
 api：负责网络服务，例如定义网络接口，以及固定常量。
 app：项目单独的application
 bean：负责实体类的定义
 db：负责view和接口层
-ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分">
+ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
 <meta property="og:url" content="https://smallbluewhale.github.io/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /index.html">
 <meta property="og:site_name" content="SmallBlueWhale's blog">
-<meta property="og:description" content="封装一个网络框架(Rxjava + Retrofit 2 +  )
+<meta property="og:description" content="封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)图片UML类图
+
 项目分包：为了让项目更加清晰
 api：负责网络服务，例如定义网络接口，以及固定常量。
 app：项目单独的application
 bean：负责实体类的定义
 db：负责view和接口层
-ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分">
-<meta property="og:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
-<meta property="og:updated_time" content="2017-06-09T08:23:03.602Z">
+ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，">
+<meta property="og:image" content="https://github.com/SmallBlueWhale/SmallBlueWhale.github.io/blob/master/img/Retrofit%20+%20Rxjava%20+%20OkHttp.png?raw=true">
+<meta property="og:updated_time" content="2017-06-16T02:08:44.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)">
-<meta name="twitter:description" content="封装一个网络框架(Rxjava + Retrofit 2 +  )
+<meta name="twitter:description" content="封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)图片UML类图
+
 项目分包：为了让项目更加清晰
 api：负责网络服务，例如定义网络接口，以及固定常量。
 app：项目单独的application
 bean：负责实体类的定义
 db：负责view和接口层
-ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分">
-<meta name="twitter:image" content="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg">
+ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，">
+<meta name="twitter:image" content="https://github.com/SmallBlueWhale/SmallBlueWhale.github.io/blob/master/img/Retrofit%20+%20Rxjava%20+%20OkHttp.png?raw=true">
     
         <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
     
@@ -88,16 +91,16 @@ ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                归档
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                标签
+              <a href="https://www.zhihu.com/people/jin-hui-18-8/activities"  >
+                <i class="icon icon-lg icon-archives"></i>
+                知乎
               </a>
             </li>
         
@@ -177,7 +180,7 @@ ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#封装一个网络框架-Rxjava-Retrofit-2"><span class="post-toc-number">1.</span> <span class="post-toc-text">封装一个网络框架(Rxjava + Retrofit 2 +  )</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目分包："><span class="post-toc-number">2.</span> <span class="post-toc-text">项目分包：</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#封装一个网络框架-Rxjava-Retrofit-2-OkHttp3"><span class="post-toc-number">1.</span> <span class="post-toc-text">封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目分包："><span class="post-toc-number">2.</span> <span class="post-toc-text">项目分包：</span></a></li></ol>
         </nav>
     </aside>
     
@@ -202,7 +205,8 @@ ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="封装一个网络框架-Rxjava-Retrofit-2"><a href="#封装一个网络框架-Rxjava-Retrofit-2" class="headerlink" title="封装一个网络框架(Rxjava + Retrofit 2 +  )"></a>封装一个网络框架(Rxjava + Retrofit 2 +  )</h2><p><img src="http://oa5504rxk.bkt.clouddn.com/week5_MVP/2.jpg" alt="img"></p>
+            <h2 id="封装一个网络框架-Rxjava-Retrofit-2-OkHttp3"><a href="#封装一个网络框架-Rxjava-Retrofit-2-OkHttp3" class="headerlink" title="封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)"></a>封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)</h2><p><strong>图片UML类图</strong></p>
+<p><img src="https://github.com/SmallBlueWhale/SmallBlueWhale.github.io/blob/master/img/Retrofit%20+%20Rxjava%20+%20OkHttp.png?raw=true" alt="img"></p>
 <h2 id="项目分包："><a href="#项目分包：" class="headerlink" title="项目分包："></a>项目分包：</h2><p>为了让项目更加清晰</p>
 <p>api：负责网络服务，例如定义网络接口，以及固定常量。</p>
 <p>app：项目单独的application</p>
@@ -222,7 +226,7 @@ ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-06-09T08:23:03.602Z" itemprop="dateUpdated">2017年6月9日 16:23</time>
+    最后更新时间：<time datetime="2017-06-16T02:08:44.019Z" itemprop="dateUpdated">2017年6月16日 10:08</time>
 </span><br>
 
 
