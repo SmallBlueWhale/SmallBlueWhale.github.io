@@ -166,7 +166,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</a>
+      <a class="post-title-link" href="/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /">Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三)</a>
     </h3>
   
 
@@ -179,18 +179,22 @@
         封装一个网络框架(Rxjava + Retrofit 2 +  OkHttp3)图片UML类图
 
 项目分包：为了让项目更加清晰
-api：负责网络服务，例如定义网络接口，以及固定常量。
-app：项目单独的application
-bean：负责实体类的定义
-db：负责view和接口层
-ui：整个mvp中最关键的一环，每一个功能模块在这内部都应分出一个属于自己的包。这内部中有几个功能模块，比如main，main模块是总组成，又可以分成activity，fragment，contract，model，presenter。其中activity和fragment属于view，contract定义了这个view和model以及presenter全部的功能接口，属于一个能让结构更加清晰的类，每次分析项目，只需要从contract看起就可以清楚的理解这个模块主要承载了什么样子的功能特点。同时，我们构建项目也只需要先从contract入手，这样就不会在mvp这个架构中被一堆的接口绕晕。model层定义的是数据类型，用来拼装一系列数据，将数据拼装好再传到presenter中通过Presenter层接口进行调用。
-util：负责项目一些公有的项目大部分功能。
-widget：项目中的自定义控件
-部分参考自：
-RxJava+Retrofit+OkHttp封装
-Android RxJava之网络处理专栏
-# 
+api：网络层框架总包
+basic：项目一些网络接口配置
+builder：设置observable以及retrofit和okhttp的
+Intercepter：okhtpp的拦截器用来设置网络的
+observable：只有NetworkErrorCodeFunc1，用来处理返回的response
+subscriber：用来设置subscriber
+util：gson将map转化成需要的requestbody请求体
+基本思想先从整体最后调用的代码去谈。
+1234567891011121314    /*    * 调用model层来获取数据d    * */    NetworkRequest.with(mContext)            .setShowingDialog()            .setObservable(NetworkApi.register(hashMap))            .subScriber(new NetworkSubscriber&lt;ResponseInfo&lt;User&gt;&gt;() &#123;                //数据成功                @Override                public void onNext(ResponseInfo&lt;User&gt; result) &#123;                &#125;            &#125;);&#125;
 
+Retrofit (用rxjava去实现的话其实，我们可以这样去构造，observable的start()函数可以用来提前处理由okhttp返回的observable数据)
+Observable (这样的话我们用一个转化ResponseInfo的observable也就是func1()将ResponseInfo转化成一个只有data数据的observable)
+Subscriber (通过返回的observable之后，再由subscriber订阅时，在主线程去回调相应的方法，比如说)
+
+observable.)
+Retrofit2 + Okh...
     
 
         <a href="/2017/06/20/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(三) /" class="post-more waves-effect waves-button">
@@ -200,7 +204,7 @@ Android RxJava之网络处理专栏
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Glide/">Glide</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gradle/">Gradle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP/">MVP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retrofit/">Retrofit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rxjava/">Rxjava</a></li></ul>
 
     </div>
     
