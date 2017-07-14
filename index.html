@@ -245,8 +245,8 @@ Retrofit2 + Okh...
 123456new Thread(new Runnable()&#123;  @Override  public void run()&#123;      &#125;&#125;).start();
 Runnable是一个匿名内部类，会隐含的持有外部类对象，具体原因下面
 Non-static Inner Class非静态匿名内部类导致的内存泄漏问题，主要是因为非静态匿名内部类是属于外部类的一部分，所以如果这个匿名内部类的周期比外部类的周期要长的话，它会隐式引用这个外部类，同时这个外部类就因为被持有，导致无法销毁，因此就泄漏了。
- 内存泄漏之Handler &amp; InnerClass
 
+解决方法1234567891011121314151617181920212223242526272829303132333435package com.hyx.maizuo.base.utils.system;import android.app.Activity;import android.content.SharedPreferences;import android.os.Bundle;import android.support.multidex.MultiDex;import com.tencent.bugly.beta.Beta;import cn.com.mma.mobile.tracking.util.DeviceInfoUtil;public class LoadDexActivity extends Activity &#123;	protected Context mContext;	private MyHandler mHandler;  	WeakReference&lt;Activity&gt; mActivity;	private static class MyHandler extends Handler&#123;	  	MyHandler(Activity activity)&#123;          	mActivity =...
     
 
         <a href="/2017/06/09/Android常见内存泄漏原因以及解决方法/" class="post-more waves-effect waves-button">
@@ -713,6 +713,12 @@ In addition, several convenience methods are offered to avoid unnecessary comput
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 

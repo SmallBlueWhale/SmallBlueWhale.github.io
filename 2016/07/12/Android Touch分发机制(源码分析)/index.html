@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Android Touch分发机制源码分析 | SmallBlueWhale&#39;s blog | Real Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#99CCFF">
+    
+    
+    <meta name="keywords" content="Android,Touch,View">
+    <meta name="description" content="Touch事件分发机制先从Activity源码分析，分析写在函数内部
+12345678910111213141516171819202122232425/** * Called to process touch screen events.  You can override this to * intercept all touch screen events before they are d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Touch分发机制源码分析">
+<meta property="og:url" content="https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/index.html">
+<meta property="og:site_name" content="SmallBlueWhale's blog">
+<meta property="og:description" content="Touch事件分发机制先从Activity源码分析，分析写在函数内部
+12345678910111213141516171819202122232425/** * Called to process touch screen events.  You can override this to * intercept all touch screen events before they are d">
+<meta property="og:updated_time" content="2017-07-14T09:35:38.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Touch分发机制源码分析">
+<meta name="twitter:description" content="Touch事件分发机制先从Activity源码分析，分析写在函数内部
+12345678910111213141516171819202122232425/** * Called to process touch screen events.  You can override this to * intercept all touch screen events before they are d">
+    
+        <link rel="alternative" href="/atom.xml" title="SmallBlueWhale&#39;s blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">SmallBlueWhale</h5>
+          <a href="mailto:349415101@qq.com" title="349415101@qq.com" class="mail">349415101@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/jin-hui-18-8/activities"  >
+                <i class="icon icon-lg icon-archives"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/SmallBlueWhale" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/2353851293/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android Touch分发机制源码分析</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android Touch分发机制源码分析</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-07-12T11:23:00.000Z" itemprop="datePublished" class="page-time">
+  2016-07-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Touch事件分发机制"><span class="post-toc-number">1.</span> <span class="post-toc-text">Touch事件分发机制</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Android Touch分发机制(源码分析)"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android Touch分发机制源码分析</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年07月12日 19:23" datetime="2016-07-12T11:23:00.000Z"  itemprop="datePublished">2016-07-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Touch事件分发机制"><a href="#Touch事件分发机制" class="headerlink" title="Touch事件分发机制"></a>Touch事件分发机制</h1><p><strong>先从Activity源码分析，分析写在函数内部</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Called to process touch screen events.  You can override this to</div><div class="line"> * intercept all touch screen events before they are dispatched to the</div><div class="line"> * window.  Be sure to call this implementation for touch screen events</div><div class="line"> * that should be handled normally.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> ev The touch screen event.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> boolean Return true if this event was consumed.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</div><div class="line">  	<span class="comment">//如果先调用的是一个空方法</span></div><div class="line">    <span class="keyword">if</span> (ev.getAction() == MotionEvent.ACTION_DOWN) &#123;</div><div class="line">        onUserInteraction();</div><div class="line">    &#125;</div><div class="line">  	<span class="comment">/**</span></div><div class="line">  	* 再调用父类window的superDispatchTouchEvent()方法</div><div class="line">    * 调用父类superDispatchTouchEvent()方法，如果父类拦截就返回ture</div><div class="line">  	*/</div><div class="line">    <span class="keyword">if</span> (getWindow().superDispatchTouchEvent(ev)) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">  	<span class="comment">//否则调用Activity的onTouchEvent()方法</span></div><div class="line">    <span class="keyword">return</span> onTouchEvent(ev);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们看它调用Activity的onTouchEvent()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Called when a touch screen event was not handled by any of the views</div><div class="line"> * under it.  This is most useful to process touch events that happen</div><div class="line"> * outside of your window bounds, where there is no view to receive it.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> event The touch screen event being processed.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> Return true if you have consumed the event, false if you haven't.</div><div class="line"> * The default implementation always returns false.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</div><div class="line">  	<span class="comment">//这里其实是就是考虑特殊情况，如果当前点击事件导致Activity关闭</span></div><div class="line">    <span class="keyword">if</span> (mWindow.shouldCloseOnTouch(<span class="keyword">this</span>, event)) &#123;</div><div class="line">        finish();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">	<span class="comment">//不然直接返回false</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-14T09:35:38.393Z" itemprop="dateUpdated">2017年7月14日 17:35</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="https://smallbluewhale.github.io">
+            <img src="/img/avatar.jpg" alt="SmallBlueWhale">
+            SmallBlueWhale
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Touch/">Touch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/View/">View</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&title=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&title=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/12/Android学习总结/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android学习总结</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'smallbluewhale';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢哥哥~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>SmallBlueWhale's blog &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&title=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&pic=https://smallbluewhale.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&title=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Touch分发机制源码分析》 — SmallBlueWhale's blog&url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/&via=https://smallbluewhale.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallbluewhale.github.io/2016/07/12/Android Touch分发机制(源码分析)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQW4CMRAEQP7/6eSaCCG6Z2xpD7UnRGDX5Uj2MO7XK75+/lx/33l//em7+Tuzp6wuPDw8vMXQ369Pj2k/8/75TxOXs5P74+Hh4d3jJbdul/jNEPPp/mLBw8PDewwvgc2mpt0k8PDw8J7Ma7eEs4PGw8PDexovKWHzlkTect1sS4d7LXh4eHgxrx3EE15fOd/Dw8PDW5+qzxqpm0OypHlRjBMPDw/vAq9dlE+FrvYtiaLFjIeHh3eUNytqkyW7LY7bw7BobHh4eHjXeC0gX6aTo68cVjcm8PDw8C7wTi3NCaltSbST+wWPh4eHd4g3a6QmxfSpqFZ7wjXsXuDh4eHFvGQD2BTZbXirjWRF+x4eHh7eUV5bEM8CATNe8jug2BLw8PDwjvI2kaZNuGrTaIjuj4eHh3eBlw9xFh1oD6vaUjuKJuDh4eFd5s3CWMngNltO2+wYzgQeHh7euoE7O3BqWxvts4q74eHh4V3g5XGoNk66jw5sJutLxwUPDw9vwdscPiVrbxIFaCMLeYGOh4eHd4O3jz3Njrva5sVqWvHw8PAu8PJFvF3QZ4GApOUx28Dw8PDw9rw2CtC2VvOjrFl7YtilxsPDw1vw2qJ5Fp9qN5LkKfX/EA8PD+8Qrw0/5S3XfHbzsrueFDw8PLwLvFmhnJTgeWigBecNaDw8PLwbvPwQK5mC5K95wT1rkfz7Lh4eHt4FXlsQ57GDU9vDpv2Bh4eHd4P3U155+KltRrSfjKYDDw8P7wIvv2bl9Y0tpL0/Hh4e3g1eewy275e2bdx2Y1gFCPDw8PBi3mzQyTvJop9vAHkMCw8PD+8JvDYgNSuX83DD4Y0BDw8P7wKvLXNzwCbUVUSv8PDw8I7yTjUO8uU7b8628YVjvRY8PDy8yW/812YQm8hUXjqvTvbw8PDwOt4vc6xpzhm6ByAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
