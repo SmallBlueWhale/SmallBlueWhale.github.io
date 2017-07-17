@@ -265,33 +265,6 @@
   </entry>
   
   <entry>
-    <title>Rxjava学习记录</title>
-    <link href="https://smallbluewhale.github.io/2017/03/20/Rxjava%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <id>https://smallbluewhale.github.io/2017/03/20/Rxjava学习记录/</id>
-    <published>2017-03-20T03:23:00.000Z</published>
-    <updated>2017-03-22T07:05:29.044Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Rxjava学习记录"><a href="#Rxjava学习记录" class="headerlink" title="Rxjava学习记录"></a>Rxjava学习记录</h1><p><strong>map操作符和flatmap操作符其实都是转化用的，区别是</strong></p>
-<ul>
-<li>map是一个一对一转化.       例：提取一个文件夹下的一张图片，就只要把file转化成bitmap.</li>
-<li>flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，这个时候如果不能用flatmap,所以我们用flatmap将file转化成List<bitmap>.</bitmap></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Rxjava学习记录&quot;&gt;&lt;a href=&quot;#Rxjava学习记录&quot; class=&quot;headerlink&quot; title=&quot;Rxjava学习记录&quot;&gt;&lt;/a&gt;Rxjava学习记录&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;map操作符和flatmap操作符其实都是转化用的，区别是&lt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
-    
-      <category term="Rxjava" scheme="https://smallbluewhale.github.io/tags/Rxjava/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android日常开发bug记录</title>
     <link href="https://smallbluewhale.github.io/2017/03/20/Android%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91bug%E8%AE%B0%E5%BD%95/"/>
     <id>https://smallbluewhale.github.io/2017/03/20/Android日常开发bug记录/</id>
@@ -319,6 +292,33 @@
       <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
     
       <category term="bug" scheme="https://smallbluewhale.github.io/tags/bug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rxjava学习记录</title>
+    <link href="https://smallbluewhale.github.io/2017/03/20/Rxjava%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>https://smallbluewhale.github.io/2017/03/20/Rxjava学习记录/</id>
+    <published>2017-03-20T03:23:00.000Z</published>
+    <updated>2017-03-22T07:05:29.044Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Rxjava学习记录"><a href="#Rxjava学习记录" class="headerlink" title="Rxjava学习记录"></a>Rxjava学习记录</h1><p><strong>map操作符和flatmap操作符其实都是转化用的，区别是</strong></p>
+<ul>
+<li>map是一个一对一转化.       例：提取一个文件夹下的一张图片，就只要把file转化成bitmap.</li>
+<li>flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，这个时候如果不能用flatmap,所以我们用flatmap将file转化成List<bitmap>.</bitmap></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Rxjava学习记录&quot;&gt;&lt;a href=&quot;#Rxjava学习记录&quot; class=&quot;headerlink&quot; title=&quot;Rxjava学习记录&quot;&gt;&lt;/a&gt;Rxjava学习记录&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;map操作符和flatmap操作符其实都是转化用的，区别是&lt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
+    
+      <category term="Rxjava" scheme="https://smallbluewhale.github.io/tags/Rxjava/"/>
     
   </entry>
   
