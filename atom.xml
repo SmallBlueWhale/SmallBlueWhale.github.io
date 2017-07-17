@@ -296,33 +296,6 @@
   </entry>
   
   <entry>
-    <title>Rxjava学习记录</title>
-    <link href="https://smallbluewhale.github.io/2017/03/20/Rxjava%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <id>https://smallbluewhale.github.io/2017/03/20/Rxjava学习记录/</id>
-    <published>2017-03-20T03:23:00.000Z</published>
-    <updated>2017-03-22T07:05:29.044Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Rxjava学习记录"><a href="#Rxjava学习记录" class="headerlink" title="Rxjava学习记录"></a>Rxjava学习记录</h1><p><strong>map操作符和flatmap操作符其实都是转化用的，区别是</strong></p>
-<ul>
-<li>map是一个一对一转化.       例：提取一个文件夹下的一张图片，就只要把file转化成bitmap.</li>
-<li>flatmap是一对多的操作. 例：提取一个文件夹下的多张图片，这个时候如果不能用flatmap,所以我们用flatmap将file转化成List<bitmap>.</bitmap></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Rxjava学习记录&quot;&gt;&lt;a href=&quot;#Rxjava学习记录&quot; class=&quot;headerlink&quot; title=&quot;Rxjava学习记录&quot;&gt;&lt;/a&gt;Rxjava学习记录&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;map操作符和flatmap操作符其实都是转化用的，区别是&lt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://smallbluewhale.github.io/tags/Android/"/>
-    
-      <category term="Rxjava" scheme="https://smallbluewhale.github.io/tags/Rxjava/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)</title>
     <link href="https://smallbluewhale.github.io/2017/03/08/Android%E5%BC%80%E5%8F%91%E7%B3%BB%E5%88%97%EF%BC%9A%E2%80%9C%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAmvp+retrofit+glide+rxjava+material%20design%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%9D(%E4%B8%80)/"/>
     <id>https://smallbluewhale.github.io/2017/03/08/Android开发系列：“从零搭建一个mvp+retrofit+glide+rxjava+material design的应用”(一)/</id>
